@@ -28,3 +28,10 @@
 
 /* HQ hero artwork crop */
 .hero-photo{width:100%;right:0;object-fit:cover;object-position:center top;filter:none;transform:none}.hero:before,.hero:after{display:none}.hero-copy{visibility:hidden;pointer-events:none}.hero{min-height:720px;background:#f8f4ea}@media(max-width:720px){.hero{min-height:650px}.hero-photo{height:100%;object-position:62% top}.hero-copy{display:none}}
+
+/* Correct hero architecture: live copy + clean portrait, no baked-in duplicate UI */
+.hero-photo{display:block;width:64%;right:0;height:100%;object-fit:cover;object-position:54% 27%;filter:saturate(.97) contrast(1.045) brightness(1.02);transform:none}
+.hero-copy{display:block;visibility:visible;pointer-events:auto;width:51%;z-index:3}
+.hero:before{display:block;background:linear-gradient(90deg,#f8f4ea 0%,#f8f4ea 31%,rgba(248,244,234,.97) 37%,rgba(248,244,234,.76) 43%,rgba(248,244,234,.38) 49%,rgba(248,244,234,.10) 55%,transparent 60%)}
+.hero:after{display:block;background:linear-gradient(90deg,rgba(248,244,234,.20),rgba(248,244,234,.06) 40%,transparent 53%)}
+@media(max-width:720px){.hero-photo{width:100%;height:58%;object-position:54% 24%}.hero-copy{display:block;visibility:visible;width:100%}.hero:before{display:block;background:linear-gradient(180deg,#f8f4ea 0%,#f8f4ea 40%,rgba(248,244,234,.90) 47%,rgba(248,244,234,.42) 55%,rgba(248,244,234,.08) 64%,transparent 70%)}.hero:after{display:none}}
