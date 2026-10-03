@@ -35,3 +35,11 @@
 .hero:before{display:block;background:linear-gradient(90deg,#f8f4ea 0%,#f8f4ea 31%,rgba(248,244,234,.97) 37%,rgba(248,244,234,.76) 43%,rgba(248,244,234,.38) 49%,rgba(248,244,234,.10) 55%,transparent 60%)}
 .hero:after{display:block;background:linear-gradient(90deg,rgba(248,244,234,.20),rgba(248,244,234,.06) 40%,transparent 53%)}
 @media(max-width:720px){.hero-photo{width:100%;height:58%;object-position:54% 24%}.hero-copy{display:block;visibility:visible;width:100%}.hero:before{display:block;background:linear-gradient(180deg,#f8f4ea 0%,#f8f4ea 40%,rgba(248,244,234,.90) 47%,rgba(248,244,234,.42) 55%,rgba(248,244,234,.08) 64%,transparent 70%)}.hero:after{display:none}}
+
+/* Final HQ full-bleed hero */
+.hero{min-height:720px;overflow:hidden;background:#f8f4ea}
+.hero-photo{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;filter:none;transform:none}
+.hero-copy{display:block;visibility:visible;pointer-events:auto;width:50%;z-index:4}
+.hero:before{display:block;z-index:2;background:linear-gradient(90deg,rgba(248,244,234,.98) 0%,rgba(248,244,234,.94) 25%,rgba(248,244,234,.80) 34%,rgba(248,244,234,.48) 43%,rgba(248,244,234,.16) 51%,transparent 59%),linear-gradient(0deg,rgba(248,244,234,.14),transparent 18%)}
+.hero:after{display:block;z-index:2;background:linear-gradient(90deg,rgba(248,244,234,.22) 0%,transparent 48%,transparent 90%,rgba(248,244,234,.10) 100%)}
+@media(max-width:720px){.hero{min-height:760px}.hero-photo{width:100%;height:100%;object-position:60% 50%}.hero-copy{width:100%}.hero:before{display:block;background:linear-gradient(180deg,rgba(248,244,234,.98) 0%,rgba(248,244,234,.94) 34%,rgba(248,244,234,.66) 45%,rgba(248,244,234,.20) 56%,transparent 66%)}.hero:after{display:none}}
