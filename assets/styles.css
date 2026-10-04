@@ -478,3 +478,9 @@ body.home-sync .benefit-label{font-family:"Bradley Hand","Segoe Print","Comic Sa
 @keyframes typeCharV24{to{opacity:1;transform:none;filter:blur(0)}}
 .type-space{width:.28em}
 @media(max-width:720px){body.home-sync .benefit-label{font-size:11.5px!important;letter-spacing:.025em!important}}
+
+/* v25 visible handwritten type-on, source-rendered */
+body.home-sync .benefit-label{font-family:"Snell Roundhand","Apple Chancery","Bradley Hand",cursive!important;font-weight:400!important;font-style:italic!important;font-size:18px!important;letter-spacing:.055em!important;white-space:nowrap!important}
+body.home-sync .benefit-label .ink-char{font:inherit!important;display:inline-block!important;opacity:0!important;transform:translateY(5px) rotate(-2deg)!important;animation:inkTypeV25 .22s ease forwards!important;animation-delay:calc(.22s + (var(--i) / var(--n)) * .78s)!important}
+@keyframes inkTypeV25{to{opacity:1;transform:translateY(0) rotate(0)}}
+@media(max-width:720px){body.home-sync .benefit-label{font-size:11.5px!important;letter-spacing:.025em!important}}
