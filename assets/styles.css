@@ -404,3 +404,7 @@
 /* Safari: hero video behaves as artwork, never as a player */
 .hero-video{background:transparent!important;border:0!important;outline:0!important;pointer-events:none!important;-webkit-user-select:none!important;user-select:none!important}
 .hero-video::-webkit-media-controls,.hero-video::-webkit-media-controls-panel,.hero-video::-webkit-media-controls-play-button,.hero-video::-webkit-media-controls-start-playback-button{display:none!important;-webkit-appearance:none!important;opacity:0!important;pointer-events:none!important}
+
+/* Hero media authoritative override v6 */
+.hero-media .hero-video{display:block!important;visibility:visible!important;opacity:1!important}
+@media(prefers-reduced-motion:reduce){.hero-media .hero-video{display:block!important;visibility:visible!important}}
