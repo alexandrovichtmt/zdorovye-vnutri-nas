@@ -456,3 +456,10 @@
 .desktop-benefits .benefit:nth-child(5),.mobile-benefits .benefit:nth-child(5){animation-delay:2.07s!important}
 .desktop-benefits .benefit span,.mobile-benefits .benefit span{opacity:1!important;visibility:visible!important;filter:none!important;transform:none!important}
 @keyframes benefitVisibleV14{to{opacity:1;transform:none}}
+
+/* v15 emergency restore: benefit labels must always be visible */
+.desktop-benefits .benefit span,.mobile-benefits .benefit span,
+.desktop-benefits .benefit .benefit-icon,.mobile-benefits .benefit .benefit-icon{
+opacity:1!important;visibility:visible!important;display:block!important;filter:none!important;color:inherit!important;
+}
+.desktop-benefits .benefit,.mobile-benefits .benefit{visibility:visible!important}
