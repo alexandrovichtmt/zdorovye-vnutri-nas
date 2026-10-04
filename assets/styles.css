@@ -215,3 +215,41 @@
 @media(max-width:430px){
  .brand{line-height:1.06!important}
 }
+
+/* Mobile visual polish v5 */
+@media(max-width:720px){
+ .navin{height:74px;padding:0}
+ .brand{font-size:19px!important;line-height:1.08!important;letter-spacing:-.015em;max-width:none}
+ .brand small{font-size:8px!important;line-height:1.2;letter-spacing:.25em;margin-top:7px}
+ .menu{width:42px;height:42px}
+ .hero{margin-top:74px!important}
+ .hero>.hero-photo{width:100%;height:auto;aspect-ratio:1.22/1;object-fit:cover;object-position:58% 30%!important}
+ .hero>.mobile-benefits{height:62px!important;padding:0 8px;box-sizing:border-box}
+ .hero>.mobile-benefits .benefitgrid{height:62px!important}
+ .hero>.mobile-benefits .benefit{height:62px!important;min-height:62px!important;padding:4px 3px!important;font:10.5px/1.08 Georgia!important;gap:1px!important;overflow:visible}
+ .hero>.mobile-benefits .benefit-icon{font-size:13px;line-height:1;margin-bottom:2px;color:#31533d}
+ .hero>.mobile-benefits .benefit:first-child{border-left:1px solid rgba(33,76,55,.10)}
+ .hero-copy{padding:24px 0 26px!important}
+ .eyebrow{margin:4px 0 20px!important;font-size:10.5px;letter-spacing:.25em}
+ .hero h1{font-size:clamp(40px,11.2vw,50px)!important;line-height:1.01!important;letter-spacing:-.045em!important;margin-bottom:22px!important}
+ .hero .lead{font-size:17px!important;line-height:1.38!important;margin-bottom:16px!important}
+ .hero-copy>p{font-size:14.5px!important;line-height:1.48!important}
+ .actions{margin-top:18px!important}
+ .section{padding:40px 0!important}
+ .topicgrid{margin-top:24px}
+ .tgbar{right:10px;bottom:10px}
+}
+@media(max-width:430px){
+ .navin{height:70px}
+ .hero{margin-top:70px!important}
+ .brand{font-size:17px!important}
+ .brand small{font-size:7px!important}
+ .hero>.hero-photo{aspect-ratio:1.18/1;object-position:59% 28%!important}
+ .hero>.mobile-benefits{height:60px!important;padding:0 5px}
+ .hero>.mobile-benefits .benefitgrid{height:60px!important}
+ .hero>.mobile-benefits .benefit{height:60px!important;min-height:60px!important;font-size:9px!important;padding:3px 1px!important}
+ .hero>.mobile-benefits .benefit-icon{font-size:12px}
+ .hero-copy{padding-top:22px!important}
+ .eyebrow{margin-bottom:18px!important}
+ .hero h1{font-size:39px!important;line-height:1.02!important}
+}
