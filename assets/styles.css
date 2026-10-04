@@ -333,3 +333,19 @@
  .hero-copy>p{font-size:15px;line-height:1.45;margin-bottom:14px!important}
  .actions{margin-top:14px!important}
 }
+
+/* Desktop hero copy containment — keep text inside safe left column */
+@media(min-width:721px){
+ .hero>.wrap{position:relative;z-index:4;width:min(1440px,94vw)!important;margin:0 auto!important}
+ .hero-copy{width:46%!important;max-width:690px!important;padding-top:28px!important;margin-left:0!important}
+ .hero .eyebrow{margin-left:0!important}
+ .hero h1{font-size:clamp(64px,5.9vw,94px)!important;line-height:.88!important;letter-spacing:-.045em!important;margin-left:0!important}
+ .hero .lead{font-size:clamp(22px,2vw,30px)!important;line-height:1.12!important;max-width:650px}
+ .hero-copy>p{max-width:640px!important;font-size:15.5px!important;line-height:1.5!important}
+ .actions{margin-top:18px!important}
+}
+@media(min-width:721px) and (max-width:1250px){
+ .hero-copy{width:49%!important}
+ .hero h1{font-size:clamp(58px,6vw,78px)!important}
+ .hero .lead{font-size:22px!important}
+}
