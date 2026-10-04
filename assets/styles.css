@@ -284,3 +284,12 @@
 .icon-sprout:before{width:10px;height:15px;left:5px;top:3px;border-width:0 0 1.5px 1.5px;border-radius:0 0 0 12px;transform:rotate(-45deg)}.icon-sprout:after{width:11px;height:8px;left:8px;top:3px;border-radius:100% 0 100% 0;transform:rotate(-15deg)}
 .icon-support:before{width:7px;height:7px;left:1px;top:8px;border-radius:50%;box-shadow:11px 0 0 -1.5px #f8f4ea,11px 0 0 0 #315b43}.icon-support:after{width:18px;height:9px;left:1px;bottom:0;border-radius:12px 12px 0 0;border-bottom:0}
 @media(max-width:720px){.hero>.mobile-benefits{height:70px!important}.hero>.mobile-benefits .benefitgrid{height:70px!important}.hero>.mobile-benefits .benefit{height:70px!important;min-height:70px!important;font-size:10px!important}.hero>.mobile-benefits .benefit-icon{font-size:inherit!important}}
+
+/* Final unified SVG benefit icon system */
+.icon-defs{position:absolute;width:0;height:0;overflow:hidden}
+.premium-svg{display:block!important;width:24px!important;height:24px!important;margin:0 auto 5px!important;color:#315b43!important}
+.premium-svg svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.45;stroke-linecap:round;stroke-linejoin:round}
+.desktop-benefits .benefit{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;text-align:center}
+.desktop-benefits .benefit>span:not(.premium-svg){display:block}
+@media(min-width:721px){.desktop-benefits .premium-svg{width:27px!important;height:27px!important;margin-bottom:7px!important}.desktop-benefits .benefit{min-height:105px}}
+@media(max-width:720px){.hero>.mobile-benefits .premium-svg{width:22px!important;height:22px!important;margin-bottom:3px!important}.hero>.mobile-benefits .benefit{gap:1px!important}}
