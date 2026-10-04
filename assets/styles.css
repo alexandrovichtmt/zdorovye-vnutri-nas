@@ -422,3 +422,9 @@
 .benefit{transition:transform .3s ease,background .3s ease}.benefit:hover{transform:translateY(-5px)}.benefit-icon{transition:transform .42s cubic-bezier(.2,.8,.2,1)}.benefit:hover .benefit-icon{transform:translateY(-3px) rotate(-5deg) scale(1.08)}
 .topic{transition:transform .42s cubic-bezier(.2,.8,.2,1),box-shadow .42s ease}.topic:hover{transform:translateY(-7px);box-shadow:0 18px 42px rgba(31,63,47,.13)}.topic img{transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .5s ease}.topic:hover img{transform:scale(1.045);filter:saturate(1.04)}
 .reveal{transition:opacity .9s ease,transform .9s cubic-bezier(.2,.75,.2,1)!important}
+
+/* Homepage text comes alive */
+.text-alive{opacity:0;transform:translateY(16px);filter:blur(3px);transition:opacity .85s ease var(--alive-delay,0s),transform .9s cubic-bezier(.2,.75,.2,1) var(--alive-delay,0s),filter .8s ease var(--alive-delay,0s)}
+.text-alive.text-alive-on{opacity:1;transform:none;filter:blur(0)}
+.topic:hover .topiccopy h3,.topic:hover .topiccopy p{transform:translateX(4px)}
+.topiccopy h3,.topiccopy p{transition:transform .32s ease}
