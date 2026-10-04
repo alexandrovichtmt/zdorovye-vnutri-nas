@@ -490,3 +490,8 @@ body.home-sync .benefit-label{font-family:Arial,Helvetica,sans-serif!important;f
 .hero-type-char{display:inline!important;opacity:0;animation:heroTypeV26 .06s linear forwards!important;animation-delay:calc(.18s + var(--type-pos)*1s)!important}
 @keyframes heroTypeV26{to{opacity:1}}
 @media(max-width:720px){body.home-sync .benefit-label{font-size:10px!important;letter-spacing:0!important}}
+
+/* v27 authoritative first-screen typewriter */
+.screen-type-char{display:inline!important;opacity:0!important;animation:screenTypeV27 .055s linear forwards!important;animation-delay:calc(.16s + var(--p,0)*1.05s)!important}
+.reveal-char.screen-type-char{transform:none!important;filter:none!important}
+@keyframes screenTypeV27{to{opacity:1}}
