@@ -408,3 +408,17 @@
 /* Hero media authoritative override v6 */
 .hero-media .hero-video{display:block!important;visibility:visible!important;opacity:1!important}
 @media(prefers-reduced-motion:reduce){.hero-media .hero-video{display:block!important;visibility:visible!important}}
+
+/* Living UI motion */
+.btn{position:relative;overflow:hidden;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,background .28s ease,border-color .28s ease}
+.btn:before{content:"";position:absolute;top:-60%;left:-45%;width:34%;height:220%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);transform:rotate(18deg);transition:left .65s ease;pointer-events:none}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(27,76,55,.18)}
+.btn:hover:before{left:120%}.btn:active{transform:translateY(-1px) scale(.985)}
+.links a{position:relative;transition:color .25s ease,transform .25s ease}.links a:hover{transform:translateY(-2px)}
+.links a:after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1px;background:currentColor;transition:right .32s ease}.links a:hover:after{right:0}
+.hero .eyebrow,.hero .lead,.hero-copy>p,.hero .actions{opacity:0;transform:translateY(18px);animation:softRise .85s cubic-bezier(.2,.75,.2,1) forwards}
+.hero .eyebrow{animation-delay:.15s}.hero .lead{animation-delay:1.65s}.hero-copy>p{animation-delay:1.82s}.hero .actions{animation-delay:2s}
+@keyframes softRise{to{opacity:1;transform:none}}
+.benefit{transition:transform .3s ease,background .3s ease}.benefit:hover{transform:translateY(-5px)}.benefit-icon{transition:transform .42s cubic-bezier(.2,.8,.2,1)}.benefit:hover .benefit-icon{transform:translateY(-3px) rotate(-5deg) scale(1.08)}
+.topic{transition:transform .42s cubic-bezier(.2,.8,.2,1),box-shadow .42s ease}.topic:hover{transform:translateY(-7px);box-shadow:0 18px 42px rgba(31,63,47,.13)}.topic img{transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .5s ease}.topic:hover img{transform:scale(1.045);filter:saturate(1.04)}
+.reveal{transition:opacity .9s ease,transform .9s cubic-bezier(.2,.75,.2,1)!important}
