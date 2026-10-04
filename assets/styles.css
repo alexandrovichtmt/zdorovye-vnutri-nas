@@ -253,3 +253,23 @@
  .eyebrow{margin-bottom:18px!important}
  .hero h1{font-size:39px!important;line-height:1.02!important}
 }
+
+/* Integrated editorial hero image — remove inserted-photo feel */
+@media(max-width:720px){
+ .hero{background:#f8f4ea}
+ .hero>.hero-photo{
+   display:block;width:100%;height:auto;aspect-ratio:1.16/1;
+   object-fit:cover;object-position:59% 27%!important;
+   -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 82%,rgba(0,0,0,.92) 88%,rgba(0,0,0,.55) 95%,transparent 100%);
+   mask-image:linear-gradient(to bottom,#000 0%,#000 82%,rgba(0,0,0,.92) 88%,rgba(0,0,0,.55) 95%,transparent 100%);
+   margin-bottom:-18px;
+ }
+ .hero>.mobile-benefits{
+   position:relative!important;z-index:6;
+   background:linear-gradient(180deg,rgba(248,244,234,.82),#f8f4ea 38%,#f8f4ea 100%)!important;
+   border-top:0!important;
+ }
+}
+@media(max-width:430px){
+ .hero>.hero-photo{aspect-ratio:1.12/1;object-position:59% 25%!important;margin-bottom:-16px}
+}
