@@ -535,3 +535,18 @@ body.home-sync .benefit-label{
   body.home-sync .hero-copy{width:auto!important;max-width:none!important;margin-left:0!important}
   body.home-sync .hero-copy .lead,body.home-sync .hero-copy>p{max-width:none!important}
 }
+
+/* v29: soft premium typewriter motion */
+.typewriter-char{
+  display:inline;
+  opacity:0;
+  filter:blur(1.8px);
+  animation:typewriterSoftV29 .34s cubic-bezier(.22,.72,.28,1) forwards!important;
+  animation-delay:calc(.18s + var(--type-pos)*1.22s)!important;
+  will-change:opacity,filter;
+}
+@keyframes typewriterSoftV29{
+  0%{opacity:0;filter:blur(1.8px)}
+  55%{opacity:.72;filter:blur(.55px)}
+  100%{opacity:1;filter:blur(0)}
+}
