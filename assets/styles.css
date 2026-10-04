@@ -463,3 +463,7 @@
 opacity:1!important;visibility:visible!important;display:block!important;filter:none!important;color:inherit!important;
 }
 .desktop-benefits .benefit,.mobile-benefits .benefit{visibility:visible!important}
+
+/* v15 benefit label restore */
+.desktop-benefits .benefit span,.mobile-benefits .benefit span{opacity:1!important;visibility:visible!important;filter:none!important;color:inherit!important}
+.desktop-benefits .benefit,.mobile-benefits .benefit{visibility:visible!important}
