@@ -388,3 +388,13 @@
 .reveal-char{display:inline-block;opacity:0;transform:translateY(.42em) scale(.94);filter:blur(7px);animation:heroLetterIn .72s cubic-bezier(.2,.75,.2,1) forwards;animation-delay:calc(.34s + var(--i)*.065s);will-change:transform,opacity,filter}
 @keyframes heroLetterIn{0%{opacity:0;transform:translateY(.42em) scale(.94);filter:blur(7px)}65%{opacity:1;transform:translateY(-.025em) scale(1.012);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
 @media(prefers-reduced-motion:reduce){.reveal-char{opacity:1;transform:none;filter:none;animation:none}}
+
+/* Hero animation layer fix */
+.hero-media{z-index:1!important}
+.hero-media .hero-video{z-index:3!important;display:block!important;visibility:visible!important;opacity:1}
+.hero-media .hero-final{z-index:1!important}
+.hero:before,.hero:after{z-index:2!important;pointer-events:none}
+.hero-copy{z-index:5!important}
+.hero-media.video-finished .hero-video{opacity:0!important;visibility:hidden!important}
+.reveal-char{animation-play-state:paused!important}
+.hero-copy.reveal.on .reveal-char{animation-play-state:running!important}
