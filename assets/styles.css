@@ -475,3 +475,15 @@ opacity:1!important;visibility:visible!important;display:block!important;filter:
 /* v17 independent benefit labels */
 .benefit-label{display:block!important;opacity:1!important;visibility:visible!important;color:#20251f!important;font-family:Georgia,"Times New Roman",serif!important;font-size:16px!important;line-height:1.05!important;font-weight:600!important;text-align:center!important;text-shadow:0 1px 2px rgba(255,255,255,.35),0 2px 8px rgba(28,50,39,.08)!important;transform:none!important;filter:none!important}
 @media(max-width:720px){.benefit-label{font-size:10px!important;line-height:1.02!important}}
+
+/* v18 premium first-screen benefit typography + motion */
+.benefit-label{font-family:Georgia,"Times New Roman",serif!important;font-size:15px!important;line-height:1.12!important;font-weight:400!important;letter-spacing:.015em!important;color:#24352b!important}
+.desktop-benefits .benefit,.mobile-benefits .benefit{opacity:0!important;transform:translateY(12px) scale(.985)!important;animation:benefitPremiumIn .82s cubic-bezier(.2,.75,.2,1) forwards!important}
+.desktop-benefits .benefit:nth-child(1),.mobile-benefits .benefit:nth-child(1){animation-delay:1.35s!important}
+.desktop-benefits .benefit:nth-child(2),.mobile-benefits .benefit:nth-child(2){animation-delay:1.49s!important}
+.desktop-benefits .benefit:nth-child(3),.mobile-benefits .benefit:nth-child(3){animation-delay:1.63s!important}
+.desktop-benefits .benefit:nth-child(4),.mobile-benefits .benefit:nth-child(4){animation-delay:1.77s!important}
+.desktop-benefits .benefit:nth-child(5),.mobile-benefits .benefit:nth-child(5){animation-delay:1.91s!important}
+@keyframes benefitPremiumIn{0%{opacity:0;transform:translateY(12px) scale(.985)}100%{opacity:1;transform:none}}
+.desktop-benefits .benefit:hover,.mobile-benefits .benefit:hover{transform:translateY(-4px)!important}
+@media(max-width:720px){.benefit-label{font-size:10.5px!important;font-weight:400!important;letter-spacing:0!important}}
