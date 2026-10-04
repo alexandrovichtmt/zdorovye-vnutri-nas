@@ -159,3 +159,21 @@
 @media(max-width:430px){
  .benefit{min-height:40px;padding:4px 2px;font-size:8.5px;line-height:1.05;letter-spacing:-.01em}
 }
+
+/* Mobile exact placement from reference: benefits directly under portrait */
+@media(max-width:720px){
+ .hero{position:relative}
+ .benefits{position:absolute;left:0;right:0;top:auto;bottom:auto;z-index:8;margin-top:-42px;transform:translateY(100%);background:#f8f4ea;border-block:1px solid rgba(33,76,55,.12)}
+ .benefitgrid{width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+ .benefit{min-width:0;min-height:42px;padding:4px 2px;white-space:normal;font:8.5px/1.05 Georgia;text-align:center}
+ .section:first-of-type{margin-top:42px}
+ .hero-copy{padding-top:44px}
+ .eyebrow{margin-top:10px;margin-bottom:20px}
+ .hero h1{line-height:.96}
+}
+@media(max-width:430px){
+ .benefit{font-size:7.5px;letter-spacing:-.02em}
+ .hero-copy{padding-top:42px}
+ .eyebrow{margin-top:12px}
+ .hero h1{line-height:.98}
+}
