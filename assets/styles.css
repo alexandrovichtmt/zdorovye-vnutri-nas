@@ -434,66 +434,17 @@
 .hero-copy,.hero-copy p,.hero-copy .lead,.hero-copy .eyebrow,.benefit span,.topiccopy h3,.topiccopy p,.approach h2,.approach p,.healthbox div,.ctaBox h2,.ctaBox p,.footer b,.footer span{text-shadow:0 1px 2px rgba(255,255,255,.32),0 2px 10px rgba(28,50,39,.10)}
 .hero h1{text-shadow:0 2px 2px rgba(255,255,255,.28),0 4px 16px rgba(35,67,49,.11)}
 
-/* Hero benefit strip reveal v12 */
-.desktop-benefits .benefit,.mobile-benefits .benefit{opacity:0;transform:translateY(14px);animation:benefitReveal .72s cubic-bezier(.2,.75,.2,1) forwards}
-.desktop-benefits .benefit:nth-child(1),.mobile-benefits .benefit:nth-child(1){animation-delay:1.75s}
-.desktop-benefits .benefit:nth-child(2),.mobile-benefits .benefit:nth-child(2){animation-delay:1.88s}
-.desktop-benefits .benefit:nth-child(3),.mobile-benefits .benefit:nth-child(3){animation-delay:2.01s}
-.desktop-benefits .benefit:nth-child(4),.mobile-benefits .benefit:nth-child(4){animation-delay:2.14s}
-.desktop-benefits .benefit:nth-child(5),.mobile-benefits .benefit:nth-child(5){animation-delay:2.27s}
-@keyframes benefitReveal{to{opacity:1;transform:none}}
-
-/* First-screen benefits must animate on page load, never on scroll */
-.first-screen-benefit{opacity:0!important;filter:none!important;transform:translateY(14px)!important;animation:firstScreenBenefit .72s cubic-bezier(.2,.75,.2,1) forwards!important;animation-delay:calc(1.55s + var(--benefit-i)*.13s)!important}
-@keyframes firstScreenBenefit{to{opacity:1;transform:none}}
-
-/* v14: benefit text always exists; animate whole visible first-screen panel immediately */
-.desktop-benefits .benefit,.mobile-benefits .benefit{opacity:0!important;visibility:visible!important;transform:translateY(14px)!important;animation:benefitVisibleV14 .72s cubic-bezier(.2,.75,.2,1) forwards!important}
-.desktop-benefits .benefit:nth-child(1),.mobile-benefits .benefit:nth-child(1){animation-delay:1.55s!important}
-.desktop-benefits .benefit:nth-child(2),.mobile-benefits .benefit:nth-child(2){animation-delay:1.68s!important}
-.desktop-benefits .benefit:nth-child(3),.mobile-benefits .benefit:nth-child(3){animation-delay:1.81s!important}
-.desktop-benefits .benefit:nth-child(4),.mobile-benefits .benefit:nth-child(4){animation-delay:1.94s!important}
-.desktop-benefits .benefit:nth-child(5),.mobile-benefits .benefit:nth-child(5){animation-delay:2.07s!important}
-.desktop-benefits .benefit span,.mobile-benefits .benefit span{opacity:1!important;visibility:visible!important;filter:none!important;transform:none!important}
-@keyframes benefitVisibleV14{to{opacity:1;transform:none}}
-
-/* v15 emergency restore: benefit labels must always be visible */
-.desktop-benefits .benefit span,.mobile-benefits .benefit span,
-.desktop-benefits .benefit .benefit-icon,.mobile-benefits .benefit .benefit-icon{
-opacity:1!important;visibility:visible!important;display:block!important;filter:none!important;color:inherit!important;
-}
-.desktop-benefits .benefit,.mobile-benefits .benefit{visibility:visible!important}
-
-/* v15 benefit label restore */
-.desktop-benefits .benefit span,.mobile-benefits .benefit span{opacity:1!important;visibility:visible!important;filter:none!important;color:inherit!important}
-.desktop-benefits .benefit,.mobile-benefits .benefit{visibility:visible!important}
-
-/* v16 hard reset benefit strip after conflicting legacy animations */
-.desktop-benefits .benefit,.mobile-benefits .benefit{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
-.desktop-benefits .benefit>span,.mobile-benefits .benefit>span{opacity:1!important;visibility:visible!important;display:block!important;transform:none!important;filter:none!important}
-
 /* v17 independent benefit labels */
 .benefit-label{display:block!important;opacity:1!important;visibility:visible!important;color:#20251f!important;font-family:Georgia,"Times New Roman",serif!important;font-size:16px!important;line-height:1.05!important;font-weight:600!important;text-align:center!important;text-shadow:0 1px 2px rgba(255,255,255,.35),0 2px 8px rgba(28,50,39,.08)!important;transform:none!important;filter:none!important}
 @media(max-width:720px){.benefit-label{font-size:10px!important;line-height:1.02!important}}
 
-/* v18 premium first-screen benefit typography + motion */
-.benefit-label{font-family:Georgia,"Times New Roman",serif!important;font-size:15px!important;line-height:1.12!important;font-weight:400!important;letter-spacing:.015em!important;color:#24352b!important}
-.desktop-benefits .benefit,.mobile-benefits .benefit{opacity:0!important;transform:translateY(12px) scale(.985)!important;animation:benefitPremiumIn .82s cubic-bezier(.2,.75,.2,1) forwards!important}
-.desktop-benefits .benefit:nth-child(1),.mobile-benefits .benefit:nth-child(1){animation-delay:1.35s!important}
-.desktop-benefits .benefit:nth-child(2),.mobile-benefits .benefit:nth-child(2){animation-delay:1.49s!important}
-.desktop-benefits .benefit:nth-child(3),.mobile-benefits .benefit:nth-child(3){animation-delay:1.63s!important}
-.desktop-benefits .benefit:nth-child(4),.mobile-benefits .benefit:nth-child(4){animation-delay:1.77s!important}
-.desktop-benefits .benefit:nth-child(5),.mobile-benefits .benefit:nth-child(5){animation-delay:1.91s!important}
-@keyframes benefitPremiumIn{0%{opacity:0;transform:translateY(12px) scale(.985)}100%{opacity:1;transform:none}}
-.desktop-benefits .benefit:hover,.mobile-benefits .benefit:hover{transform:translateY(-4px)!important}
-@media(max-width:720px){.benefit-label{font-size:10.5px!important;font-weight:400!important;letter-spacing:0!important}}
-
-/* v19 stable benefit animation: never hide labels */
-.desktop-benefits .benefit,.mobile-benefits .benefit{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
-.desktop-benefits .benefit-label,.mobile-benefits .benefit-label{opacity:1!important;visibility:visible!important;animation:benefitTextGlowV19 .9s ease both!important}
-.desktop-benefits .benefit:nth-child(1) .benefit-label,.mobile-benefits .benefit:nth-child(1) .benefit-label{animation-delay:.9s!important}
-.desktop-benefits .benefit:nth-child(2) .benefit-label,.mobile-benefits .benefit:nth-child(2) .benefit-label{animation-delay:1.03s!important}
-.desktop-benefits .benefit:nth-child(3) .benefit-label,.mobile-benefits .benefit:nth-child(3) .benefit-label{animation-delay:1.16s!important}
-.desktop-benefits .benefit:nth-child(4) .benefit-label,.mobile-benefits .benefit:nth-child(4) .benefit-label{animation-delay:1.29s!important}
-.desktop-benefits .benefit:nth-child(5) .benefit-label,.mobile-benefits .benefit:nth-child(5) .benefit-label{animation-delay:1.42s!important}
-@keyframes benefitTextGlowV19{0%{text-shadow:0 1px 2px rgba(255,255,255,.35),0 2px 8px rgba(28,50,39,.08)}50%{text-shadow:0 1px 2px rgba(255,255,255,.45),0 4px 14px rgba(28,50,39,.16)}100%{text-shadow:0 1px 2px rgba(255,255,255,.35),0 2px 8px rgba(28,50,39,.08)}}
+/* v20 clean first-screen benefits motion */
+.benefit-label{display:block;visibility:visible;font-family:Georgia,"Times New Roman",serif;font-size:15px;line-height:1.12;font-weight:400;letter-spacing:.015em;color:#24352b;text-align:center;text-shadow:0 1px 2px rgba(255,255,255,.32),0 2px 10px rgba(28,50,39,.10)}
+.desktop-benefits .benefit,.mobile-benefits .benefit{visibility:visible;opacity:0;transform:translateY(18px);animation:benefitRiseV20 .9s cubic-bezier(.2,.75,.2,1) forwards}
+.desktop-benefits .benefit:nth-child(1),.mobile-benefits .benefit:nth-child(1){animation-delay:1.15s}
+.desktop-benefits .benefit:nth-child(2),.mobile-benefits .benefit:nth-child(2){animation-delay:1.30s}
+.desktop-benefits .benefit:nth-child(3),.mobile-benefits .benefit:nth-child(3){animation-delay:1.45s}
+.desktop-benefits .benefit:nth-child(4),.mobile-benefits .benefit:nth-child(4){animation-delay:1.60s}
+.desktop-benefits .benefit:nth-child(5),.mobile-benefits .benefit:nth-child(5){animation-delay:1.75s}
+@keyframes benefitRiseV20{0%{opacity:0;transform:translateY(18px)}100%{opacity:1;transform:translateY(0)}}
+@media(max-width:720px){.benefit-label{font-size:10.5px;line-height:1.04;letter-spacing:0}}
