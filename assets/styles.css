@@ -385,9 +385,9 @@
 /* Premium sequential letter reveal for hero title */
 .letter-reveal .reveal-line{display:inline-block}
 .letter-reveal .accent-line{color:inherit}
-.reveal-char{display:inline-block;opacity:0;transform:translateY(.42em) scale(.94);filter:blur(7px);animation:heroLetterIn .72s cubic-bezier(.2,.75,.2,1) forwards;animation-delay:calc(.34s + var(--i)*.065s);will-change:transform,opacity,filter}
-@keyframes heroLetterIn{0%{opacity:0;transform:translateY(.42em) scale(.94);filter:blur(7px)}65%{opacity:1;transform:translateY(-.025em) scale(1.012);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}
-@media(prefers-reduced-motion:reduce){.reveal-char{opacity:1;transform:none;filter:none;animation:none}}
+
+
+@media(prefers-reduced-motion:reduce){}
 
 /* Hero animation layer fix */
 .hero-media{z-index:1!important}
@@ -396,10 +396,10 @@
 .hero:before,.hero:after{z-index:2!important;pointer-events:none}
 .hero-copy{z-index:5!important}
 .hero-media.video-finished .hero-video{opacity:0!important;visibility:hidden!important}
-.reveal-char{animation-play-state:paused!important}
-.hero-copy.reveal.on .reveal-char{animation-play-state:running!important}
 
-.reveal-char{animation-duration:1.08s!important;animation-delay:calc(.51s + var(--i)*.0975s)!important}
+.hero-copy.reveal.on 
+
+
 
 /* Safari: hero video behaves as artwork, never as a player */
 .hero-video{background:transparent!important;border:0!important;outline:0!important;pointer-events:none!important;-webkit-user-select:none!important;user-select:none!important}
@@ -447,13 +447,13 @@
 
 /* v21 synchronize first-screen entrance */
 .hero .eyebrow,.hero .lead,.hero-copy>p,.hero .actions{animation-delay:.35s!important;animation-duration:.9s!important}
-.reveal-char{animation-delay:.35s!important;animation-duration:.9s!important}
+
 .desktop-benefits .benefit,.mobile-benefits .benefit{animation-delay:.35s!important;animation-duration:.9s!important}
 
 /* v22 one clock for ALL homepage text */
 body.home-sync main :is(h1,h2,h3,p,.eyebrow,.lead,.actions,.benefit-label),
 body.home-sync footer :is(b,span){animation-delay:.25s!important;animation-duration:1s!important;transition-delay:.25s!important;transition-duration:1s!important}
-body.home-sync .reveal-char{animation-delay:.25s!important;animation-duration:1s!important}
+body.home-sync 
 body.home-sync .text-alive{transition-delay:.25s!important;transition-duration:1s!important}
 body.home-sync .benefit-label{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive!important;font-weight:400!important;font-style:italic!important;font-size:16px!important;line-height:1.05!important;letter-spacing:.01em!important;color:#315443!important;text-shadow:0 1px 0 rgba(255,255,255,.45)!important}
 @media(max-width:720px){body.home-sync .benefit-label{font-size:11px!important}}
@@ -471,100 +471,6 @@ color:#315443!important;
 }
 body.home-sync .desktop-benefits strong.benefit-label,
 body.home-sync .mobile-benefits strong.benefit-label{font-weight:300!important}
-
-/* v24 handwritten benefits + synchronized type-on characters */
-body.home-sync .benefit-label{font-family:"Bradley Hand","Segoe Print","Comic Sans MS",cursive!important;font-weight:300!important;font-style:italic!important;font-size:17px!important;line-height:1.08!important;letter-spacing:.045em!important;transform:skewX(-5deg)!important}
-.type-char{display:inline-block;opacity:0;transform:translateY(.16em);filter:blur(2px);animation:typeCharV24 .34s cubic-bezier(.2,.75,.2,1) forwards;animation-delay:calc(.28s + var(--char-delay,0s))!important}
-@keyframes typeCharV24{to{opacity:1;transform:none;filter:blur(0)}}
-.type-space{width:.28em}
-@media(max-width:720px){body.home-sync .benefit-label{font-size:11.5px!important;letter-spacing:.025em!important}}
-
-/* v25 visible handwritten type-on, source-rendered */
-body.home-sync .benefit-label{font-family:"Snell Roundhand","Apple Chancery","Bradley Hand",cursive!important;font-weight:400!important;font-style:italic!important;font-size:18px!important;letter-spacing:.055em!important;white-space:nowrap!important}
-body.home-sync .benefit-label .ink-char{font:inherit!important;display:inline-block!important;opacity:0!important;transform:translateY(5px) rotate(-2deg)!important;animation:inkTypeV25 .22s ease forwards!important;animation-delay:calc(.22s + (var(--i) / var(--n)) * .78s)!important}
-@keyframes inkTypeV25{to{opacity:1;transform:translateY(0) rotate(0)}}
-@media(max-width:720px){body.home-sync .benefit-label{font-size:11.5px!important;letter-spacing:.025em!important}}
-
-/* v26: normal thin benefit typography + full first-screen typewriter */
-body.home-sync .benefit-label{font-family:Arial,Helvetica,sans-serif!important;font-weight:300!important;font-style:normal!important;font-size:14px!important;line-height:1.12!important;letter-spacing:.02em!important;color:#31483c!important;transform:none!important;white-space:normal!important}
-.hero-type-char{display:inline!important;opacity:0;animation:heroTypeV26 .06s linear forwards!important;animation-delay:calc(.18s + var(--type-pos)*1s)!important}
-@keyframes heroTypeV26{to{opacity:1}}
-@media(max-width:720px){body.home-sync .benefit-label{font-size:10px!important;letter-spacing:0!important}}
-
-/* v27 authoritative first-screen typewriter */
-.screen-type-char{display:inline!important;opacity:0!important;animation:screenTypeV27 .055s linear forwards!important;animation-delay:calc(.16s + var(--p,0)*1.05s)!important}
-.reveal-char.screen-type-char{transform:none!important;filter:none!important}
-@keyframes screenTypeV27{to{opacity:1}}
-
-/* v28: stable first-screen typewriter with fixed layout */
-body.home-sync .hero-copy.reveal,
-body.home-sync .hero .eyebrow,
-body.home-sync .hero .lead,
-body.home-sync .hero-copy>p,
-body.home-sync .hero .actions,
-body.home-sync .desktop-benefits .benefit,
-body.home-sync .mobile-benefits .benefit{
-  opacity:1!important;
-  visibility:visible!important;
-  transform:none!important;
-  filter:none!important;
-  animation:none!important;
-  transition:none!important;
-}
-body.home-sync .hero-copy{
-  width:44%!important;
-  max-width:620px!important;
-  margin-left:0!important;
-}
-body.home-sync .hero-copy .lead{max-width:590px!important}
-body.home-sync .hero-copy>p{max-width:560px!important}
-body.home-sync .benefit-label{
-  font-family:Arial,Helvetica,sans-serif!important;
-  font-weight:300!important;
-  font-style:normal!important;
-  transform:none!important;
-}
-.typewriter-char{
-  display:inline;
-  opacity:0;
-  animation:typewriterStableV28 .08s linear forwards!important;
-  animation-delay:calc(.16s + var(--type-pos)*1.04s)!important;
-}
-@keyframes typewriterStableV28{to{opacity:1}}
-@media(max-width:720px){
-  body.home-sync .hero-copy{width:auto!important;max-width:none!important;margin-left:0!important}
-  body.home-sync .hero-copy .lead,body.home-sync .hero-copy>p{max-width:none!important}
-}
-
-/* v29: soft premium typewriter motion */
-.typewriter-char{
-  display:inline;
-  opacity:0;
-  filter:blur(1.8px);
-  animation:typewriterSoftV29 .34s cubic-bezier(.22,.72,.28,1) forwards!important;
-  animation-delay:calc(.18s + var(--type-pos)*1.22s)!important;
-  will-change:opacity,filter;
-}
-@keyframes typewriterSoftV29{
-  0%{opacity:0;filter:blur(1.8px)}
-  55%{opacity:.72;filter:blur(.55px)}
-  100%{opacity:1;filter:blur(0)}
-}
-
-/* v30: continuous gentle letter-by-letter reveal */
-.typewriter-char{
-  display:inline;
-  opacity:0;
-  filter:none!important;
-  transform:none!important;
-  animation:softTypeV30 .52s cubic-bezier(.22,.61,.36,1) forwards!important;
-  animation-delay:calc(.12s + var(--type-pos)*1.35s)!important;
-  will-change:opacity;
-}
-@keyframes softTypeV30{
-  0%{opacity:0}
-  100%{opacity:1}
-}
 
 /* v31: soft rise + fade for first-screen text, no typewriter */
 body.home-sync .hero-copy{opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
@@ -599,4 +505,29 @@ body.home-sync .benefit-label{
 }
 @media(max-width:720px){
   body.home-sync .benefit-label{font-size:10px!important;line-height:1.08!important;letter-spacing:0!important}
+}
+
+/* v32: one clean soft reveal for the whole first screen */
+body.home-sync .hero-copy .eyebrow,
+body.home-sync .hero-copy h1,
+body.home-sync .hero-copy .lead,
+body.home-sync .hero-copy>p,
+body.home-sync .hero-copy .actions,
+body.home-sync .desktop-benefits .benefit,
+body.home-sync .mobile-benefits .benefit{
+  opacity:0!important;
+  transform:translateY(16px)!important;
+  filter:none!important;
+  animation:firstScreenRevealV32 .95s cubic-bezier(.22,.72,.28,1) .12s forwards!important;
+  transition:none!important;
+}
+@keyframes firstScreenRevealV32{
+  0%{opacity:0;transform:translateY(16px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+body.home-sync .benefit-label{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-weight:300!important;
+  font-style:normal!important;
+  letter-spacing:.01em!important;
 }
