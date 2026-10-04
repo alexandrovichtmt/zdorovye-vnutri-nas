@@ -349,3 +349,15 @@
  .hero h1{font-size:clamp(58px,6vw,78px)!important}
  .hero .lead{font-size:22px!important}
 }
+
+/* Desktop hero copy: intentional centered-left placement */
+@media(min-width:721px){
+ .hero>.wrap{width:min(1360px,90vw)!important;margin:0 auto!important}
+ .hero-copy{width:48%!important;max-width:650px!important;margin-left:4.5vw!important;padding-top:30px!important}
+ .hero h1{font-size:clamp(62px,5.5vw,88px)!important;line-height:.91!important}
+ .hero .lead{max-width:610px!important}
+ .hero-copy>p{max-width:600px!important}
+}
+@media(min-width:1500px){
+ .hero-copy{margin-left:3vw!important}
+}
