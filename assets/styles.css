@@ -446,3 +446,13 @@
 /* First-screen benefits must animate on page load, never on scroll */
 .first-screen-benefit{opacity:0!important;filter:none!important;transform:translateY(14px)!important;animation:firstScreenBenefit .72s cubic-bezier(.2,.75,.2,1) forwards!important;animation-delay:calc(1.55s + var(--benefit-i)*.13s)!important}
 @keyframes firstScreenBenefit{to{opacity:1;transform:none}}
+
+/* v14: benefit text always exists; animate whole visible first-screen panel immediately */
+.desktop-benefits .benefit,.mobile-benefits .benefit{opacity:0!important;visibility:visible!important;transform:translateY(14px)!important;animation:benefitVisibleV14 .72s cubic-bezier(.2,.75,.2,1) forwards!important}
+.desktop-benefits .benefit:nth-child(1),.mobile-benefits .benefit:nth-child(1){animation-delay:1.55s!important}
+.desktop-benefits .benefit:nth-child(2),.mobile-benefits .benefit:nth-child(2){animation-delay:1.68s!important}
+.desktop-benefits .benefit:nth-child(3),.mobile-benefits .benefit:nth-child(3){animation-delay:1.81s!important}
+.desktop-benefits .benefit:nth-child(4),.mobile-benefits .benefit:nth-child(4){animation-delay:1.94s!important}
+.desktop-benefits .benefit:nth-child(5),.mobile-benefits .benefit:nth-child(5){animation-delay:2.07s!important}
+.desktop-benefits .benefit span,.mobile-benefits .benefit span{opacity:1!important;visibility:visible!important;filter:none!important;transform:none!important}
+@keyframes benefitVisibleV14{to{opacity:1;transform:none}}
