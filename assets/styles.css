@@ -495,3 +495,43 @@ body.home-sync .benefit-label{font-family:Arial,Helvetica,sans-serif!important;f
 .screen-type-char{display:inline!important;opacity:0!important;animation:screenTypeV27 .055s linear forwards!important;animation-delay:calc(.16s + var(--p,0)*1.05s)!important}
 .reveal-char.screen-type-char{transform:none!important;filter:none!important}
 @keyframes screenTypeV27{to{opacity:1}}
+
+/* v28: stable first-screen typewriter with fixed layout */
+body.home-sync .hero-copy.reveal,
+body.home-sync .hero .eyebrow,
+body.home-sync .hero .lead,
+body.home-sync .hero-copy>p,
+body.home-sync .hero .actions,
+body.home-sync .desktop-benefits .benefit,
+body.home-sync .mobile-benefits .benefit{
+  opacity:1!important;
+  visibility:visible!important;
+  transform:none!important;
+  filter:none!important;
+  animation:none!important;
+  transition:none!important;
+}
+body.home-sync .hero-copy{
+  width:44%!important;
+  max-width:620px!important;
+  margin-left:0!important;
+}
+body.home-sync .hero-copy .lead{max-width:590px!important}
+body.home-sync .hero-copy>p{max-width:560px!important}
+body.home-sync .benefit-label{
+  font-family:Arial,Helvetica,sans-serif!important;
+  font-weight:300!important;
+  font-style:normal!important;
+  transform:none!important;
+}
+.typewriter-char{
+  display:inline;
+  opacity:0;
+  animation:typewriterStableV28 .08s linear forwards!important;
+  animation-delay:calc(.16s + var(--type-pos)*1.04s)!important;
+}
+@keyframes typewriterStableV28{to{opacity:1}}
+@media(max-width:720px){
+  body.home-sync .hero-copy{width:auto!important;max-width:none!important;margin-left:0!important}
+  body.home-sync .hero-copy .lead,body.home-sync .hero-copy>p{max-width:none!important}
+}
