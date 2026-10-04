@@ -361,3 +361,9 @@
 @media(min-width:1500px){
  .hero-copy{margin-left:3vw!important}
 }
+
+/* Desktop hero: align copy left edge with header brand; preserve vertical position */
+@media(min-width:721px){
+ .hero>.wrap{width:94%!important;max-width:none!important;margin:0 auto!important}
+ .hero-copy{margin-left:0!important;padding-top:30px!important}
+}
