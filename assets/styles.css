@@ -457,3 +457,17 @@ body.home-sync .reveal-char{animation-delay:.25s!important;animation-duration:1s
 body.home-sync .text-alive{transition-delay:.25s!important;transition-duration:1s!important}
 body.home-sync .benefit-label{font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive!important;font-weight:400!important;font-style:italic!important;font-size:16px!important;line-height:1.05!important;letter-spacing:.01em!important;color:#315443!important;text-shadow:0 1px 0 rgba(255,255,255,.45)!important}
 @media(max-width:720px){body.home-sync .benefit-label{font-size:11px!important}}
+
+/* v23 bottom benefit labels: explicitly light handwritten weight */
+body.home-sync .desktop-benefits .benefit-label,
+body.home-sync .mobile-benefits .benefit-label{
+font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive!important;
+font-weight:300!important;
+font-style:italic!important;
+font-synthesis:none!important;
+-webkit-text-stroke:0!important;
+letter-spacing:.015em!important;
+color:#315443!important;
+}
+body.home-sync .desktop-benefits strong.benefit-label,
+body.home-sync .mobile-benefits strong.benefit-label{font-weight:300!important}
