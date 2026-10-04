@@ -428,3 +428,8 @@
 .text-alive.text-alive-on{opacity:1;transform:none;filter:blur(0)}
 .topic:hover .topiccopy h3,.topic:hover .topiccopy p{transform:translateX(4px)}
 .topiccopy h3,.topiccopy p{transition:transform .32s ease}
+
+/* Homepage typography polish v11 */
+.hero-copy>p{animation-delay:1.68s!important}
+.hero-copy,.hero-copy p,.hero-copy .lead,.hero-copy .eyebrow,.benefit span,.topiccopy h3,.topiccopy p,.approach h2,.approach p,.healthbox div,.ctaBox h2,.ctaBox p,.footer b,.footer span{text-shadow:0 1px 2px rgba(255,255,255,.32),0 2px 10px rgba(28,50,39,.10)}
+.hero h1{text-shadow:0 2px 2px rgba(255,255,255,.28),0 4px 16px rgba(35,67,49,.11)}
