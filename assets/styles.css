@@ -273,3 +273,14 @@
 @media(max-width:430px){
  .hero>.hero-photo{aspect-ratio:1.12/1;object-position:59% 25%!important;margin-bottom:-16px}
 }
+
+/* Bespoke premium wellness icons */
+.custom-icon{position:relative;display:block!important;width:20px;height:20px;margin:0 auto 2px!important;color:#315b43}
+.custom-icon:before,.custom-icon:after{content:"";position:absolute;box-sizing:border-box;border:1.5px solid currentColor}
+.icon-leaf:before{width:11px;height:17px;left:2px;top:2px;border-radius:100% 0 100% 0;transform:rotate(-35deg)}
+.icon-leaf:after{width:9px;height:14px;right:1px;top:0;border-radius:0 100% 0 100%;transform:rotate(25deg)}
+.icon-compass{border:1.5px solid currentColor;border-radius:50%}.icon-compass:before{width:7px;height:11px;left:5px;top:3px;border-radius:70% 0 70% 0;transform:rotate(45deg)}.icon-compass:after{width:3px;height:3px;border-radius:50%;left:7px;top:7px;background:currentColor}
+.icon-heartleaf:before{width:13px;height:13px;left:1px;top:2px;border-radius:8px 8px 3px 8px;transform:rotate(45deg)}.icon-heartleaf:after{width:7px;height:10px;right:0;bottom:0;border-radius:100% 0 100% 0;transform:rotate(18deg)}
+.icon-sprout:before{width:10px;height:15px;left:5px;top:3px;border-width:0 0 1.5px 1.5px;border-radius:0 0 0 12px;transform:rotate(-45deg)}.icon-sprout:after{width:11px;height:8px;left:8px;top:3px;border-radius:100% 0 100% 0;transform:rotate(-15deg)}
+.icon-support:before{width:7px;height:7px;left:1px;top:8px;border-radius:50%;box-shadow:11px 0 0 -1.5px #f8f4ea,11px 0 0 0 #315b43}.icon-support:after{width:18px;height:9px;left:1px;bottom:0;border-radius:12px 12px 0 0;border-bottom:0}
+@media(max-width:720px){.hero>.mobile-benefits{height:70px!important}.hero>.mobile-benefits .benefitgrid{height:70px!important}.hero>.mobile-benefits .benefit{height:70px!important;min-height:70px!important;font-size:10px!important}.hero>.mobile-benefits .benefit-icon{font-size:inherit!important}}
