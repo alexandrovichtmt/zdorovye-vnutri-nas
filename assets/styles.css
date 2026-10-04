@@ -293,3 +293,24 @@
 .desktop-benefits .benefit>span:not(.premium-svg){display:block}
 @media(min-width:721px){.desktop-benefits .premium-svg{width:27px!important;height:27px!important;margin-bottom:7px!important}.desktop-benefits .benefit{min-height:105px}}
 @media(max-width:720px){.hero>.mobile-benefits .premium-svg{width:22px!important;height:22px!important;margin-bottom:3px!important}.hero>.mobile-benefits .benefit{gap:1px!important}}
+
+/* Desktop first viewport: keep benefits fully visible */
+@media(min-width:721px){
+ .hero{min-height:0!important;height:calc(100vh - 84px - 112px)!important;max-height:770px;overflow:hidden}
+ .hero-photo{height:100%!important;object-fit:cover!important;object-position:58% 36%!important}
+ .hero-copy{padding-top:0!important}
+ .benefits.desktop-benefits{height:112px!important}
+ .desktop-benefits .benefitgrid{height:112px!important}
+ .desktop-benefits .benefit{min-height:112px!important;padding:10px 14px!important}
+ .desktop-benefits .premium-svg{width:25px!important;height:25px!important;margin-bottom:5px!important}
+ .desktop-benefits .benefit>span:not(.premium-svg){line-height:1.08}
+}
+@media(min-width:721px) and (max-height:850px){
+ .hero{height:calc(100vh - 78px - 102px)!important}
+ .navin{height:78px}
+ .hero h1{font-size:clamp(64px,6.5vw,100px);line-height:.86}
+ .hero .lead{margin-top:18px;margin-bottom:14px}
+ .hero-copy>p{margin-bottom:16px}
+ .benefits.desktop-benefits,.desktop-benefits .benefitgrid{height:102px!important}
+ .desktop-benefits .benefit{min-height:102px!important}
+}
