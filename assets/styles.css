@@ -398,3 +398,5 @@
 .hero-media.video-finished .hero-video{opacity:0!important;visibility:hidden!important}
 .reveal-char{animation-play-state:paused!important}
 .hero-copy.reveal.on .reveal-char{animation-play-state:running!important}
+
+.reveal-char{animation-duration:1.08s!important;animation-delay:calc(.51s + var(--i)*.0975s)!important}
