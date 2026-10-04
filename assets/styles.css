@@ -438,49 +438,16 @@
 .benefit-label{display:block!important;opacity:1!important;visibility:visible!important;color:#20251f!important;font-family:Georgia,"Times New Roman",serif!important;font-size:16px!important;line-height:1.05!important;font-weight:600!important;text-align:center!important;text-shadow:0 1px 2px rgba(255,255,255,.35),0 2px 8px rgba(28,50,39,.08)!important;transform:none!important;filter:none!important}
 @media(max-width:720px){.benefit-label{font-size:10px!important;line-height:1.02!important}}
 
-/* v33: safe unified first-screen reveal */
-body.home-sync .hero-copy,
-body.home-sync .desktop-benefits,
-body.home-sync .mobile-benefits{
-  opacity:1;
-  transform:none;
-  visibility:visible;
-}
-body.home-sync .hero-copy .eyebrow,
-body.home-sync .hero-copy h1,
-body.home-sync .hero-copy .lead,
-body.home-sync .hero-copy>p,
-body.home-sync .hero-copy .actions,
-body.home-sync .desktop-benefits .benefit,
-body.home-sync .mobile-benefits .benefit,
-body.home-sync .benefit-label{
-  opacity:1!important;
-  visibility:visible!important;
-  transform:none!important;
-  filter:none!important;
-  animation:none!important;
-  transition:none!important;
-}
-body.home-sync .hero-copy,
-body.home-sync .desktop-benefits,
-body.home-sync .mobile-benefits{
-  animation:firstScreenRevealV33 1s cubic-bezier(.22,.72,.28,1) .08s both;
-  will-change:opacity,transform;
-}
-@keyframes firstScreenRevealV33{
-  from{opacity:0;transform:translateY(16px)}
-  to{opacity:1;transform:translateY(0)}
-}
-body.home-sync .benefit-label{
-  font-family:Arial,Helvetica,sans-serif!important;
-  font-weight:300!important;
-  font-style:normal!important;
-  font-size:14px!important;
-  line-height:1.15!important;
-  letter-spacing:.01em!important;
-  color:#31483c!important;
-  text-shadow:none!important;
-}
-@media(max-width:720px){
-  body.home-sync .benefit-label{font-size:10px!important;line-height:1.08!important;letter-spacing:0!important}
-}
+
+/* v34: unified living homepage */
+.home-sync .hero-copy .eyebrow,.home-sync .hero-copy h1,.home-sync .hero-copy .lead,.home-sync .hero-copy>p,.home-sync .hero-copy .actions,
+.home-sync .desktop-benefits .benefit,.home-sync .mobile-benefits .benefit{opacity:0;transform:translateY(18px);filter:blur(4px)}
+.home-sync.motion-ready .hero-copy .eyebrow{animation:liveIn .75s .08s both}
+.home-sync.motion-ready .hero-copy h1{animation:liveIn .9s .22s both}
+.home-sync.motion-ready .hero-copy .lead{animation:liveIn .85s .48s both}
+.home-sync.motion-ready .hero-copy>p{animation:liveIn .85s .64s both}
+.home-sync.motion-ready .hero-copy .actions{animation:liveIn .85s .8s both}
+.home-sync.motion-ready .desktop-benefits .benefit,.home-sync.motion-ready .mobile-benefits .benefit{animation:liveIn .75s both}
+.home-sync.motion-ready .benefit:nth-child(1){animation-delay:.88s}.home-sync.motion-ready .benefit:nth-child(2){animation-delay:.98s}.home-sync.motion-ready .benefit:nth-child(3){animation-delay:1.08s}.home-sync.motion-ready .benefit:nth-child(4){animation-delay:1.18s}.home-sync.motion-ready .benefit:nth-child(5){animation-delay:1.28s}
+@keyframes liveIn{0%{opacity:0;transform:translateY(18px);filter:blur(4px)}100%{opacity:1;transform:none;filter:blur(0)}}
+.home-sync .benefit-label{font-family:Arial,Helvetica,sans-serif!important;font-weight:300!important;font-style:normal!important;color:#31483c!important;text-shadow:none!important}
