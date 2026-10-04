@@ -206,3 +206,12 @@
 @media(max-width:430px){
  .hero>.mobile-benefits .benefit{font-size:9.5px!important;letter-spacing:-.015em}
 }
+
+/* Mobile brand title — prevent line overlap */
+@media(max-width:720px){
+ .brand{line-height:1.02!important}
+ .brand strong,.brand>span:first-child{line-height:1.02!important}
+}
+@media(max-width:430px){
+ .brand{line-height:1.06!important}
+}
