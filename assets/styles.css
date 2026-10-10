@@ -550,3 +550,13 @@ body:has(.new-page-hero) .section.soft{background:#f7f4eb}
 @media(max-width:1380px){.links{gap:9px}.links a{font-size:11px}}
 @media(max-width:1180px){.links{display:none}.menu{display:block}.nav.open .links{display:flex;position:absolute;top:78px;left:0;right:0;background:#fbf8f0;padding:25px;flex-direction:column}.navcta{display:none}}
 @media(max-width:720px){.child-home-teaser{padding:8px 0 54px}.child-teaser-inner{padding:26px 24px;flex-direction:column;align-items:flex-start}.child-teaser-inner .btn{width:100%;justify-content:center}.nav.open .links{top:68px;max-height:calc(100dvh - 68px);overflow-y:auto}}
+
+/* Healthy Gut discovery card on the homepage */
+.gut-home-teaser{padding:0 0 72px;background:#fffdf8}
+.gut-teaser-inner{padding:36px 46px;border:1px solid #e6e4d6;border-radius:23px;background:radial-gradient(circle at 100% 0%,#e0e9d4a6,transparent 45%),linear-gradient(110deg,#fbf8ef,#ecefe4);display:flex;gap:26px;align-items:center;justify-content:space-between}
+.gut-teaser-inner>div{max-width:800px}
+.gut-teaser-kicker{color:#80947c;font-size:11px;letter-spacing:.17em;font-weight:600!important}
+.gut-teaser-inner h2{font-size:clamp(31px,3.3vw,50px);line-height:1.1;letter-spacing:-.025em;color:#28513b;margin:11px 0 14px;font-weight:600!important}
+.gut-teaser-inner p{line-height:1.7;color:#677467;font-size:16px;margin:0}
+.gut-teaser-inner .btn{flex:none;white-space:nowrap}
+@media(max-width:760px){.gut-home-teaser{padding-bottom:53px}.gut-teaser-inner{flex-direction:column;align-items:flex-start;padding:27px 23px}.gut-teaser-inner .btn{width:100%;justify-content:center;white-space:normal}}
