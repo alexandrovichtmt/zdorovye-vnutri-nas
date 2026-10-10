@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@413&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Nunito:wght@413&display=swap");
 
 /* Unified typography — user-selected weights */
 body,
 body * {
   font-family:"Montserrat", sans-serif !important;
   font-optical-sizing:auto;
-  font-weight:200 !important;
+  font-weight:300 !important;
   font-style:normal;
 }
 
@@ -15,7 +15,7 @@ body.home-sync .benefit-label,
 body .hero > .mobile-benefits .benefit,
 body .new-page-hero h1 {
   font-family:"Montserrat", sans-serif !important;
-  font-weight:200 !important;
+  font-weight:300 !important;
 }
 
 /* The one exception: the main two-line homepage heading. */
@@ -36,4 +36,25 @@ body.home-sync .hero .hero-copy h1.hero-title * {
    line-height:1.07 !important;
    letter-spacing:-.055em !important;
  }
+}
+
+/* Readable editorial hierarchy */
+body p,body li,body td,body label,body .lead,body .content p,body .pageHero p,
+body .topiccopy p,body .new-info-card p,body .iron-table tbody th {
+  font-weight:300 !important;
+}
+body h1,body h2,body h3,body h4,body h5,body h6,
+body .brand,body .topiccopy h3,body .new-info-card h2,body .new-page-hero h1,
+body .iron-hero h1,body .iron-intro h2,body .ctaBox h2,body .new-center h2 {
+  font-weight:600 !important;
+}
+body strong,body b,body th,body .btn,body button,body .new-kicker,body .new-eyebrow,
+body .readmore,body .benefit-label,body .nav a,body .links a,
+body .iron-small-label,body .iron-question-number,body .nutrient-eyebrow {
+  font-weight:500 !important;
+}
+body.home-sync .hero .hero-copy h1.hero-title,
+body.home-sync .hero .hero-copy h1.hero-title * {
+ font-family:"Nunito",sans-serif !important;
+ font-weight:600 !important;
 }
