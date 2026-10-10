@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8f5ec">
+<meta name="description" content="Интерактивная анкета по симптомам возможного дефицита железа: 28 вопросов, выбор от 0 до 4, автоматический подсчёт баллов.">
+<title>Анкета по железу — Здоровье внутри нас</title>
+<link rel="stylesheet" href="assets/styles.css?v=35">
+<link rel="stylesheet" href="assets/iron-questionnaire.css?v=1">
+</head>
+<body class="iron-questionnaire-page">
+<nav class="nav"><div class="wrap navin"><a class="brand" href="index.html">ТВОЙ НУТРИЦИОЛОГ<small>ЛЮДМИЛА БАРАН</small></a><div class="links"><a href="index.html">Главная</a><a href="about.html">Обо мне</a><a href="nutrition.html">Питание</a><a href="supplements.html">БАДы</a><a href="labs.html">Анализы</a><a href="recipes.html">Рецепты</a><a href="community.html">Комьюнити</a><a href="courses.html">Курсы</a><a href="blog.html">Блог</a><a href="contacts.html">Контакты</a></div><a class="btn navcta" href="consultation.html">Консультация</a><button class="menu" type="button" aria-label="Открыть меню" aria-expanded="false">☰</button></div></nav>
+<header class="iron-hero">
+<div class="wrap iron-hero-inner">
+<div><a class="iron-back" href="supplements.html#iron">← Назад к разделу «Железо»</a><div class="iron-eyebrow"><span class="iron-eyebrow-dot"></span> Интерактивный опросник</div><h1>Анкета по <em>железу</em></h1><p>Ответьте на 28 вопросов о вашем самочувствии. Выберите одно число в каждой строке — мы автоматически сложим баллы и покажем предварительный результат.</p></div>
+<div class="iron-hero-aside" aria-hidden="true"><div class="iron-droplet">Fe</div><span>28 вопросов</span><span>5 вариантов ответа</span><span>Результат сразу</span></div>
+</div>
+</header>
+<main>
+<section class="iron-section"><div class="wrap">
+<div class="iron-intro"><h2>Оцените выраженность симптомов</h2><p>Отмечайте, насколько часто или сильно проявляется каждый симптом. Если симптом отсутствует или не относится к вам, выберите <strong>0</strong>. Для результата нужно ответить на все вопросы.</p></div>
+<div class="iron-survey" id="iron-survey">
+<div class="iron-survey-top"><div class="iron-survey-heading"><span class="iron-small-label">Ваш прогресс</span><strong id="iron-counter">0 из 28 ответов</strong></div><div class="iron-survey-points">Баллы: <strong id="iron-running-total">0</strong><span> / 112</span></div></div>
+<div class="iron-progress-track" role="progressbar" aria-label="Заполнено вопросов" aria-valuemin="0" aria-valuemax="28" aria-valuenow="0" id="iron-progress"><div id="iron-progress-fill"></div></div>
+<div class="iron-scale" aria-label="Шкала оценки"><span><b>0</b> Нет</span><span><b>1</b> Редко / слабо</span><span><b>2</b> Периодически / терпимо</span><span><b>3</b> Часто / умеренно</span><span><b>4</b> Постоянно / выраженно</span></div>
+<div class="iron-table-scroller"><table class="iron-table"><thead><tr><th scope="col">Симптом / вопрос</th><th scope="col" title="Нет">0</th><th scope="col" title="Редко / слабо">1</th><th scope="col" title="Периодически / терпимо">2</th><th scope="col" title="Часто / умеренно">3</th><th scope="col" title="Постоянно / выраженно">4</th></tr></thead><tbody id="iron-questions"><tr><td colspan="6">Загрузка анкеты…</td></tr></tbody></table></div>
+<div class="iron-survey-footer"><div class="iron-footer-hint" id="iron-footer-hint" aria-live="polite">Выберите по одному ответу для каждого из 28 вопросов.</div><div class="iron-survey-buttons"><button type="button" class="iron-reset" id="iron-reset">Сбросить ответы</button><button type="button" class="btn iron-submit" id="iron-submit" disabled>Показать результат →</button></div></div>
+</div>
+<section id="iron-result" class="iron-result" tabindex="-1" hidden aria-live="polite"><span class="iron-small-label">Результат анкеты</span><div class="iron-result-header"><h2 id="iron-result-heading">Ваш результат</h2><div class="iron-result-score"><strong id="iron-result-score">0</strong><span>баллов из 112</span></div></div><p id="iron-result-summary"></p><div class="iron-result-advice" id="iron-result-advice"></div><div class="iron-result-actions"><a class="btn" href="consultation.html">Обсудить со специалистом →</a><button type="button" class="iron-reset" id="iron-again">Пройти заново</button></div></section>
+<div class="iron-disclaimer"><strong>Важно.</strong> Анкета основана на перечне симптомов из предоставленного материала «SMART-диагностика дефицита железа». Она не является диагностическим тестом, не определяет уровень железа или ферритина в крови и не заменяет консультацию врача. При симптомах, факторах риска или подозрении на дефицит обсудите обследование (например, общий анализ крови и ферритин) с врачом. Не начинайте приём препаратов железа только по результатам анкеты.</div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap foot"><b>ЗДОРОВЬЕ ВНУТРИ НАС • Людмила Баран</b><span>Осознанное питание • анализы • БАДы • сопровождение</span></div></footer>
+<div class="tgbar"><a class="btn" target="_blank" rel="noopener noreferrer" href="https://t.me/trunova1977">✦ Telegram</a></div>
+<script src="assets/app.js?v=34"></script><script src="assets/iron-questionnaire.js?v=1"></script>
+</body></html>
