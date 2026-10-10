@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Nunito:wght@413&display=swap");
+
+/* Unified typography — user-selected weights */
+body,
+body * {
+  font-family:"Montserrat", sans-serif !important;
+  font-optical-sizing:auto;
+  font-weight:200 !important;
+  font-style:normal;
+}
+
+/* Override legacy !important declarations / font shorthands. */
+body .benefit-label,
+body.home-sync .benefit-label,
+body .hero > .mobile-benefits .benefit,
+body .new-page-hero h1 {
+  font-family:"Montserrat", sans-serif !important;
+  font-weight:200 !important;
+}
+
+/* The one exception: the main two-line homepage heading. */
+body.home-sync .hero .hero-copy h1.hero-title,
+body.home-sync .hero .hero-copy h1.hero-title * {
+  font-family:"Nunito", sans-serif !important;
+  font-optical-sizing:auto;
+  font-weight:413 !important;
+  font-style:normal;
+  line-height:1.03 !important;
+  letter-spacing:-.04em !important;
+}
+
+/* Responsive line wrapping for the new, wider sans-serif heading. */
+@media(max-width:720px){
+ body.home-sync .hero .hero-copy h1.hero-title{
+   font-size:clamp(37px,10.1vw,52px) !important;
+   line-height:1.07 !important;
+   letter-spacing:-.055em !important;
+ }
+}
