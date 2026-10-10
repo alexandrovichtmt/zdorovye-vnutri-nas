@@ -74,8 +74,7 @@
       input.type = "radio";
       input.name = "iron-question-" + i;
       input.value = String(value);
-      input.setAttribute("aria-labelledby", th.id);
-      input.setAttribute("aria-label", "Балл " + value);
+      input.setAttribute("aria-label", "Вопрос " + (i + 1) + ": " + question + ". Балл " + value);
       input.addEventListener("change", () => {
         answers[i] = value;
         tr.classList.add("iron-answered");
