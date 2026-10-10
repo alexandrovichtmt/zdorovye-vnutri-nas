@@ -535,3 +535,18 @@ body:has(.new-page-hero) .section.soft{background:#f7f4eb}
  .new-info-card h2{font-size:32px}
  .new-center h2{font-size:clamp(34px,8vw,44px)}
 }
+
+/* New child health navigation / homepage teaser */
+.navin{gap:14px}
+.links{gap:clamp(9px,.95vw,16px)}
+.links a{font-size:12px;white-space:nowrap}
+.child-home-teaser{padding:18px 0 70px;background:#fffdf8}
+.child-teaser-inner{padding:38px 45px;border:1px solid #dfe5d9;border-radius:22px;background:linear-gradient(110deg,#f6f4eb,#e8eddf);display:flex;gap:28px;align-items:center;justify-content:space-between}
+.child-teaser-inner>div{max-width:760px}
+.child-teaser-inner h2{font-size:clamp(32px,3.3vw,50px);color:#28513b;line-height:1.1;margin:6px 0 14px}
+.child-teaser-inner p{line-height:1.7;color:#607364;font-size:16px;margin:0}
+.child-teaser-kicker{font-size:11px;letter-spacing:.19em;color:#708b70;font-weight:600!important}
+.child-teaser-inner .btn{white-space:nowrap}
+@media(max-width:1380px){.links{gap:9px}.links a{font-size:11px}}
+@media(max-width:1180px){.links{display:none}.menu{display:block}.nav.open .links{display:flex;position:absolute;top:78px;left:0;right:0;background:#fbf8f0;padding:25px;flex-direction:column}.navcta{display:none}}
+@media(max-width:720px){.child-home-teaser{padding:8px 0 54px}.child-teaser-inner{padding:26px 24px;flex-direction:column;align-items:flex-start}.child-teaser-inner .btn{width:100%;justify-content:center}.nav.open .links{top:68px;max-height:calc(100dvh - 68px);overflow-y:auto}}
