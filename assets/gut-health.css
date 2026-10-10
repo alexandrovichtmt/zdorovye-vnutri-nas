@@ -1,0 +1,103 @@
+/* Healthy Gut — premium ivory editorial language */
+.gut-health-page{background:#fffdf8}
+.gut-hero{background:radial-gradient(ellipse at 88% 22%,#d6e1d06b 0%,transparent 38%),linear-gradient(112deg,#fbf8ef,#f0eee3 64%,#e8ebe0);padding:145px 0 83px;overflow:hidden;border-bottom:1px solid #dbe2d6}
+.gut-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(25px,5vw,80px);align-items:center}
+.gut-kicker{font-size:11px;letter-spacing:.22em;font-weight:600!important;text-transform:uppercase;color:#748d71;display:block;margin-bottom:25px}
+.gut-hero-copy h1{color:#284b38;font-size:clamp(58px,7.1vw,111px);line-height:.94;letter-spacing:-.07em;margin:0 0 32px;font-weight:600!important}
+.gut-hero-copy h1 span{color:#7e9a79}
+.gut-hero-copy>p{font-size:clamp(16px,1.5vw,19px);color:#566b5d;line-height:1.73;max-width:660px}
+.gut-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:35px}
+.gut-hero-visual{min-height:405px;border:1px solid #dce5d6;border-radius:37px;position:relative;display:flex;flex-direction:column;justify-content:end;padding:39px;background:radial-gradient(circle at 48% 45%,#d6e7cd,#edf1e7 43%,#f7f5eb 77%);box-shadow:0 24px 60px #2a53351a;overflow:hidden}
+.gut-hero-ring{position:absolute;width:260px;height:260px;left:50%;top:13%;transform:translateX(-50%);border:1px solid #8eaa8d77;border-radius:50%;box-shadow:0 0 0 22px #b8ccae24,0 0 0 44px #bdc9ae24}
+.gut-hero-leaf{font-family:Georgia,serif!important;position:absolute;top:12%;left:50%;transform:translateX(-50%);font-size:210px;font-weight:200!important;line-height:1;color:#82a57e;opacity:.7}
+.gut-hero-visual>span{font-size:25px;line-height:1.31;color:#426449;position:relative;z-index:2}
+.gut-visual-small{font-size:11px;letter-spacing:.14em;margin-top:15px;color:#728776;text-transform:uppercase}
+.gut-intro{padding:90px 0 87px}
+.gut-intro-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:7vw}
+.gut-intro h2,.gut-headline h2,.gut-journal h2,.gut-care h2{font-size:clamp(36px,4vw,61px);font-weight:600!important;letter-spacing:-.045em;color:#254a36;line-height:1.09;margin:0}
+.gut-intro-text p{font-size:16px;line-height:1.82;color:#647367;margin:0 0 20px}
+.gut-intro-text p strong{color:#2f513b;font-weight:600!important}
+.gut-protocol{padding:84px 0 96px;background:linear-gradient(160deg,#f4f2e9,#e8eee4 100%)}
+.gut-headline{max-width:890px;margin-bottom:42px}
+.gut-headline h2{margin-bottom:18px}
+.gut-headline p{font-size:16px;line-height:1.7;color:#657469;margin:0}
+.gut-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gut-step{background:#fffefa;border:1px solid #e3e8de;border-radius:22px;padding:clamp(25px,3vw,43px);min-height:345px;box-shadow:0 12px 35px #23482e09;display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.gut-step:hover{transform:translateY(-6px);box-shadow:0 25px 45px #23482e16}
+.gut-step-number{font-size:55px;line-height:1;font-weight:300!important;letter-spacing:-.07em;color:#a1b69b;margin-bottom:33px}
+.gut-step-period{font-size:11px;letter-spacing:.13em;color:#81927f;text-transform:uppercase;font-weight:600!important}
+.gut-step h3{color:#2b4e39;font-size:23px;line-height:1.16;letter-spacing:-.02em;margin:14px 0 19px;font-weight:600!important}
+.gut-step p{line-height:1.76;color:#667468;font-size:14px;margin:0}
+.gut-protocol-note{margin-top:27px;padding:26px 32px;background:#f6f8f1;border-left:3px solid #90a98d;border-radius:0 16px 16px 0}
+.gut-protocol-note strong{font-size:17px;color:#2e513b;font-weight:600!important}
+.gut-protocol-note p{font-size:14px;line-height:1.77;max-width:950px;color:#657365;margin:8px 0 0}
+.gut-foods{padding:92px 0}
+.gut-food-matrix{border:1px solid #e2e6dc;background:#fffefa;border-radius:20px;overflow:hidden;box-shadow:0 20px 50px #2d533513}
+.gut-food-table-head,.gut-food-row{display:grid;grid-template-columns:1fr 1.4fr 1.3fr;gap:0}
+.gut-food-table-head{background:#e7ede2;color:#3b5d44;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:600!important}
+.gut-food-table-head span{padding:19px 24px}
+.gut-food-row{border-top:1px solid #e7ebe3;transition:background .2s}
+.gut-food-row:hover{background:#f2f5ef}
+.gut-food-name,.gut-food-details,.gut-food-swap{padding:20px 24px;line-height:1.65;font-size:14px;color:#5f7063}
+.gut-food-name{font-weight:600!important;color:#2e533a}
+.gut-food-swap{color:#5e7765}
+.gut-food-footnote{font-size:13px;line-height:1.75;color:#687668;margin:20px 0 0;max-width:1150px}
+.gut-food-footnote a{color:#42684c;text-decoration:underline;text-underline-offset:3px}
+.gut-recipe-section{padding:90px 0 96px;background:linear-gradient(135deg,#f9f6ed,#f1f3e9)}
+.gut-filters{display:flex;flex-wrap:wrap;gap:8px;margin:-9px 0 30px}
+.gut-filters button{font-family:inherit;appearance:none;cursor:pointer;border-radius:999px;border:1px solid #d1ddcc;background:#fffefa;padding:13px 22px;color:#527057;font-size:13px;transition:background .2s,color .2s,transform .2s}
+.gut-filters button:hover{transform:translateY(-2px)}
+.gut-filters button.is-current{background:#365f44;color:white;border-color:#365f44;font-weight:600!important}
+.gut-recipes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:21px}
+.gut-recipe{border-radius:21px;overflow:hidden;background:#fffefa;border:1px solid #e9e9dd;box-shadow:0 17px 40px #183b2610;transition:transform .35s,box-shadow .35s}
+.gut-recipe:hover{transform:translateY(-5px);box-shadow:0 25px 46px #183b261c}
+.gut-recipe[hidden]{display:none!important}
+.gut-recipe-media{height:245px;position:relative;overflow:hidden;background:#e5eddf}
+.gut-recipe-media img{height:100%;width:100%;object-fit:cover;display:block;transition:transform .55s ease}
+.gut-recipe:hover img{transform:scale(1.055)}
+.gut-recipe-index{position:absolute;top:17px;left:17px;background:#fffefaeb;color:#496e4e;padding:9px 13px;border-radius:50%;font-size:12px;font-weight:600!important}
+.gut-recipe-content{padding:28px 29px 31px}
+.gut-recipe-content>span{color:#84967c;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600!important}
+.gut-recipe-content h3{font-size:22px;line-height:1.17;color:#2e523b;margin:12px 0;font-weight:600!important}
+.gut-recipe-content p{font-size:13px;line-height:1.75;color:#6e7c6f;margin:0}
+.gut-recipes-note{margin:25px 0 0;padding:18px 20px;color:#7a8578;font-size:13px;line-height:1.75;background:#f8f9f4;border-radius:12px}
+.gut-journal{padding:90px 0}
+.gut-journal-panel{padding:clamp(35px,5vw,73px);border-radius:28px;border:1px solid #dce6d8;background:linear-gradient(120deg,#e9f0e5,#fbf9f1);display:grid;grid-template-columns:1.12fr .88fr;gap:70px;align-items:center}
+.gut-journal-panel h2{margin-bottom:20px}
+.gut-journal-panel p{font-size:16px;line-height:1.79;color:#657665;max-width:670px}
+.gut-journal-tips{display:grid;gap:18px}
+.gut-journal-tips div{display:flex;align-items:center;gap:16px;line-height:1.55;font-size:14px;color:#375b40;border-bottom:1px solid #cbdac5;padding:13px 0}
+.gut-journal-tips span{font-size:27px;color:#90ac89;font-weight:300!important}
+.gut-care{padding:10px 0 85px}
+.gut-care-box{border-radius:25px;padding:clamp(28px,5vw,55px);background:#f5f5ee;border-left:3px solid #a8bda3}
+.gut-care h2{font-size:clamp(30px,3.3vw,43px);margin-bottom:20px}
+.gut-care p{font-size:15px;max-width:1060px;line-height:1.85;color:#647465}
+.gut-sources{display:flex;flex-wrap:wrap;gap:12px 23px;margin:22px 0 28px}
+.gut-sources a{color:#406a48;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:1100px){.gut-steps{gap:14px}.gut-step{padding:27px}.gut-recipes{grid-template-columns:repeat(2,minmax(0,1fr))}.gut-hero-grid{grid-template-columns:1.25fr .75fr}}
+@media(max-width:760px){
+.gut-hero{padding:112px 0 62px}
+.gut-hero-grid,.gut-intro-grid,.gut-journal-panel{grid-template-columns:1fr;gap:23px}
+.gut-hero-copy h1{font-size:clamp(50px,11vw,72px)}
+.gut-hero-visual{min-height:205px;border-radius:19px;padding:25px}
+.gut-hero-ring{width:175px;height:175px;top:2%;left:76%}
+.gut-hero-leaf{font-size:130px;left:75%;top:0}
+.gut-hero-visual>span{font-size:23px}
+.gut-intro,.gut-foods,.gut-journal{padding:59px 0}
+.gut-protocol,.gut-recipe-section{padding:62px 0}
+.gut-intro h2,.gut-headline h2,.gut-journal h2{font-size:clamp(32px,8vw,44px)}
+.gut-steps,.gut-recipes{grid-template-columns:1fr}
+.gut-step{min-height:0;padding:27px}
+.gut-step-number{margin-bottom:16px}
+.gut-food-table-head{display:none}
+.gut-food-row{grid-template-columns:1fr;gap:3px;padding:20px 19px}
+.gut-food-name,.gut-food-details,.gut-food-swap{padding:2px 0;font-size:13px}
+.gut-food-name{font-size:15px}
+.gut-food-swap{margin-top:4px}
+.gut-recipe-media{height:235px}
+.gut-filters{gap:7px}
+.gut-filters button{padding:11px 15px;font-size:12px}
+.gut-journal-panel{border-radius:21px;padding:29px 24px}
+.gut-care{padding-bottom:65px}
+}
+@media(prefers-reduced-motion:reduce){.gut-recipe,.gut-recipe img,.gut-step,.gut-filters button{transition:none}}
