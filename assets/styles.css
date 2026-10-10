@@ -451,3 +451,19 @@
 .home-sync.motion-ready .benefit:nth-child(1){animation-delay:.88s}.home-sync.motion-ready .benefit:nth-child(2){animation-delay:.98s}.home-sync.motion-ready .benefit:nth-child(3){animation-delay:1.08s}.home-sync.motion-ready .benefit:nth-child(4){animation-delay:1.18s}.home-sync.motion-ready .benefit:nth-child(5){animation-delay:1.28s}
 @keyframes liveIn{0%{opacity:0;transform:translateY(18px);filter:blur(4px)}100%{opacity:1;transform:none;filter:blur(0)}}
 .home-sync .benefit-label{font-family:Arial,Helvetica,sans-serif!important;font-weight:300!important;font-style:normal!important;color:#31483c!important;text-shadow:none!important}
+
+/* Community and courses pages */
+.new-page-hero{background:linear-gradient(115deg,#f8f5ec,#e8efe1 65%,#f8f1e5);padding:72px 0 62px}
+.new-page-hero h1{font-size:clamp(42px,6vw,82px);line-height:1.02;text-transform:none;color:#214c37;max-width:900px}
+.new-page-hero p{max-width:700px}.new-eyebrow,.new-kicker{display:block;text-transform:uppercase;letter-spacing:.19em;font-size:12px;color:#758a66;margin-bottom:18px}
+.new-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+.new-info-card{border:1px solid #e3e7dc;border-radius:26px;padding:clamp(24px,4vw,48px);background:linear-gradient(145deg,#fffefb,#f2f7ed);box-shadow:0 16px 50px rgba(32,69,44,.06);transition:transform .35s,box-shadow .35s}
+.new-info-card:hover{transform:translateY(-6px);box-shadow:0 22px 54px rgba(32,69,44,.12)}
+.new-info-card.new-sand{background:linear-gradient(145deg,#fffdfa,#f8f0df)}
+.new-info-card h2{font:clamp(28px,3vw,42px)/1.12 Georgia,serif;color:#214c37;margin:12px 0 20px}
+.new-info-card p,.new-info-card li,.new-center p{line-height:1.7;color:#566358;font-size:16px}
+.new-info-card ul{padding-left:21px;margin:24px 0}.new-info-card li{margin:9px 0}
+.new-symbol{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;background:#e1eadb;color:#31583a;font-size:42px;margin-bottom:26px}
+.new-pending{display:inline-block;padding:13px 20px;border:1px solid #b5c6ae;border-radius:50px;color:#526b4c;font-size:14px;background:#ffffff99}
+.new-center{text-align:center;max-width:850px}.new-center h2{font:clamp(32px,4vw,52px) Georgia,serif;color:#214c37}.new-center p{margin:18px auto;max-width:760px}.new-center .btn{margin-top:18px}
+@media(max-width:760px){.new-card-grid{grid-template-columns:1fr}.new-page-hero{padding:52px 0 42px}.new-info-card{border-radius:20px}.new-page-hero h1{font-size:clamp(38px,10vw,58px)}}
