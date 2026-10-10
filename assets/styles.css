@@ -467,3 +467,15 @@
 .new-pending{display:inline-block;padding:13px 20px;border:1px solid #b5c6ae;border-radius:50px;color:#526b4c;font-size:14px;background:#ffffff99}
 .new-center{text-align:center;max-width:850px}.new-center h2{font:clamp(32px,4vw,52px) Georgia,serif;color:#214c37}.new-center p{margin:18px auto;max-width:760px}.new-center .btn{margin-top:18px}
 @media(max-width:760px){.new-card-grid{grid-template-columns:1fr}.new-page-hero{padding:52px 0 42px}.new-info-card{border-radius:20px}.new-page-hero h1{font-size:clamp(38px,10vw,58px)}}
+
+/* Inline iron questionnaire invitation in supplements */
+.iron-preview-callout{padding-top:15px}
+.iron-preview-card{display:flex;align-items:center;justify-content:space-between;gap:36px;padding:clamp(30px,5vw,66px);border-radius:26px;background:radial-gradient(circle at 95% 10%,#426c4a55,transparent 42%),linear-gradient(120deg,#244c37,#396c4b);color:#fff;box-shadow:0 25px 64px #27483329}
+.iron-preview-copy{max-width:750px}
+.iron-preview-eyebrow{font-size:11px;letter-spacing:.19em;color:#cee0c5}
+.iron-preview-card h2{font:clamp(32px,4vw,52px)/1.05 Georgia,serif;font-weight:400;margin:17px 0}
+.iron-preview-card p{color:#f2f7f0;line-height:1.67;font-size:17px;margin-bottom:14px}
+.iron-preview-note{display:block;color:#ceddcd;font-size:13px}
+.iron-preview-card>.btn{background:#f8f3e5;color:#275239;white-space:nowrap}
+.iron-modal-cta{margin-top:24px}
+@media(max-width:760px){.iron-preview-card{flex-direction:column;align-items:flex-start;gap:25px;border-radius:20px}.iron-preview-card>.btn{width:100%;justify-content:center;white-space:normal;text-align:center}}
