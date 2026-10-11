@@ -1080,3 +1080,22 @@ body.wellness-v3.about-page .about-layout-bio-left .about-photo > img {
     overflow-wrap:break-word!important;
   }
 }
+
+/* Remove letterboxed beige gutter beneath the mobile homepage hero image. */
+@media(max-width:840px){
+ body.wellness-v3.home-sync .hero > .hero-media{
+   padding:0!important;
+   line-height:0!important;
+   overflow:hidden!important;
+   background:#ede4d9!important;
+ }
+ body.wellness-v3.home-sync .hero > .hero-media img.hero-final{
+   display:block!important;
+   width:100%!important;
+   height:100%!important;
+   object-fit:cover!important;
+   object-position:center 46%!important;
+   margin:0!important;
+   padding:0!important;
+ }
+}
