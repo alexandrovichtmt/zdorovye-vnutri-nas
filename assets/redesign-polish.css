@@ -1,0 +1,108 @@
+/* FINAL WARM-PASTEL VISUAL PASS · inspired by the supplied Claude design.
+   One accent only: linear-gradient(to top,#e6b980 0%,#eacda3 100%).
+   Original photographs are never recolored. */
+:root{
+ --rd-bg:#F7F5EF;--rd-ink:#0F1A14;--rd-text:#50483F;--rd-sub:#766a5e;
+ --rd-paper:#fffefa;--rd-line:#E9DECF;--rd-soft:#efd7b8;--rd-blush:#ebd0bc;
+ --rd-accent:linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+ --rd-shadow:0 8px 22px rgba(160,110,50,.18);
+ --cream:#F7F5EF;--cream-soft:#FBF4EA;--cream-deep:#efd7b8;--cream-card:#fffefa;
+ --sand:#e6b980;--champagne:#eacda3;--taupe:#775c46;--ink:#0F1A14;--text:#50483f;--line:#ebd0bc;
+ --primary:#0F1A14;--accent:#e6b980;--green:#b68b60;--sage:#eacda3;
+}
+html,body{background:#F7F5EF!important}
+body :is(.section.soft,.soft,.child-materials,.child-extra,.child-registration,.child-intro,.child-path,
+ .gut-explainer,.gut-food-comparison,.gut-protocol,.gut-foods,.gut-recipe-section,.gut-journal,
+ .checkup-section,.recipe-library,.community-formats,.community-intro,.community-access,.course-section){
+ background:linear-gradient(135deg,#F7F5EF 0%,#fffaf3 39%,#efd7b8 120%)!important}
+body .hero,body .child-hero,body .gut-hero,body .pageHero,body .new-page-hero,
+body .community-hero,body .iron-hero{background-color:#F7F5EF!important;border-color:#ebd0bc!important}
+body :is(.hero h1,.child-hero h1,.gut-hero h1,.pageHero h1,.community-hero h1,.new-page-hero h1,
+ .child-intro h2,.gut-headline h2,.child-section-heading h2,.child-path h2){
+ font-family:Unbounded,Manrope,system-ui,sans-serif!important;color:#0F1A14!important}
+body :is(.child-hero h1 span,.gut-hero h1 span,.community-hero h1 span,.hero-title-line:last-child){
+ color:#0F1A14!important}
+body :is(.child-eyebrow,.gut-kicker,.about-eyebrow,.community-eyebrow,.checkup-eyebrow,
+ .new-eyebrow,.new-kicker,.recipe-library-eyebrow,.topic-kicker){
+ color:#7a5424!important}
+body :is(.child-hero p,.child-intro p,.child-section-heading p,.gut-hero p,.gut-intro p,
+ .gut-headline p,.child-card-copy p,.gut-step p,.child-path p,.community-card p,
+ .new-info-card p,.recipe-library-head p){color:#5d5349!important}
+body :is(.btn,.nav .links>a[aria-current=page],.home-category-tabs a.active,
+ .home-category-tabs a:hover,.recipe-library-filters button.active,.gut-filters button.is-current,
+ .checkup-copy,.iron-option input:checked+span,.child-register-button,.child-age-tabs a.active,
+ .child-age-tabs a:hover){
+ background:linear-gradient(to top, #e6b980 0%, #eacda3 100%)!important;
+ color:#0F1A14!important;border-color:#e6b980!important;
+ box-shadow:0 8px 22px rgba(160,110,50,.18)!important}
+body .nav .navcta{background:#0F1A14!important;color:white!important;border-color:#0F1A14!important}
+body .btn-outline,body a.btn-outline{background:#fffdfa!important;border-color:#ebd0bc!important;color:#0F1A14!important}
+body .btn:focus-visible,body button:focus-visible,body a:focus-visible{outline-color:#e6b980!important}
+body .nav .more-menu,body .nav .mobile-dropdown{background:#fffdfa!important;border-color:#ebd0bc!important}
+body .topic.topic-community,body .topic:nth-child(3),body .ctaBox,body .child-register-card,
+body .community-access-panel{background:#0F1A14!important;color:#fff!important}
+body .ctaBox h2,body .child-register-card h2,body .topic.topic-community h3{color:white!important}
+body .ctaBox p,body .child-register-card p,body .topic.topic-community p{color:#f1e9df!important}
+body .child-register-card :is(.child-eyebrow,.child-register-hint,.child-registration-small){color:#eacda3!important}
+body .child-hero-art,body .gut-hero-visual,body .new-info-card,
+body .child-visual-card,body .gut-step,body .gut-mechanism-node,body .gut-compare-card,
+body .checkup-group,body .community-card,body .recipe-library-card,body .about-specialty-card{
+ background:linear-gradient(145deg,#fffefa,#f7eddf)!important;border:1px solid #ebd0bc!important;
+ box-shadow:0 14px 34px rgba(104,71,35,.08)!important}
+body :is(.child-art-mark,.gut-hero-leaf,.child-guide-number,.child-path-number,.gut-step-number,
+ .gut-mechanism-icon,.new-symbol,.child-register-symbol){color:#b2865c!important}
+body :is(.child-visual-card,.gut-step,.gut-mechanism-node,.child-path-card,.gut-compare-card){
+ border-radius:30px!important}
+body :is(.child-important,.gut-protocol-note,.child-path-note,.gut-fodmap-caption,
+ .gut-food-footnote,.checkup-medical-note,.checkup-caution,.iron-disclaimer,.nutrient-caveat,
+ .about-specialty-note,.child-note){
+ background:#fff5e9!important;color:#5d5349!important;border-color:#e6b980!important}
+body :is(.gut-step-period,.child-guide-step small,.child-path-card small,.gut-food-name,
+ .child-inline-link,.recipe-library-type,.community-kicker){color:#8a5d31!important}
+body .gut-food-table-head,body .checkup-group-header,body .checkup-toolbar,
+body .nutrient-matrix-table thead th{background:#efd7b8!important;color:#0F1A14!important}
+body :is(.gut-filters button,.recipe-library-filters button,.iron-reset,.checkup-clear,
+ .child-age-tabs a){background:#fffdfa!important;color:#5d4835!important;border-color:#ebd0bc!important}
+body :is(.checkup-item input:checked+.checkup-checkmark,.checkup-item:has(input:checked) .checkup-checkmark,
+ .iron-option input:checked+span,.nutrient-matrix-table .is-compatible .nutrient-dot,
+ .nutrient-legend .is-compatible,.child-guide-number){
+ background:linear-gradient(to top, #e6b980 0%, #eacda3 100%)!important;color:#0F1A14!important;
+ border-color:#e6b980!important}
+body .nutrient-matrix-table .is-neutral .nutrient-dot,body .nutrient-legend .is-neutral{background:#c9bdad!important}
+body .nutrient-matrix-table .is-incompatible .nutrient-dot,body .nutrient-legend .is-incompatible{background:#c28779!important}
+body .hero-glass b,body .hero-glass .glass-icon,body .healthbox div,body .feature-icon,
+body .gut-compare-icon,body .community-access-circle{background:linear-gradient(to top, #e6b980 0%, #eacda3 100%)!important;color:#0F1A14!important}
+body .footer{background:#0F1A14!important;color:#fff!important;border:0!important}
+body .footer .foot,body .footer .foot span,body .footer .foot b{color:#f7f0e8!important}
+/* Child health — same editorial storytelling rhythm as Healthy Gut */
+.child-path{padding:92px 0 110px;position:relative;overflow:hidden}
+.child-path::before{content:"";position:absolute;inset:auto -13vw -25vw auto;width:55vw;aspect-ratio:1;
+ border-radius:50%;background:radial-gradient(circle,#ebd0bc65,transparent 72%);pointer-events:none}
+.child-path-heading{max-width:970px;margin-bottom:42px}
+.child-path-heading h2{font-size:clamp(33px,4.7vw,64px);letter-spacing:-.055em!important;
+ line-height:1.11!important;margin:10px 0 23px}
+.sand-highlight{display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone;
+ padding:0 .2em .04em;border-radius:12px;background:linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+ box-shadow:0 7px 19px rgba(160,110,50,.18)}
+.child-path-heading p{max-width:790px;color:#64594f;font-size:16px;line-height:1.85}
+.child-path-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.child-path-card{position:relative;padding:clamp(24px,3vw,40px);background:#fffdfa;
+ border:1px solid #ebd0bc;box-shadow:0 16px 39px rgba(119,79,38,.09)}
+.child-path-number{display:grid;place-items:center;background:linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+ border-radius:16px;width:57px;height:57px;color:#0F1A14!important;font:700 17px Unbounded,sans-serif!important;margin-bottom:28px}
+.child-path-card small{display:block;font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+ font-weight:700;color:#7a5424;margin-bottom:10px}
+.child-path-card h3{font-size:clamp(19px,2.1vw,27px);line-height:1.22!important;margin:0 0 17px}
+.child-path-card p{font-size:14px;line-height:1.76;margin:0}
+.child-path-note{margin-top:25px;padding:22px 27px;border-left:4px solid #e6b980!important;
+ background:#fff8ee;border-radius:0 18px 18px 0;font-size:14px;line-height:1.8}
+.child-path-note strong{font-weight:700!important;color:#0F1A14}
+.child-image-grid{gap:20px}
+.child-image-open{background:#f7ede1!important}
+.child-image-open img{filter:none!important;object-fit:contain}
+.child-register-button{background:linear-gradient(to top, #e6b980 0%, #eacda3 100%)!important;color:#0F1A14!important}
+/* responsive */
+@media(max-width:850px){.child-path-grid{grid-template-columns:1fr}.child-path{padding:60px 0 70px}
+ .child-path-card{padding:26px}.child-path-heading{margin-bottom:25px}
+ .child-path-number{margin-bottom:18px}.child-path-heading h2{font-size:clamp(30px,7.6vw,46px)}}
+@media(prefers-reduced-motion:reduce){.child-path-card{transition:none}}
