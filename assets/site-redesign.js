@@ -1,7 +1,7 @@
 /* Adaptive multipage navigation & progressive design enhancements.
    All business content, existing checks, supplements and recipe data stay untouched. */
 (()=>{"use strict";
-const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"],["community.html","Комьюнити"],["blog.html","Блог"],["services.html","Услуги"],["contacts.html","Контакты"]];
+const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["community.html","Комьюнити"],["blog.html","Блог"],["services.html","Услуги"]];
 const all=desktop;
 const page=location.pathname.split("/").pop()||"index.html";
 const nav=document.querySelector(".nav"),inNav=nav?.querySelector(".navin");
@@ -42,7 +42,7 @@ if(document.body.classList.contains("home-sync")){
  if(benefits&&!document.querySelector(".home-category-tabs")){
   const tabs=document.createElement("nav");tabs.className="home-category-tabs";
   tabs.setAttribute("aria-label","Популярные разделы");
-  tabs.innerHTML=anchors([["nutrition.html","Питание"],["labs.html","Анализы"],["supplements.html","БАДы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"]]);
+  tabs.innerHTML=anchors([["nutrition.html","Питание"],["labs.html","Анализы"],["supplements.html","БАДы"],["child-health.html","Детское здоровье"],["nutrition.html#recipes","Рецепты"]]);
   benefits.insertAdjacentElement("afterend",tabs);
  }
 }

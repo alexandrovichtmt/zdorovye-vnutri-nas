@@ -89,6 +89,7 @@
       const td=document.createElement("td");
       const item=states[state]||states.n;
       td.className="nutrient-cell "+item.cls;
+      td.dataset.col=String(j);
       if(state!=="."){
         const dot=document.createElement("span");
         dot.className="nutrient-dot";
@@ -104,18 +105,33 @@
   });
   table.append(tbody);
   mount.replaceChildren(table);
-  table.addEventListener("pointerover", e=>{
-    const cell=e.target.closest("td");
+  /* Align the crosshair by the nutrient column, not by DOM cellIndex:
+     the two-level table header contains colspan cells and a row-spanning label. */
+  const headerCells=[...labelsHead.querySelectorAll("th")];
+  const rows=[...tbody.querySelectorAll("tr")];
+  const focusClasses=["nutrient-row-focus","nutrient-column-focus","nutrient-intersection"];
+  let currentCell=null;
+  const clearFocus=()=>{
+    table.querySelectorAll(".nutrient-row-focus,.nutrient-column-focus,.nutrient-intersection").forEach(node=>node.classList.remove(...focusClasses));
+    currentCell=null;
+  };
+  const highlight=(cell)=>{
+    if(cell===currentCell)return;
+    clearFocus();
     if(!cell)return;
-    table.querySelectorAll(".nutrient-focused").forEach(x=>x.classList.remove("nutrient-focused"));
-    const row=cell.closest("tr");
-    const col=cell.cellIndex;
-    row.classList.add("nutrient-focused");
-    table.querySelectorAll("tr").forEach(tr=>{
-      if(tr.children[col])tr.children[col].classList.add("nutrient-focused");
-    });
+    const col=Number(cell.dataset.col);
+    if(!Number.isInteger(col)||col<0||col>=nutrients.length)return;
+    currentCell=cell;
+    const tr=cell.parentElement;
+    tr.classList.add("nutrient-row-focus");
+    tr.querySelector(".nutrient-row-name")?.classList.add("nutrient-row-focus");
+    headerCells[col]?.classList.add("nutrient-column-focus");
+    rows.forEach(row=>row.querySelector('td[data-col="'+col+'"]')?.classList.add("nutrient-column-focus"));
+    cell.classList.add("nutrient-intersection");
+  };
+  table.addEventListener("pointerover",event=>{
+    const cell=event.target.closest("td.nutrient-cell");
+    highlight(cell);
   });
-  table.addEventListener("pointerleave",()=>{
-    table.querySelectorAll(".nutrient-focused").forEach(x=>x.classList.remove("nutrient-focused"));
-  });
+  table.addEventListener("pointerleave",clearFocus);
 })();

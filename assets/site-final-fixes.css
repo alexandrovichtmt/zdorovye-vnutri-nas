@@ -1,0 +1,241 @@
+/* Unified site refinements — global navigation, typography, accessibility, images, and matrix */
+
+/* Navigation: preserve the approved sizes, reduce the weight only. */
+body.wellness-v3 .nav .links > a,
+body.wellness-v3 .nav .links > a[aria-current="page"],
+body.wellness-v3 .nav .more-trigger {
+  font-weight:450!important;
+}
+body.wellness-v3 .nav .links > a[aria-current="page"]{font-weight:500!important}
+body.wellness-v3 .nav .mobile-dropdown a{font-weight:450!important}
+
+/* About: align every element in the biography to the same left edge,
+   without cropping the original portrait or changing the text hierarchy. */
+body.wellness-v3.about-page .about-layout.about-layout-bio-left{
+  width:min(1340px,calc(100% - 48px))!important;
+  max-width:1340px!important;
+  grid-template-columns:minmax(0,1.12fr) minmax(0,.8fr)!important;
+  gap:clamp(22px,4vw,65px)!important;
+  justify-content:start!important;
+  align-items:center!important;
+}
+body.wellness-v3.about-page .about-layout-bio-left .about-photo-bio{
+  min-width:0!important;width:100%!important;max-width:100%!important;
+  justify-self:start!important;text-align:left!important;
+  padding:0!important;margin:0!important;
+}
+body.wellness-v3.about-page .about-photo-bio > h1,
+body.wellness-v3.about-page .about-photo-bio > p,
+body.wellness-v3.about-page .about-photo-bio > .about-eyebrow,
+body.wellness-v3.about-page .about-photo-bio-years,
+body.wellness-v3.about-page .about-photo-bio-list{
+  text-align:left!important;margin-left:0!important;
+  margin-right:0!important;justify-self:start!important;
+}
+body.wellness-v3.about-page .about-photo-bio-list{
+  padding-left:0!important;width:100%!important;
+}
+body.wellness-v3.about-page .about-photo-bio-list li{text-align:left!important}
+body.wellness-v3.about-page .about-photo-bio-list li .about-emoji{text-align:center!important}
+
+/* Matching editorial left edges on Child Health and combined Nutrition/FODMAP. */
+body.wellness-v3.child-health-page .child-intro > .wrap,
+body.wellness-v3.nutrition-page .gut-intro > .wrap{
+  padding-inline:0!important;
+}
+body.wellness-v3.child-health-page .child-intro-grid,
+body.wellness-v3.nutrition-page .gut-intro-grid{
+  justify-content:start!important;
+  text-align:left!important;
+}
+body.wellness-v3.child-health-page .child-intro-grid > :first-child,
+body.wellness-v3.nutrition-page .gut-intro-grid > :first-child{
+  padding-left:0!important;margin-left:0!important;justify-self:start!important;
+}
+body.wellness-v3.child-health-page .child-intro-grid h2,
+body.wellness-v3.child-health-page .child-intro-grid .child-eyebrow,
+body.wellness-v3.nutrition-page .gut-intro-grid h2,
+body.wellness-v3.nutrition-page .gut-intro-grid .gut-kicker{
+  text-align:left!important;margin-left:0!important;
+}
+
+/* Nutrition presents the full FODMAP resource and only one recipe library. */
+body.wellness-v3.nutrition-page .nutrition-basics{padding:clamp(45px,5vw,75px) 0!important}
+body.wellness-v3.nutrition-page .nutrition-basics-head{text-align:left;max-width:860px;margin-bottom:25px}
+body.wellness-v3.nutrition-page .nutrition-basics-head h2{
+  font-size:clamp(27px,3.3vw,49px)!important;line-height:1.13!important;
+  margin:12px 0 15px!important;color:#0F1A14!important
+}
+body.wellness-v3.nutrition-page .nutrition-basics-head p{color:#544a40!important;line-height:1.65!important}
+body.wellness-v3.nutrition-page .nutrition-basics-cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:17px!important}
+body.wellness-v3.nutrition-page .nutrition-basics-cards .info-card{
+  min-width:0!important;border:1px solid #e7cfb1!important;background:#fffcf8!important;
+  text-align:left!important;cursor:pointer!important;
+}
+body.wellness-v3.nutrition-page .nutrition-basics-cards .info-card h3{font-size:clamp(17px,1.7vw,24px)!important}
+body.wellness-v3.nutrition-page .nutrition-basics-cards .info-card p{
+  color:#54483c!important;-webkit-text-fill-color:#54483c!important
+}
+
+/* High contrast on the dark health warning: never inherit low-contrast brown. */
+body.wellness-v3.nutrition-page .gut-care-box{
+  background:#0e1e17!important;border-radius:34px!important;border:1px solid #415047!important;
+}
+body.wellness-v3.nutrition-page .gut-care-box h2{
+  color:#fffefa!important;-webkit-text-fill-color:#fffefa!important;
+}
+body.wellness-v3.nutrition-page .gut-care-box p,
+body.wellness-v3.nutrition-page .gut-care-box p strong{
+  color:#f3efe7!important;-webkit-text-fill-color:#f3efe7!important;
+  opacity:1!important;filter:none!important;text-shadow:none!important;
+}
+body.wellness-v3.nutrition-page .gut-care-box .gut-sources a{
+  color:#f5c68b!important;-webkit-text-fill-color:#f5c68b!important;
+  text-decoration-color:#f5c68b!important;opacity:1!important;
+}
+body.wellness-v3.nutrition-page .gut-care-box .btn{
+  color:#0e1e17!important;-webkit-text-fill-color:#0e1e17!important
+}
+
+/* Services: preserve the source image's entire frame on desktop.
+   Soft radial edge masking integrates its background into the cream surface. */
+.services-hero .services-portrait{
+  display:block!important;position:relative!important;min-width:0!important;
+  width:100%!important;align-self:center!important;overflow:visible!important;
+}
+.services-hero .services-photo{
+  width:100%!important;height:auto!important;min-height:0!important;
+  max-height:none!important;max-width:100%!important;
+  object-fit:contain!important;object-position:center!important;
+  aspect-ratio:auto!important;border-radius:0!important;
+  transform:none!important;filter:none!important;opacity:1!important;
+  -webkit-mask-image:radial-gradient(ellipse 73% 75% at 51% 50%,black 68%,transparent 100%)!important;
+  mask-image:radial-gradient(ellipse 73% 75% at 51% 50%,black 68%,transparent 100%)!important;
+}
+.services-hero{background:linear-gradient(115deg,#fffdf9 0%,#f3e8d9 70%,#ede1d3 100%)!important}
+
+/* Merged consultation information below the two pricing plans. */
+.services-contact{
+  scroll-margin-top:120px;display:block;
+  padding:clamp(22px,3vw,45px);margin:30px 0 38px;
+  background:linear-gradient(135deg,#fffefa,#f5e6d5);
+  border:1px solid #e6c7a6;border-radius:32px;
+  box-shadow:0 16px 45px rgba(83,54,30,.07)
+}
+.services-contact-head{
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.72fr);
+  gap:clamp(22px,4vw,60px);align-items:center;margin-bottom:27px;
+}
+.services-contact-copy h2{
+  font-size:clamp(28px,3.6vw,53px)!important;line-height:1.1!important;
+  margin:13px 0 19px!important;color:#0f1a14!important
+}
+.services-contact-copy p{font-size:clamp(15px,1.35vw,19px)!important;color:#54483c!important;line-height:1.65!important}
+.services-contact-photo{
+  width:100%;min-width:0;height:clamp(190px,21vw,300px);
+  overflow:hidden;border-radius:25px;box-shadow:0 14px 36px #6b513521
+}
+.services-contact-photo img{
+  width:100%!important;height:100%!important;display:block!important;
+  object-fit:cover!important;object-position:center 37%!important;filter:none!important
+}
+.services-contact-cards{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px
+}
+.services-contact-cards .card{
+  min-width:0;padding:clamp(17px,2.1vw,28px)!important;
+  border:1px solid #e4c6a8!important;background:#fffdf9!important;border-radius:22px!important;
+  transition:transform .2s ease,box-shadow .2s ease!important
+}
+.services-contact-cards .card:hover{
+  transform:translateY(-3px);box-shadow:0 13px 27px rgba(107,69,28,.11)!important;
+}
+.services-contact-cards .card h3{
+  margin:0 0 10px!important;font-size:clamp(15px,1.4vw,21px)!important;
+  color:#0f1a14!important;line-height:1.26!important
+}
+.services-contact-cards .card p{
+  color:#635548!important;font-size:clamp(13px,1.05vw,15px)!important;
+  line-height:1.5!important;margin:0!important;
+}
+
+/* Compatibility dots: vivid, opaque signals, without dull brown filters. */
+body.wellness-v3 .nutrient-matrix-table tbody .nutrient-cell{
+  background:#fffaf4!important;transition:background .085s ease!important
+}
+body.wellness-v3 .nutrient-matrix-table tbody tr:nth-child(even) .nutrient-cell{
+  background:#f2efea!important
+}
+body.wellness-v3 .nutrient-matrix-table .nutrient-dot{
+  width:20px!important;height:20px!important;opacity:1!important;
+  filter:saturate(1.22)!important;transform:none!important;
+  box-shadow:inset 0 1px 1px rgba(255,255,255,.4),0 1px 3px rgba(40,32,21,.25)!important
+}
+body.wellness-v3 .nutrient-matrix-table .is-compatible .nutrient-dot,
+body.wellness-v3 .nutrient-legend i.is-compatible{background:#23ac72!important}
+body.wellness-v3 .nutrient-matrix-table .is-incompatible .nutrient-dot,
+body.wellness-v3 .nutrient-legend i.is-incompatible{background:#e45a54!important}
+body.wellness-v3 .nutrient-matrix-table .is-neutral .nutrient-dot,
+body.wellness-v3 .nutrient-legend i.is-neutral{background:#eca63c!important}
+body.wellness-v3 .nutrient-matrix-table tbody .nutrient-row-name{
+  color:#49301f!important;background:#faf2e7!important;font-weight:600!important
+}
+body.wellness-v3 .nutrient-matrix-table .nutrient-labels-head th{
+  color:#492d19!important;background:#e9d1b6!important
+}
+/* Precise crosshair: 18 column labels, 18 data rows. Header colspans are excluded. */
+body.wellness-v3 .nutrient-matrix-table tbody tr.nutrient-row-focus > td.nutrient-cell{
+  background:#f4e4ca!important
+}
+body.wellness-v3 .nutrient-matrix-table tbody tr.nutrient-row-focus > th.nutrient-row-name{
+  background:#e7c08f!important;color:#2b180c!important
+}
+body.wellness-v3 .nutrient-matrix-table tbody tr > td.nutrient-column-focus{
+  background:#efcb92!important
+}
+body.wellness-v3 .nutrient-matrix-table .nutrient-labels-head th.nutrient-column-focus{
+  background:#d99e5e!important;color:#25190f!important
+}
+body.wellness-v3 .nutrient-matrix-table tbody tr.nutrient-row-focus > td.nutrient-intersection{
+  background:#e6ae64!important;outline:2px solid #af6b28!important;outline-offset:-2px!important
+}
+body.wellness-v3 .nutrient-matrix-table tbody tr > td.nutrient-intersection .nutrient-dot{
+  box-shadow:0 0 0 3px rgba(255,250,238,.95),0 2px 5px rgba(31,26,19,.35)!important
+}
+body.wellness-v3 .nutrient-matrix-table tbody .is-self:not(.nutrient-intersection):not(.nutrient-column-focus){
+  background:#e4e1dc!important
+}
+body.wellness-v3 .nutrient-legend{color:#5a4030!important}
+body.wellness-v3 .nutrient-matrix-frame{
+  background:#fffefa!important;box-shadow:0 17px 43px rgba(108,76,35,.13)!important;
+}
+
+@media(max-width:900px){
+  .services-contact-head{grid-template-columns:1fr!important}
+  .services-contact-photo{height:clamp(200px,48vw,360px)!important}
+  .services-contact-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  body.wellness-v3.nutrition-page .nutrition-basics-cards{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important
+  }
+}
+@media(max-width:850px){
+  body.wellness-v3.about-page .about-layout.about-layout-bio-left{
+    width:calc(100% - 28px)!important;grid-template-columns:minmax(0,1fr)!important
+  }
+}
+@media(max-width:800px){
+  /* Mobile portrait layout is intentionally preserved. */
+  .services-hero .services-photo{
+    width:100%!important;height:auto!important;max-height:520px!important;
+    aspect-ratio:1 / 1!important;object-fit:cover!important;
+    border-radius:28px!important;-webkit-mask-image:none!important;mask-image:none!important
+  }
+}
+@media(max-width:650px){
+  body.wellness-v3.nutrition-page .nutrition-basics-cards,
+  .services-contact-cards{grid-template-columns:1fr!important}
+  .services-contact{padding:20px!important;border-radius:23px!important}
+  .services-contact-photo{height:auto!important;aspect-ratio:1.15 / 1!important}
+  body.wellness-v3.child-health-page .child-intro > .wrap,
+  body.wellness-v3.nutrition-page .gut-intro > .wrap{width:calc(100% - 28px)!important}
+}
