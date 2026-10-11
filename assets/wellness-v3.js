@@ -47,4 +47,31 @@ document.querySelectorAll(".topicgrid .topic").forEach(node=>{
   const arrow=document.createElement("span");arrow.className="topic-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";node.append(arrow);
  }
 });
+
+/* Match the approved homepage composition with an editorial, three-stage FODMAP preview.
+   Reuse the existing title, summary and link from the published section. */
+const gutPreview=document.querySelector(".gut-home-teaser .gut-teaser-inner");
+if(gutPreview&&!gutPreview.classList.contains("gut-glass-preview")){
+ const introduction=gutPreview.querySelector(":scope > div");
+ const link=gutPreview.querySelector(":scope > a");
+ if(introduction&&link){
+  gutPreview.classList.add("gut-glass-preview");
+  introduction.classList.add("gut-glass-intro");
+  introduction.append(link);
+  const steps=document.createElement("div");steps.className="gut-glass-steps";
+  const data=[
+   ["01","Тонкий кишечник","Некоторые FODMAP всасываются не полностью и могут притягивать воду в просвет кишечника."],
+   ["02","Толстый кишечник","Часть углеводов достигает толстой кишки, где микробиота ферментирует их с образованием газа."],
+   ["03","Самочувствие","У чувствительных людей возможны вздутие, дискомфорт и изменение стула."]
+  ];
+  data.forEach(([n,title,desc])=>{
+   const item=document.createElement("article");item.className="gut-glass-step";
+   const index=document.createElement("span");index.className="gut-glass-number";index.textContent=n;
+   const h=document.createElement("h3");h.textContent=title;
+   const p=document.createElement("p");p.textContent=desc;
+   item.append(index,h,p);steps.append(item);
+  });
+  gutPreview.append(steps);
+ }
+}
 })();
