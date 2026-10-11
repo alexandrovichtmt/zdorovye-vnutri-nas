@@ -1099,3 +1099,241 @@ body.wellness-v3.about-page .about-layout-bio-left .about-photo > img {
    padding:0!important;
  }
 }
+
+/* 2026-10-11 — Final About portrait framing and mobile flow.
+   Crop out the empty tree and lawn, not the person: keep the image's
+   bottom aligned (feet visible), and use the actual image aspect ratio.
+   The original photograph is unchanged. */
+body.wellness-v3.about-page .about-layout-bio-left .about-photo {
+  aspect-ratio:756 / 1030!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  position:relative!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  background:#f0e9df!important;
+}
+body.wellness-v3.about-page .about-layout-bio-left .about-photo > img {
+  display:block!important;
+  position:absolute!important;
+  top:auto!important;
+  right:auto!important;
+  bottom:0!important;
+  left:0!important;
+  inset:auto auto 0 0!important;
+  height:150%!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:none!important;
+  min-height:0!important;
+  max-height:none!important;
+  object-fit:fill!important;
+  object-position:left bottom!important;
+  transform:none!important;
+  margin:0!important;
+  padding:0!important;
+  filter:none!important;
+}
+
+/* The 721–840px interval previously retained desktop fixed hero height.
+   Make all mobile homepage sections follow natural document flow. */
+@media (max-width:840px) {
+  body.wellness-v3.home-sync .hero {
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:hidden!important;
+    isolation:isolate!important;
+    margin-bottom:0!important;
+  }
+  body.wellness-v3.home-sync .hero > .hero-media {
+    position:relative!important;
+    inset:auto!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    height:auto!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+  body.wellness-v3.home-sync .hero > .wrap {
+    position:relative!important;
+    order:2!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  body.wellness-v3.home-sync .hero .hero-copy {
+    box-sizing:border-box!important;
+    width:100%!important;
+    max-width:100%!important;
+    min-width:0!important;
+    height:auto!important;
+    margin:0!important;
+    padding:clamp(20px,4.5vw,32px)!important;
+  }
+  body.wellness-v3.home-sync .hero .hero-copy :is(h1,p,.lead,.actions) {
+    max-width:100%!important;
+    overflow-wrap:break-word!important;
+  }
+  body.wellness-v3.home-sync .hero .actions {
+    display:flex!important;
+    flex-wrap:wrap!important;
+    gap:10px!important;
+  }
+  body.wellness-v3.home-sync .hero .actions .btn {
+    max-width:100%!important;
+    white-space:normal!important;
+    text-align:center!important;
+  }
+  body.wellness-v3.home-sync .hero + .desktop-benefits {
+    display:block!important;
+    position:relative!important;
+    inset:auto!important;
+    clear:both!important;
+    float:none!important;
+    flex:none!important;
+    transform:none!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    margin:16px auto 16px!important;
+    overflow:visible!important;
+  }
+  body.wellness-v3.home-sync .hero + .desktop-benefits + .section {
+    position:relative!important;
+    z-index:0!important;
+    clear:both!important;
+    margin-top:0!important;
+    padding-top:clamp(20px,4vw,34px)!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefitgrid {
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-auto-rows:auto!important;
+    align-items:stretch!important;
+    height:auto!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit {
+    position:relative!important;
+    box-sizing:border-box!important;
+    min-width:0!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:72px!important;
+    overflow:hidden!important;
+    display:flex!important;
+    flex-direction:row!important;
+    gap:10px!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    padding:12px!important;
+    white-space:normal!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit:last-child {
+    grid-column:1/-1!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit-label {
+    display:block!important;
+    min-width:0!important;
+    width:auto!important;
+    flex:1 1 auto!important;
+    font-size:clamp(11px,1.8vw,14px)!important;
+    line-height:1.4!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .premium-svg {
+    flex:0 0 25px!important;
+    width:25px!important;
+    height:25px!important;
+  }
+  body.wellness-v3.home-sync .topicgrid {
+    position:relative!important;
+    z-index:0!important;
+    display:grid!important;
+    align-items:stretch!important;
+    grid-auto-flow:row!important;
+    grid-auto-rows:auto!important;
+    margin-top:0!important;
+    padding-top:0!important;
+    overflow:visible!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic {
+    box-sizing:border-box!important;
+    min-width:0!important;
+    overflow:hidden!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topiccopy {
+    box-sizing:border-box!important;
+    max-width:calc(100% - 76px)!important;
+    overflow-wrap:anywhere!important;
+    white-space:normal!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topiccopy :is(h3,p) {
+    max-width:100%!important;
+    white-space:normal!important;
+    overflow-wrap:anywhere!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topic-arrow {
+    flex-shrink:0!important;
+  }
+}
+@media (max-width:620px) {
+  body.wellness-v3.home-sync .hero .hero-copy {
+    padding:22px 18px 27px!important;
+  }
+  body.wellness-v3.home-sync .hero .actions {
+    flex-direction:column!important;
+    align-items:stretch!important;
+  }
+  body.wellness-v3.home-sync .hero .actions a {
+    display:flex!important;
+    width:100%!important;
+    min-width:0!important;
+    justify-content:center!important;
+  }
+  body.wellness-v3.home-sync .topicgrid {
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic:nth-child(n) {
+    grid-column:1/-1!important;
+    min-height:230px!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topiccopy {
+    inset:auto 64px 13px 13px!important;
+    max-width:calc(100% - 81px)!important;
+  }
+  body.wellness-v3.about-page .about-layout-bio-left .about-photo {
+    max-width:min(100%,390px)!important;
+    margin-inline:auto!important;
+  }
+  body.wellness-v3.about-page .about-layout-bio-left .about-photo-bio,
+  body.wellness-v3.about-page .about-reasons,
+  body.wellness-v3.about-page .about-specialty-grid,
+  body.wellness-v3.about-page .about-specialty-card {
+    min-width:0!important;
+    max-width:100%!important;
+    overflow-wrap:anywhere!important;
+  }
+}
+@media (max-width:360px) {
+  body.wellness-v3.home-sync .desktop-benefits .benefitgrid {
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit:last-child {
+    grid-column:auto!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit {
+    min-height:62px!important;
+  }
+}
