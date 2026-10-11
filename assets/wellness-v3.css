@@ -1373,7 +1373,7 @@ body.wellness-v3.about-page .about-layout-bio-left .about-photo>img{
 }
 /* Third floating glass badge: the two existing badges remain unchanged. */
 body.wellness-v3.home-sync .hero .hero-glass.glass-three{
- top:43%!important;bottom:auto!important;right:2.8%!important;left:auto!important;
+ top:58%!important;bottom:auto!important;right:2.8%!important;left:auto!important;
  max-width:min(310px,29%)!important;animation-delay:-1.2s!important
 }
 body.wellness-v3.home-sync .hero .hero-glass.glass-three strong{font-size:clamp(10px,1vw,13px)!important;line-height:1.34!important}
