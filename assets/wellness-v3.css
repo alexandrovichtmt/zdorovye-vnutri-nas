@@ -799,3 +799,284 @@ body.wellness-v3 .tgbar:focus-within .tg-floating span{opacity:1!important;max-w
 /* Footer background removal — final cascade override on every page */
 body .footer{background:transparent!important;background-image:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;margin-top:0!important}
 body .footer .foot,body .footer .foot b,body .footer .foot span{color:#50463b!important;text-shadow:none!important}
+
+
+/* 2026-10-11: full-person photo and mobile content-flow repair.
+ * Use original portrait dimensions (837 x 1280) so no vertical crop occurs.
+ */
+body.wellness-v3.about-page .about-layout.about-layout-bio-left {
+  width:min(1100px,calc(100% - 40px))!important;
+  max-width:1100px!important;
+  grid-template-columns:minmax(0,1.25fr) minmax(0,.80fr)!important;
+  gap:clamp(18px,3vw,42px)!important;
+  align-items:center!important;
+}
+body.wellness-v3.about-page .about-layout-bio-left .about-photo {
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:837 / 1280!important;
+  padding:0!important;
+  margin:0!important;
+  display:block!important;
+  position:relative!important;
+  overflow:hidden!important;
+  line-height:0!important;
+  border-radius:26px!important;
+  background:transparent!important;
+}
+body.wellness-v3.about-page .about-layout-bio-left .about-photo > img {
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  min-width:0!important;
+  min-height:0!important;
+  max-width:none!important;
+  max-height:none!important;
+  display:block!important;
+  object-fit:contain!important;
+  object-position:center bottom!important;
+  transform:none!important;
+  margin:0!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0!important;
+}
+@media(max-width:850px){
+  body.wellness-v3.about-page .about-layout.about-layout-bio-left {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:20px!important;
+    width:calc(100% - 28px)!important;
+  }
+  body.wellness-v3.about-page .about-layout-bio-left .about-photo {
+    max-width:min(100%,380px)!important;
+    justify-self:center!important;
+    margin-inline:auto!important;
+  }
+}
+/* Homepage feature strip and category cards have their own row and natural height. */
+@media(max-width:840px){
+  body.wellness-v3.home-sync .hero > .mobile-benefits{display:none!important}
+  body.wellness-v3.home-sync .desktop-benefits {
+    display:block!important;
+    position:relative!important;
+    inset:auto!important;
+    transform:none!important;
+    float:none!important;
+    clear:both!important;
+    z-index:1!important;
+    width:calc(100% - 28px)!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:16px auto 12px!important;
+    padding:0!important;
+    overflow:visible!important;
+    background:transparent!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .wrap {
+    display:block!important;
+    width:100%!important;
+    max-width:none!important;
+    height:auto!important;
+    padding:0!important;
+    margin:0!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefitgrid {
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-auto-rows:auto!important;
+    gap:9px!important;
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    background:transparent!important;
+    align-items:stretch!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit {
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    text-align:left!important;
+    gap:10px!important;
+    box-sizing:border-box!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:64px!important;
+    min-width:0!important;
+    padding:10px 12px!important;
+    margin:0!important;
+    border:1px solid #ead6bf!important;
+    border-radius:17px!important;
+    background:rgba(255,251,246,.9)!important;
+    overflow:visible!important;
+    animation:none!important;
+    opacity:1!important;
+    transform:none!important;
+    filter:none!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit:last-child {
+    grid-column:1 / -1!important;
+    border:1px solid #ead6bf!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit-icon,
+  body.wellness-v3.home-sync .desktop-benefits .premium-svg {
+    display:block!important;
+    flex:0 0 26px!important;
+    width:26px!important;
+    height:26px!important;
+    margin:0!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit-label {
+    display:block!important;
+    flex:1!important;
+    min-width:0!important;
+    max-width:none!important;
+    font-size:clamp(11px,1.65vw,14px)!important;
+    line-height:1.35!important;
+    font-weight:600!important;
+    white-space:normal!important;
+    overflow-wrap:break-word!important;
+    word-break:normal!important;
+    text-align:left!important;
+    margin:0!important;
+  }
+  body.wellness-v3.home-sync .home-category-tabs{
+    position:relative!important;
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:9px!important;
+    clear:both!important;
+    width:calc(100% - 28px)!important;
+    height:auto!important;
+    margin:12px auto!important;
+    padding:0!important;
+    overflow:visible!important;
+    scroll-snap-type:none!important;
+  }
+  body.wellness-v3.home-sync .home-category-tabs a{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+    min-width:0!important;
+    min-height:42px!important;
+    flex:auto!important;
+    padding:10px 8px!important;
+    white-space:normal!important;
+    font-size:12px!important;
+    line-height:1.35!important;
+    overflow-wrap:break-word!important;
+  }
+  body.wellness-v3.home-sync .home-category-tabs a:last-child:nth-child(odd){
+    grid-column:1 / -1!important;
+  }
+  body.wellness-v3.home-sync .topicgrid{
+    position:relative!important;
+    clear:both!important;
+    width:100%!important;
+    margin:0!important;
+    gap:12px!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic{
+    min-width:0!important;
+    grid-column:span 1!important;
+    min-height:235px!important;
+    height:250px!important;
+    position:relative!important;
+    overflow:hidden!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic:first-child,
+  body.wellness-v3.home-sync .topicgrid .topic.topic-community{
+    grid-column:1 / -1!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topiccopy{
+    box-sizing:border-box!important;
+    position:absolute!important;
+    inset:auto 65px 13px 13px!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:auto!important;
+    padding:12px 13px!important;
+    border-radius:16px!important;
+    overflow:visible!important;
+    overflow-wrap:break-word!important;
+    white-space:normal!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topiccopy h3{
+    font-size:clamp(17px,2.7vw,23px)!important;
+    line-height:1.2!important;
+    margin:0 0 6px!important;
+    overflow-wrap:break-word!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topiccopy p{
+    font-size:clamp(11px,1.5vw,13px)!important;
+    line-height:1.35!important;
+    margin:0!important;
+    overflow-wrap:break-word!important;
+    white-space:normal!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topic-arrow{
+    right:12px!important;
+    bottom:12px!important;
+    width:38px!important;
+    height:38px!important;
+    z-index:4!important;
+  }
+  body.wellness-v3.home-sync .hero + .desktop-benefits + .home-category-tabs + .section,
+  body.wellness-v3.home-sync .home-category-tabs + .section{
+    position:relative!important;
+    clear:both!important;
+    margin-top:0!important;
+    padding-top:18px!important;
+  }
+}
+@media(max-width:620px){
+  body.wellness-v3.home-sync .topicgrid{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic:nth-child(n){
+    grid-column:1 / -1!important;
+    height:235px!important;
+    min-height:225px!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic.topic-community{
+    min-height:185px!important;
+    height:185px!important;
+  }
+  body.wellness-v3.home-sync .topicgrid .topic .topiccopy {
+    inset:auto 69px 14px 14px!important;
+    padding:13px 15px!important;
+  }
+  body.wellness-v3.home-sync .desktop-benefits .benefit-label{
+    font-size:clamp(11px,3vw,13px)!important;
+  }
+}
+@media(max-width:365px){
+  body.wellness-v3.home-sync .desktop-benefits .benefit{gap:7px!important;padding:9px 8px!important}
+  body.wellness-v3.home-sync .desktop-benefits .benefit-icon,
+  body.wellness-v3.home-sync .desktop-benefits .premium-svg{flex-basis:22px!important;width:22px!important;height:22px!important}
+  body.wellness-v3.home-sync .desktop-benefits .benefit-label{font-size:11px!important}
+}
+/* Keep responsive content inside its own column on narrow devices. */
+@media(max-width:620px){
+  body.wellness-v3 :is(.wrap,.split,.cards,.ctaBox,.healthbox,.about-reasons,
+    .about-specialty-grid,.gut-step-grid,.child-path-grid){
+    min-width:0!important;
+    max-width:100%!important;
+  }
+  body.wellness-v3 :is(.card,.new-info-card,.child-visual-card,.gut-step,
+    .about-specialty-card,.about-reasons-action,.ctaBox) {
+    min-width:0!important;
+    overflow-wrap:break-word!important;
+  }
+}
