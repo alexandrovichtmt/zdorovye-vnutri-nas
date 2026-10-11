@@ -661,13 +661,13 @@ body.wellness-v3 .checkup-section .checkup-top h2 em {
     inset:auto!important;
     top:50%!important;
     left:50%!important;
-    width:24px!important;
-    height:18px!important;
+    width:18px!important;
+    height:13px!important;
     transform:translate(-50%,-50%)!important;
     background:
-      linear-gradient(#102019,#102019) center top / 24px 2.5px no-repeat,
-      linear-gradient(#102019,#102019) center center / 24px 2.5px no-repeat,
-      linear-gradient(#102019,#102019) center bottom / 24px 2.5px no-repeat!important;
+      linear-gradient(#102019,#102019) center top / 18px 1.5px no-repeat,
+      linear-gradient(#102019,#102019) center center / 18px 1.5px no-repeat,
+      linear-gradient(#102019,#102019) center bottom / 18px 1.5px no-repeat!important;
     border:0!important;
     border-radius:0!important;
     font-size:0!important;
@@ -676,8 +676,8 @@ body.wellness-v3 .checkup-section .checkup-top h2 em {
   }
   body .nav .menu[aria-expanded="true"]::after{
     background:
-      linear-gradient(45deg,transparent 43%,#102019 43%,#102019 56%,transparent 56%) center / 24px 24px no-repeat,
-      linear-gradient(-45deg,transparent 43%,#102019 43%,#102019 56%,transparent 56%) center / 24px 24px no-repeat!important;
+      linear-gradient(45deg,transparent 43%,#102019 43%,#102019 56%,transparent 56%) center / 18px 18px no-repeat,
+      linear-gradient(-45deg,transparent 43%,#102019 43%,#102019 56%,transparent 56%) center / 18px 18px no-repeat!important;
   }
 }
 
@@ -865,4 +865,124 @@ body.wellness-v3 :is(.services-hero .services-portrait,.editorial-visual,
   font-size:clamp(24px,6.2vw,29px)!important}
  body.wellness-v3.home-sync .child-teaser-inner h2{
   font-size:clamp(24px,6.8vw,30px)!important}
+}
+
+
+/* SITE GRID UNIFICATION v10 — consistent outer bounds on every tab.
+   The section's .wrap is the outer grid, never the padding of an individual
+   card; full-width card shells use the very same outer bounds. */
+body.wellness-v3{
+ --site-grid-max:1340px;
+ --site-grid-gutter:24px;
+ --site-grid-card-inset:clamp(24px,3.1vw,44px);
+}
+body.wellness-v3 :is(
+ .section,.pageHero,.new-page-hero,.gut-hero,.child-hero,.community-hero,
+ .iron-section,.about-scope,.about-profile-extra,.child-materials,
+ .gut-journal,.gut-care,.gut-protocol,.gut-explainer,.gut-food-comparison,
+ .recipe-library
+)> .wrap,
+body.wellness-v3 main.wrap{
+ width:min(var(--site-grid-max),calc(100% - var(--site-grid-gutter) - var(--site-grid-gutter)))!important;
+ max-width:var(--site-grid-max)!important;
+ box-sizing:border-box!important;
+ margin-left:auto!important;
+ margin-right:auto!important;
+ min-width:0!important;
+}
+body.wellness-v3.home-sync :is(
+ .child-home-teaser>.wrap.child-teaser-inner,
+ .gut-home-teaser>.wrap.gut-teaser-inner,
+ .unified-wellness-section>.wrap.unified-wellness-card
+){
+ width:min(var(--site-grid-max),calc(100% - var(--site-grid-gutter) - var(--site-grid-gutter)))!important;
+ max-width:var(--site-grid-max)!important;
+ margin-left:auto!important;
+ margin-right:auto!important;
+ padding:var(--site-grid-card-inset)!important;
+ box-sizing:border-box!important;
+ min-width:0!important;
+}
+/* Ensure inner text starts a matching distance from each card edge. */
+body.wellness-v3.home-sync :is(
+ .child-teaser-inner,.gut-teaser-inner,.unified-wellness-card
+)>div{
+ min-width:0!important;
+ box-sizing:border-box!important;
+}
+body.wellness-v3.home-sync :is(
+ .child-teaser-inner,.gut-teaser-inner,.unified-wellness-card
+) :is(h2,h3,p){
+ max-width:100%!important;
+ overflow-wrap:break-word!important;
+ word-break:normal!important;
+}
+body.wellness-v3 .section>.wrap:not(
+ .child-teaser-inner,.gut-teaser-inner,.unified-wellness-card,
+ .ctaBox,.gut-care-box,.gut-journal-panel
+){
+ padding-left:0!important;
+ padding-right:0!important;
+}
+body.wellness-v3 :is(
+ .section .cards,.nutrition-basics-cards,.services-contact-cards,
+ .gut-compare-grid,.child-path-grid,.child-materials-grid,
+ .community-grid,.recipe-library-grid,.gut-step-grid,.checkup-grid
+){
+ max-width:100%!important;
+ min-width:0!important;
+ box-sizing:border-box!important;
+ margin-left:0!important;
+ margin-right:0!important;
+}
+body.wellness-v3 :is(.section,.gut-care,.gut-journal)>.wrap:where(
+ .ctaBox,.gut-care-box,.gut-journal-panel
+){
+ padding:var(--site-grid-card-inset)!important;
+}
+body.wellness-v3 .services-contact{
+ width:100%!important;
+ max-width:100%!important;
+ min-width:0!important;
+ padding:var(--site-grid-card-inset)!important;
+ box-sizing:border-box!important;
+ margin-inline:0!important;
+}
+body.wellness-v3 .services-hero,
+body.wellness-v3 .services-contact-head,
+body.wellness-v3 .services-contact-cards{
+ width:100%!important;
+ max-width:100%!important;
+ box-sizing:border-box!important;
+}
+/* Text never pushes a block beyond the shared grid. */
+body.wellness-v3 :is(
+ .section,.services-contact,.community-access-panel,.child-path-card,
+ .nutrition-basics-cards,.community-card,.gut-step,.gut-compare-card
+) :is(h1,h2,h3,h4,p){
+ max-width:100%!important;
+ overflow-wrap:break-word!important;
+}
+@media(max-width:840px){
+ body.wellness-v3{--site-grid-gutter:14px;--site-grid-card-inset:22px}
+ body.wellness-v3.home-sync :is(
+  .child-home-teaser>.wrap.child-teaser-inner,
+  .gut-home-teaser>.wrap.gut-teaser-inner,
+  .unified-wellness-section>.wrap.unified-wellness-card
+ ){
+  width:calc(100% - 28px)!important;
+  max-width:calc(100% - 28px)!important;
+  padding:22px!important;
+ }
+ body.wellness-v3.home-sync .child-teaser-inner>a.btn{
+  max-width:100%!important;
+ }
+}
+@media(max-width:430px){
+ body.wellness-v3{--site-grid-gutter:14px;--site-grid-card-inset:19px}
+ body.wellness-v3.home-sync :is(
+  .child-home-teaser>.wrap.child-teaser-inner,
+  .gut-home-teaser>.wrap.gut-teaser-inner,
+  .unified-wellness-section>.wrap.unified-wellness-card
+ ){padding:19px!important}
 }
