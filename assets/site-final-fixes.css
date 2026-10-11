@@ -289,3 +289,9 @@ body.wellness-v3 .services-contact-photo img{
   object-fit:contain!important;
   object-position:center center!important;
 }
+
+/* Consistent left alignment and inner gutters across editorial sections. */
+:root{--site-content-gutter:clamp(20px,3.2vw,52px)}
+body.wellness-v3 :is(.section,.about-profile-extra,.about-scope,.community-intro,.community-access,.child-path,.gut-intro,.gut-mechanisms,.services-section) > .wrap{box-sizing:border-box;padding-inline:var(--site-content-gutter)!important}
+body.wellness-v3 :is(.about-reasons,.about-scope-intro,.about-scope-grid,.community-access-panel,.community-grid,.services-contact-head,.services-contact-cards){box-sizing:border-box}
+@media(max-width:760px){:root{--site-content-gutter:18px}}
