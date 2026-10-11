@@ -1,7 +1,7 @@
 /* Adaptive multipage navigation & progressive design enhancements.
    All business content, existing checks, supplements and recipe data stay untouched. */
 (()=>{"use strict";
-const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"],["community.html","Комьюнити"],["courses.html","Курсы"],["blog.html","Блог"],["contacts.html","Контакты"]];
+const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"],["community.html","Комьюнити"],["blog.html","Блог"],["contacts.html","Контакты"]];
 const all=desktop;
 const page=location.pathname.split("/").pop()||"index.html";
 const nav=document.querySelector(".nav"),inNav=nav?.querySelector(".navin");
