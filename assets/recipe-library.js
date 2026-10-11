@@ -9,20 +9,37 @@ document.querySelectorAll("[data-recipe-library]").forEach(root=>{
    '<div class="recipe-library-grid">'+recipes.map(([file,title,label,category,ingredients,steps],i)=>{
      const fileUrl=encodeURI(file);
      return '<article class="recipe-library-card" data-recipe-category="'+safe(category)+'">'+
-       '<div class="recipe-library-media"><img loading="lazy" decoding="async" src="'+fileUrl+'" alt="Рецептурная карточка: '+safe(title)+'" width="1320" />'+
+       '<div class="recipe-library-media"><a href="'+fileUrl+'" data-recipe-zoom="'+safe(title)+'" target="_blank" rel="noopener noreferrer" aria-label="Увеличить рецепт: '+safe(title)+'"><img loading="lazy" decoding="async" src="'+fileUrl+'" alt="Рецептурная карточка: '+safe(title)+'" width="1320" /></a>'+
        '<span class="recipe-library-number">'+String(i+1).padStart(2,'0')+'</span></div>'+
-       '<div class="recipe-library-content"><span class="recipe-library-type">'+safe(label)+'</span><h3>'+safe(title)+'</h3>'+
+       '<div class="recipe-library-content"><span class="recipe-library-type">'+safe(label)+'</span><h3><a href="'+fileUrl+'" data-recipe-zoom="'+safe(title)+'" target="_blank" rel="noopener noreferrer">'+safe(title)+'</a></h3>'+
        '<details class="recipe-library-details"><summary>Показать подробный рецепт <span aria-hidden="true">⌄</span></summary>'+
        '<div class="recipe-library-detail-text"><h4>Ингредиенты</h4><ul>'+ingredients.map(x=>'<li>'+safe(x)+'</li>').join('')+'</ul>'+
        '<h4>Способ приготовления</h4><ol>'+steps.map(x=>'<li>'+safe(x)+'</li>').join('')+'</ol>'+
        '<a href="'+fileUrl+'" target="_blank" rel="noopener noreferrer" class="recipe-library-original">Открыть исходную HD-карточку ↗</a></div></details></div></article>';
    }).join('')+'</div>'+
-   '<p class="recipe-library-disclaimer">Карточки и рецепты носят информационный характер. Не все блюда автоматически подходят для строгой low-FODMAP диеты: переносимость зависит от состава, размера порции и индивидуальных особенностей. Отдельные названия и шаги уточнены для безопасности приготовления.</p>';
+   '';
   const cards=[...root.querySelectorAll('[data-recipe-category]')];
   root.querySelectorAll('[data-recipe-filter]').forEach(btn=>btn.addEventListener('click',()=>{
     const cat=btn.getAttribute('data-recipe-filter');
     root.querySelectorAll('[data-recipe-filter]').forEach(b=>{const on=b===btn;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
     cards.forEach(c=>{c.hidden=cat!=='all'&&c.getAttribute('data-recipe-category')!==cat;});
   }));
+});
+
+/* Full-resolution recipe viewer; supports keyboard and close controls. */
+const viewer=document.createElement("div");viewer.className="recipe-image-viewer";viewer.hidden=true;
+viewer.setAttribute("role","dialog");viewer.setAttribute("aria-modal","true");viewer.setAttribute("aria-label","Просмотр карточки рецепта");
+viewer.innerHTML='<button type="button" aria-label="Закрыть">×</button><img alt=""><span class="viewer-title"></span>';
+document.body.append(viewer);const image=viewer.querySelector("img"),label=viewer.querySelector(".viewer-title"),closeButton=viewer.querySelector("button");
+let lastFocus=null;
+function closeViewer(){viewer.hidden=true;image.removeAttribute("src");document.body.style.overflow="";if(lastFocus)lastFocus.focus()}
+closeButton.addEventListener("click",closeViewer);
+viewer.addEventListener("click",e=>{if(e.target===viewer)closeViewer()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!viewer.hidden)closeViewer()});
+document.addEventListener("click",e=>{
+ const link=e.target.closest("a[data-recipe-zoom]");
+ if(!link)return;e.preventDefault();lastFocus=link;
+ image.src=link.href;image.alt=link.getAttribute("data-recipe-zoom")||"Рецепт";
+ label.textContent=image.alt;viewer.hidden=false;document.body.style.overflow="hidden";closeButton.focus();
 });
 })();

@@ -1,13 +1,8 @@
 /* Adaptive multipage navigation & progressive design enhancements.
    All business content, existing checks, supplements and recipe data stay untouched. */
 (()=>{"use strict";
-const desktop=[
- ["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],
- ["supplements.html","БАДы"],["labs.html","Анализы"],["recipes.html","Рецепты"],["courses.html","Курсы"]];
-const secondary=[
- ["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"],
- ["community.html","Комьюнити"],["blog.html","Блог"],["contacts.html","Контакты"]];
-const all=[...desktop,...secondary];
+const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"],["community.html","Комьюнити"],["courses.html","Курсы"],["blog.html","Блог"],["contacts.html","Контакты"]];
+const all=desktop;
 const page=location.pathname.split("/").pop()||"index.html";
 const nav=document.querySelector(".nav"),inNav=nav?.querySelector(".navin");
 const anchors=arr=>arr.map(([file,label])=>'<a href="'+file+'"'+(file===page?' aria-current="page"':'')+'>'+label+'</a>').join("");
@@ -15,13 +10,8 @@ if(nav&&inNav){
  const oldLinks=inNav.querySelector(".links");
  if(oldLinks){
    const panel=document.createElement("div");panel.className="links";panel.setAttribute("aria-label","Основное меню");
-   panel.innerHTML=anchors(desktop)+'<div class="more-shell"><button class="more-trigger" type="button" aria-haspopup="true" aria-expanded="false">Ещё <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button><div class="more-menu">'+anchors(secondary)+'</div></div>';
+   panel.innerHTML=anchors(desktop);
    oldLinks.replaceWith(panel);
-   const shell=panel.querySelector(".more-shell"),trigger=panel.querySelector(".more-trigger");
-   const closeMore=()=>{shell.classList.remove("open");trigger.setAttribute("aria-expanded","false")};
-   trigger.addEventListener("click",ev=>{ev.stopPropagation();const on=shell.classList.toggle("open");trigger.setAttribute("aria-expanded",String(on))});
-   document.addEventListener("pointerdown",e=>{if(!shell.contains(e.target))closeMore()});
-   document.addEventListener("keydown",e=>{if(e.key==="Escape")closeMore()});
  }
  const menu=inNav.querySelector(".menu");
  if(menu){
@@ -52,7 +42,7 @@ if(document.body.classList.contains("home-sync")){
  if(benefits&&!document.querySelector(".home-category-tabs")){
   const tabs=document.createElement("nav");tabs.className="home-category-tabs";
   tabs.setAttribute("aria-label","Популярные разделы");
-  tabs.innerHTML=anchors([["nutrition.html","Питание"],["labs.html","Анализы"],["supplements.html","БАДы"],["recipes.html","Рецепты"],["child-health.html","Детское здоровье"]]);
+  tabs.innerHTML=anchors([["nutrition.html","Питание"],["labs.html","Анализы"],["supplements.html","БАДы"],["child-health.html","Детское здоровье"]]);
   benefits.insertAdjacentElement("afterend",tabs);
  }
  const grid=document.querySelector(".topicgrid");
@@ -64,7 +54,7 @@ if(document.body.classList.contains("home-sync")){
 }
 if(document.body.classList.contains("child-health-page")){
  const first=document.getElementById("child-materials");
- if(first&&!document.querySelector(".child-guide")){
+ if(first&&!document.querySelector(".child-guide")&&!document.querySelector(".child-path")){
   const section=document.createElement("section");section.className="child-guide";section.id="child-guide";
   section.innerHTML='<div class="wrap"><div class="child-guide-head reveal"><span class="child-eyebrow">Знакомство с памятками</span><h2>Как пользоваться материалами</h2><p>В этом разделе — обучающие карточки о нутриентах и возрасте. Они помогают понять тему, но не являются готовой схемой приёма препаратов для ребёнка.</p></div><div class="child-guide-steps"><article class="child-guide-step reveal"><span class="child-guide-number">01</span><h3>Изучите состав</h3><p>Посмотрите, какие нутриенты упоминаются и для чего они нужны. Уточните пищевые источники и показания.</p></article><article class="child-guide-step reveal"><span class="child-guide-number">02</span><h3>Учитывайте возраст</h3><p>Возрастные таблицы в иллюстрациях — примеры, а не рекомендации для каждого ребёнка. Учитываются рацион, диагнозы и лекарства.</p></article><article class="child-guide-step reveal"><span class="child-guide-number">03</span><h3>Обсудите с врачом</h3><p>Перед приёмом витаминов и других добавок согласуйте необходимость, форму и дозировку с педиатром.</p></article></div><div class="child-guide-callout"><strong>Важно:</strong> в период роста самостоятельный подбор нескольких добавок сразу может быть нежелателен. Сначала определите вместе с врачом, есть ли показания.</div></div>';
   first.parentNode.insertBefore(section,first);
