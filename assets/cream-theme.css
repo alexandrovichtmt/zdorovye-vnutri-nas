@@ -1,0 +1,118 @@
+/* Global warm-cream palette, site-wide. Previous legacy green accents are superseded without recoloring photographs. */
+:root{
+ --cream:#fffaf4;--cream-soft:#f8f0e7;--cream-deep:#f0e1d2;--cream-card:#fffcf7;
+ --sand:#dfc6ac;--champagne:#b89877;--taupe:#705a49;--ink:#49382d;--text:#6c5c4e;--line:#e7d9c9;
+}
+html{background:var(--cream)}
+body,body.home-sync,body.gut-health-page,body.child-health-page,body.iron-questionnaire-page,body.about-page,
+body.community-page,body.courses-page,body:has(.new-page-hero){
+ background:linear-gradient(130deg,#fffaf5 0%,#fbf5ed 36%,#f4e9dd 69%,#fffaf4 100%)!important;
+ color:var(--ink)!important;
+}
+body .nav{background:#fff8f0f0!important;border-bottom:1px solid #c7ab8d36!important;backdrop-filter:blur(16px)}
+body .brand,body .brand small,body .links a,body .menu{color:#5d4939!important}
+body .links a:hover{color:#b08b66!important}
+body .btn,body .navcta,body .actions .btn,body .btn.primary,body button.btn,body .tgbar .btn{
+ background:linear-gradient(129deg,#c1a07e,#947056)!important;color:#fffaf4!important;
+ border:1px solid #ab8666!important;box-shadow:none;
+}
+body .btn:hover,body .tgbar .btn:hover{box-shadow:0 13px 27px #84644a38!important}
+body .btn-outline,body a.btn-outline{background:#fff9f3f0!important;color:#8a6b53!important;border:1px solid #ccb296!important}
+body .pageHero,body .new-page-hero,body .gut-hero,body .child-hero,body .iron-hero{
+ background:radial-gradient(ellipse at 90% 12%,#ead7c250,transparent 40%),linear-gradient(115deg,#fffaf4,#f0e2d3 67%,#f8efe6)!important;
+ border-color:var(--line)!important;
+}
+body .hero{background:linear-gradient(110deg,#fbf5ec,#f1e5d7 65%,#e8d5c2)!important}
+body .hero:after{background:linear-gradient(90deg,#fffaf4fa,#fbf5eae5 33%,#fffaf40d 67%)!important}
+body h1,body h2,body h3,body h4,body .hero h1,body .pageHero h1,
+body .content h2,body .new-page-hero h1,body .new-info-card h2{
+ color:var(--ink)!important;
+}
+body .hero h1 span,body .gut-hero h1 span,body .child-hero h1 span,
+body .community-hero h1 span{color:#a58369!important}
+body .hero .lead,body .hero p,body .pageHero p,body .content p,body .new-info-card p,
+body .topiccopy p,body .gut-headline p,body .new-center p,body .section p{
+ color:#726255;
+}
+body .section.soft,body .soft,body .gut-protocol,body .gut-recipe-section,body .gut-foods,
+body .child-materials,body .child-registration,body .community-formats{
+ background:linear-gradient(135deg,#f9f0e6,#f4e7d8 52%,#fffbf5)!important;
+}
+body .card,body .new-info-card,body .new-info-card.new-green,body .new-info-card.new-sand,
+body .gut-step,body .gut-recipe,body .child-visual-card,body .checkup-group,
+body .iron-survey,body .recipe-library-card{
+ background:linear-gradient(148deg,#fffefa,#faf2e9)!important;
+ border-color:#e9d8c6!important;
+ box-shadow:0 16px 44px #694e3710;
+}
+body .card h3,body .new-info-card h2,body .new-center h2,body .gut-step h3,body .child-card-copy h3,
+body .checkup-group-header h3,body .gut-recipe-content h3{color:#594334!important}
+body .topic:after{background:linear-gradient(transparent,#392719e6)!important}
+body .benefits,body .benefitgrid,body .benefit,body .mobile-benefits{
+ background:#fff7eff0!important;border-color:#d4bba344!important;color:#7b614a!important
+}
+body .benefit-label,body .benefit strong{color:#6b513e!important}
+body .hero .feature-icon,body .new-info-card .new-symbol,
+body .gut-step-number,body .checkup-group-num,body .new-eyebrow,body .new-kicker,
+body .gut-kicker,body .child-eyebrow,body .iron-eyebrow,body .nutrient-eyebrow{
+ color:#9d7b60!important;
+}
+body .new-info-card .new-symbol{background:linear-gradient(139deg,#fbf1e6,#e9d2b8)!important;border-color:#e6cbb0!important}
+body .new-info-card li::before{color:#ba9270!important}
+body .gut-hero-visual,body .child-hero-art,body .gut-journal-panel,
+body .child-teaser-inner,body .gut-teaser-inner,
+body .gut-protocol-note,body .gut-journal-tips div,
+body .checkup-toolbar,body .checkup-bottom{
+ background:linear-gradient(122deg,#fff9f1,#ecd8c3)!important;border-color:#e4d0bb!important;color:#6e543f!important
+}
+body .gut-hero-leaf,body .child-art-mark{color:#c1a080!important}
+body .gut-hero-ring{border-color:#c0a185!important;box-shadow:0 0 0 20px #e2d0bd50!important}
+body .gut-step-number{color:#bda187!important}
+body .gut-food-matrix,body .nutrient-matrix-frame{background:#fffaf4!important;border-color:#e2ceba!important}
+body .gut-food-table-head,body .nutrient-matrix-table .nutrient-labels-head th,
+body .nutrient-matrix-table .nutrient-groups th:not(:first-child),
+body .iron-table thead,body .iron-progress-track{
+ background:#f0e1cf!important;color:#725742!important
+}
+body .gut-food-name,body .gut-food-swap,body .nutrient-matrix-table tbody .nutrient-row-name{color:#7c6049!important}
+body .gut-filters button,body .recipe-library-filters button,
+body .iron-reset,body .checkup-clear{color:#88684f!important;background:#fffaf4!important;border-color:#d9bda0!important}
+body .gut-filters button.is-current,body .recipe-library-filters button.active,
+body .iron-option input:checked+span{
+ background:#9e7b5f!important;color:#fff9f0!important;border-color:#9e7b5f!important
+}
+body .checkup-section{background:linear-gradient(120deg,#fffaf4,#f4e5d6)!important}
+body .checkup-top h2,body .checkup-top h2 em,body .checkup-group-header h3,
+body .checkup-item-body strong{color:#614a38!important}
+body .checkup-group-header{background:linear-gradient(110deg,#f8efE5,#efe1d1)!important}
+body .checkup-item:has(input:checked){background:#f6e7d8!important}
+body .checkup-item input:checked+.checkup-checkmark{background:#aa886a!important;border-color:#aa886a!important}
+body .checkup-checkmark{border-color:#c9ad92!important}
+body .checkup-caution,body .checkup-medical-note,body .iron-disclaimer,body .nutrient-caveat,
+body .child-important,body .gut-care-box{
+ background:#fbf1e6!important;border-color:#cbae90!important;color:#776352!important
+}
+body .iron-scale{background:#f6ebdd!important}
+body .iron-scale b{color:#8b6c51!important;border-color:#d8c1a7!important;background:#fff9f3!important}
+body .iron-option span{color:#8c6b52;border-color:#dfcbb7}
+body .iron-question-number{background:#f5e6d5!important;color:#9d7d5c!important}
+body #iron-progress-fill{background:linear-gradient(90deg,#dabda0,#9a795c)!important}
+body .iron-result{background:linear-gradient(125deg,#f7e7d3,#fffaf4)!important;border-color:#d9c2a8!important}
+body .iron-result h2,body .iron-result strong{color:#6d533e!important}
+body .iron-result-advice{border-color:#c9a27e!important}
+body .iron-preview-card,body .child-register-card{
+ background:linear-gradient(125deg,#bfa082,#8b6a52)!important;color:#fffaf4!important
+}
+body .iron-preview-card h2,body .child-register-card h2{color:#fffaf4!important}
+body .iron-preview-card p,body .child-register-card p{color:#fff7ed!important}
+body .iron-preview-card>.btn,body .child-register-button{background:#fff8ed!important;color:#7d5c44!important}
+body .nutrient-matrix-table .is-compatible .nutrient-dot,body .nutrient-legend .is-compatible{background:#b99569!important}
+body .nutrient-matrix-table .is-neutral .nutrient-dot,body .nutrient-legend .is-neutral{background:#c8bfb3!important}
+body .nutrient-matrix-table .is-incompatible .nutrient-dot,body .nutrient-legend .is-incompatible{background:#c8766b!important}
+body .footer{background:linear-gradient(115deg,#f3e6d7,#fbf2e8)!important;border-top:1px solid #e4ceba!important;color:#6b5342!important}
+body .foot{color:#6b5342!important}
+body .nav.open .links{background:#fff8f0!important}
+body .modal-panel{background:#fffaf4!important;border-color:#e0cdbb!important;color:#594334!important}
+body .modal-close{color:#9b7759!important}
+body :is(a,button,input,summary):focus-visible{outline-color:#a88868;outline-offset:3px}
+@media(max-width:720px){body .hero:after{background:linear-gradient(180deg,#fff9f109,transparent,#fff8efc9)!important}}
