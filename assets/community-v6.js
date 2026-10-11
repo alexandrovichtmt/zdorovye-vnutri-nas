@@ -6,7 +6,7 @@ if(!choices.length||!panel||!body||!image)return;
 const photos=[
 ["https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=86","images/community-care.svg"],
 ["https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=86","images/community-self.svg"],
-["https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=86","images/community-courses.svg"]
+["%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5.PNG","images/community-courses.svg"]
 ];
 const bullet=(icon,title,desc)=>'<div class="community-detail-bullet"><span class="detail-icon" aria-hidden="true">'+icon+'</span><div><strong>'+title+'</strong><small>'+desc+'</small></div></div>';
 const entries=[
