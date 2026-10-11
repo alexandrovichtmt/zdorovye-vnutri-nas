@@ -1022,3 +1022,66 @@ body.wellness-v3 .gut-journal-panel > div{
     padding-inline:22px!important;
   }
 }
+
+
+/* Shared back-to-top arrow above Telegram. 50% transparent at rest. */
+body.wellness-v3 .back-to-top-btn{
+  position:fixed!important;
+  z-index:191!important;
+  right:calc(clamp(15px,3vw,35px) + 4px)!important;
+  bottom:calc(clamp(17px,3vw,34px) + 68px)!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:none!important;
+  width:46px!important;
+  height:46px!important;
+  margin:0!important;
+  padding:0!important;
+  border-radius:50%!important;
+  border:1px solid rgba(255,255,255,.95)!important;
+  background:rgba(255,251,244,.85)!important;
+  color:#15251e!important;
+  -webkit-text-fill-color:#15251e!important;
+  box-shadow:0 7px 20px rgba(48,36,28,.16)!important;
+  backdrop-filter:blur(13px)!important;
+  -webkit-backdrop-filter:blur(13px)!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translateY(8px)!important;
+  transition:opacity .23s ease,transform .23s ease,visibility .23s ease!important;
+  cursor:pointer!important;
+  -webkit-tap-highlight-color:transparent;
+}
+body.wellness-v3 .back-to-top-btn.is-visible{
+  opacity:.5!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transform:translateY(0)!important;
+}
+body.wellness-v3 .back-to-top-btn.is-visible:is(:hover,:focus-visible){
+  opacity:.92!important;
+  transform:translateY(-2px)!important;
+}
+body.wellness-v3 .back-to-top-btn svg{
+  display:block!important;
+  width:23px!important;
+  height:23px!important;
+  flex:none!important;
+  stroke:currentColor!important;
+  fill:none!important;
+}
+@media(max-width:760px){
+  body.wellness-v3 .back-to-top-btn{
+    right:16px!important;
+    bottom:79px!important;
+    width:46px!important;
+    height:46px!important;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.wellness-v3 .back-to-top-btn{
+    transition:none!important;
+  }
+}
