@@ -290,13 +290,6 @@ body.wellness-v3 .services-contact-photo img{
   object-position:center center!important;
 }
 
-/* Consistent left alignment and inner gutters across editorial sections. */
-:root{--site-content-gutter:clamp(20px,3.2vw,52px)}
-body.wellness-v3 :is(.section,.about-profile-extra,.about-scope,.community-intro,.community-access,.child-path,.gut-intro,.gut-mechanisms,.services-section) > .wrap{box-sizing:border-box;padding-inline:var(--site-content-gutter)!important}
-body.wellness-v3 :is(.about-reasons,.about-scope-intro,.about-scope-grid,.community-access-panel,.community-grid,.services-contact-head,.services-contact-cards){box-sizing:border-box}
-@media(max-width:760px){:root{--site-content-gutter:18px}}
-
-
 /* Premium pearl portrait avatar in Community personal invitation CTA.
    Reuses the approved avatar.png, no duplicated / remade artwork. */
 body.wellness-v3.community-page .community-access-action .community-access-circle.community-access-avatar{
@@ -522,24 +515,6 @@ body.wellness-v3.about-page .about-layout-bio-left .about-photo > img {
 }
 
 
-/* 2026-10-11 audited: align actual section container edges, not the inner
-   card content. Earlier shared inset increased the left offset by 20–52px. */
-body.wellness-v3 :is(.section,.about-profile-extra,.about-scope,.community-intro,.community-access,.child-path,.gut-intro,.gut-mechanisms,.services-section) > .wrap {
-  padding-inline:0!important;
-}
-body.wellness-v3.nutrition-page :is(.gut-hero,.nutrition-basics,.gut-intro,.gut-protocol,.gut-explainer,.gut-food-comparison,.gut-recipe-section,.recipe-library,.gut-journal) > .wrap,
-body.wellness-v3.child-health-page :is(.child-hero,.child-path,.child-materials) > .wrap {
-  padding-inline:0!important;
-}
-@media(min-width:761px){
-  body.wellness-v3 :is(.child-health-page,.nutrition-page) .gut-hero-grid{
-    padding-inline:0!important;
-  }
-  body.wellness-v3.nutrition-page .nutrition-hero .gut-hero-grid,
-  body.wellness-v3.child-health-page .child-hero-grid{
-    padding-inline:0!important;
-  }
-}
 /* Keep the photos and legibility; remove only unnecessary whitespace. */
 body.wellness-v3.nutrition-page .nutrition-hero {
   padding-block:clamp(16px,2.5vw,34px)!important;
@@ -746,4 +721,148 @@ body.wellness-v3 :is(
     .gut-hero-photo-frame,
     .editorial-visual
   ){border-radius:24px!important}
+}
+
+
+/* LAYOUT REPAIR v9: restore inner padding and contain oversized typography. */
+body.wellness-v3 .section>.wrap:not(.child-teaser-inner):not(.gut-teaser-inner):not(.unified-wellness-card){padding-inline:0!important}
+body.wellness-v3.home-sync .child-home-teaser>.wrap.child-teaser-inner{
+ box-sizing:border-box!important;width:min(1340px,calc(100% - 48px))!important;
+ display:flex!important;align-items:center!important;gap:clamp(18px,3vw,38px)!important;
+ padding:clamp(26px,3.1vw,46px)!important}
+body.wellness-v3.home-sync .child-teaser-inner>div{
+ flex:1 1 0%!important;min-width:0!important;max-width:760px!important}
+body.wellness-v3.home-sync .child-teaser-inner :is(h2,p){
+ max-width:100%!important;text-align:left!important;overflow-wrap:break-word!important}
+body.wellness-v3.home-sync .child-teaser-inner h2{
+ font-size:clamp(25px,2.65vw,38px)!important;line-height:1.2!important;
+ letter-spacing:-.03em!important;margin:8px 0 12px!important}
+body.wellness-v3.home-sync .child-teaser-inner p{
+ font-size:clamp(14px,1.15vw,17px)!important;line-height:1.65!important}
+body.wellness-v3.home-sync .child-teaser-inner>a.btn{
+ flex:0 0 auto!important;max-width:min(100%,265px)!important;
+ white-space:normal!important;text-align:center!important}
+body.wellness-v3.home-sync .gut-home-teaser>.wrap.gut-teaser-inner:not(.gut-glass-preview){
+ box-sizing:border-box!important;padding:clamp(25px,3.1vw,45px)!important}
+body.wellness-v3.home-sync .gut-teaser-inner>div{min-width:0!important}
+body.wellness-v3.home-sync .gut-teaser-inner h2{
+ max-width:100%!important;font-size:clamp(25px,2.6vw,39px)!important;
+ line-height:1.2!important;overflow-wrap:break-word!important}
+body.wellness-v3.home-sync .unified-wellness-section>.wrap.unified-wellness-card{
+ box-sizing:border-box!important;width:min(1480px,calc(100% - 48px))!important;
+ max-width:1480px!important;padding:clamp(28px,3.4vw,54px)!important;
+ margin-inline:auto!important}
+body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-top{
+ grid-template-columns:minmax(0,1.02fr) minmax(0,1fr)!important;
+ gap:clamp(23px,3.5vw,52px)!important;align-items:start!important}
+body.wellness-v3.home-sync .unified-wellness-card :is(.unified-wellness-heading,
+ .unified-wellness-info,.unified-wellness-bottom,.unified-wellness-bottom>div){
+ min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
+body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-heading h2{
+ font-size:clamp(26px,2.55vw,44px)!important;line-height:1.2!important;
+ letter-spacing:-.025em!important;max-width:100%!important;
+ overflow-wrap:break-word!important;margin:0!important}
+body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-info p{
+ font-size:clamp(14px,1.2vw,18px)!important;line-height:1.62!important;
+ max-width:100%!important;margin:0 0 19px!important}
+body.wellness-v3.home-sync .unified-wellness-card .healthbox{
+ width:100%!important;min-width:0!important;
+ grid-template-columns:repeat(2,minmax(0,1fr))!important}
+body.wellness-v3.home-sync .unified-wellness-card .healthbox div{
+ min-width:0!important;max-width:100%!important;overflow-wrap:break-word!important;
+ box-sizing:border-box!important}
+body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-bottom{
+ align-items:center!important;gap:clamp(20px,2.6vw,36px)!important;
+ margin-top:clamp(22px,3vw,38px)!important;padding-top:clamp(22px,3vw,33px)!important}
+body.wellness-v3.home-sync .unified-wellness-bottom>div{
+ min-width:0!important;flex:1 1 0%!important;max-width:100%!important}
+body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-bottom h2{
+ max-width:100%!important;font-size:clamp(24px,2.12vw,37px)!important;
+ line-height:1.2!important;letter-spacing:-.027em!important;
+ overflow-wrap:break-word!important;margin:0 0 12px!important}
+body.wellness-v3.home-sync .unified-wellness-bottom>a.btn{
+ flex:0 0 auto!important;max-width:min(100%,265px)!important;
+ white-space:normal!important;text-align:center!important}
+/* Sitewide safe grid sizing and natural wrapping, never truncate text. */
+body.wellness-v3 :is(.section,.card,.info-card,.ctaBox,.services-card,
+ .community-card,.checkup-group,.services-grid,.services-contact,
+ .services-contact-head,.services-contact-cards,.child-path-grid,.gut-intro-grid,
+ .gut-hero-grid,.nutrition-basics-cards,.recipe-library-grid,.community-grid,.healthbox){
+ box-sizing:border-box!important;min-width:0!important}
+body.wellness-v3 :is(.section,.services-card,.community-card,.checkup-group)
+ :is(h1,h2,h3,h4,p,li){
+ max-width:100%!important;overflow-wrap:break-word!important;word-break:normal!important}
+body.wellness-v3 :is(.pageHero h1,.editorial-copy h1,.gut-hero-copy h1,
+ .child-hero-copy h1,.community-hero h1,.services-hero h1,.about-photo-bio h1){
+ max-width:100%!important;font-size:clamp(35px,4.6vw,67px)!important;
+ line-height:1.12!important;letter-spacing:-.035em!important;
+ overflow-wrap:break-word!important}
+body.wellness-v3 :is(.pageHero h2,.checkup-top h2,.child-path-heading h2,
+ .nutrition-basics-head h2,.gut-headline h2,.community-access-panel h2,
+ .services-contact-copy h2,.services-card h2){
+ max-width:100%!important;line-height:1.16!important;overflow-wrap:break-word!important}
+body.wellness-v3 :is(a.btn,button.btn,.checkup-copy,.checkup-clear,
+ .supplement-registration-button,.child-register-button,.iron-submit,.iron-reset){
+ box-sizing:border-box!important;max-width:100%!important;
+ white-space:normal!important;overflow-wrap:break-word!important}
+/* Contact thumbnail: original image in a truly square clipped frame. */
+body.wellness-v3 .services-contact .services-contact-head{
+ grid-template-columns:minmax(0,1.25fr) minmax(250px,340px)!important;
+ align-items:center!important;min-width:0!important}
+body.wellness-v3 .services-contact .services-contact-copy{
+ min-width:0!important;max-width:100%!important}
+body.wellness-v3 .services-contact .services-contact-photo{
+ box-sizing:border-box!important;width:min(100%,340px)!important;
+ height:auto!important;aspect-ratio:1/1!important;justify-self:center!important;
+ align-self:center!important;margin-inline:auto!important;padding:0!important;
+ overflow:hidden!important;border-radius:28px!important;background:transparent!important;
+ clip-path:inset(0 round 28px)!important}
+body.wellness-v3 .services-contact .services-contact-photo>img{
+ display:block!important;width:100%!important;height:100%!important;
+ min-height:0!important;max-height:none!important;
+ object-fit:cover!important;object-position:center center!important;
+ border-radius:28px!important;clip-path:inset(0 round 28px)!important}
+body.wellness-v3 :is(.services-hero .services-portrait,.editorial-visual,
+ .child-hero-art,.gut-hero-photo-frame,.about-layout-bio-left .about-photo){
+ overflow:hidden!important;border-radius:clamp(22px,2.4vw,30px)!important}
+@media(max-width:1100px){
+ body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-top{
+  grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+ body.wellness-v3 .services-contact .services-contact-head{
+  grid-template-columns:minmax(0,1fr) minmax(220px,300px)!important}
+}
+@media(max-width:800px){
+ body.wellness-v3.home-sync .child-home-teaser>.wrap.child-teaser-inner{
+  width:calc(100% - 32px)!important;flex-direction:column!important;
+  align-items:stretch!important;padding:25px 23px!important;gap:19px!important}
+ body.wellness-v3.home-sync .child-teaser-inner>div{
+  flex:none!important;width:100%!important;max-width:100%!important}
+ body.wellness-v3.home-sync .child-teaser-inner>a.btn{
+  width:100%!important;max-width:100%!important;justify-content:center!important}
+ body.wellness-v3.home-sync .gut-home-teaser>.wrap.gut-teaser-inner:not(.gut-glass-preview){
+  padding:25px 23px!important}
+ body.wellness-v3.home-sync .unified-wellness-section>.wrap.unified-wellness-card{
+  width:calc(100% - 32px)!important;padding:clamp(22px,5vw,32px)!important}
+ body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-bottom{
+  flex-direction:column!important;align-items:stretch!important;gap:17px!important}
+ body.wellness-v3.home-sync .unified-wellness-bottom>a.btn{
+  width:100%!important;max-width:100%!important}
+ body.wellness-v3 .services-contact .services-contact-head{
+  grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+ body.wellness-v3 .services-contact .services-contact-photo{
+  width:min(100%,325px)!important;border-radius:24px!important;
+  clip-path:inset(0 round 24px)!important}
+ body.wellness-v3 .services-contact .services-contact-photo>img{
+  border-radius:24px!important;clip-path:inset(0 round 24px)!important}
+ body.wellness-v3 :is(.pageHero h1,.editorial-copy h1,.gut-hero-copy h1,
+  .child-hero-copy h1,.community-hero h1,.services-hero h1,.about-photo-bio h1){
+  font-size:clamp(31px,7.3vw,52px)!important}
+}
+@media(max-width:430px){
+ body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-heading h2{
+  font-size:clamp(25px,7.1vw,32px)!important}
+ body.wellness-v3.home-sync .unified-wellness-card .unified-wellness-bottom h2{
+  font-size:clamp(24px,6.2vw,29px)!important}
+ body.wellness-v3.home-sync .child-teaser-inner h2{
+  font-size:clamp(24px,6.8vw,30px)!important}
 }
