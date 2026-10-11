@@ -1,7 +1,7 @@
 /* Adaptive multipage navigation & progressive design enhancements.
    All business content, existing checks, supplements and recipe data stay untouched. */
 (()=>{"use strict";
-const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"],["community.html","Комьюнити"],["blog.html","Блог"],["contacts.html","Контакты"]];
+const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"],["community.html","Комьюнити"],["blog.html","Блог"],["services.html","Услуги"],["contacts.html","Контакты"]];
 const all=desktop;
 const page=location.pathname.split("/").pop()||"index.html";
 const nav=document.querySelector(".nav"),inNav=nav?.querySelector(".navin");
@@ -31,7 +31,7 @@ if(nav&&inNav){
 if(document.body.classList.contains("home-sync")){
  const hero=document.querySelector(".hero");
  if(hero&&!hero.querySelector(".hero-glass")){
-  const cards=[["glass-one","✦","Индивидуальный подход","под ваши цели"],["glass-two","✓","Понятные рекомендации","без сложных схем"]];
+  const cards=[["glass-one","✦","Индивидуальный подход","под ваши цели"],["glass-two","✓","Понятные рекомендации","без сложных схем"],["glass-three","✦","Полное сопровождение","работа до результата"]];
   cards.forEach(([cls,icon,title,subtitle])=>{
    const card=document.createElement("div");card.className="hero-glass "+cls;
    card.innerHTML="<b aria-hidden='true'>"+icon+"</b><div><strong>"+title+"</strong><span>"+subtitle+"</span></div>";
@@ -68,6 +68,18 @@ if(document.body.classList.contains("child-health-page")){
   grid.parentNode.insertBefore(guide,grid);
  }
 }
+/* Keep arrows with the last word inside all text-only actions. */
+document.querySelectorAll("a,button,h3").forEach(node=>{
+ if(node.children.length)return;
+ const original=node.textContent.trim();
+ const parts=original.match(/^(.*?)([^\s]+)\s+([→↗↓])$/su);
+ if(!parts)return;
+ node.textContent=parts[1];
+ const joined=document.createElement("span");
+ joined.className="inline-arrow-unit";
+ joined.textContent=parts[2]+"\u00a0"+parts[3];
+ node.appendChild(joined);
+});
 const progress=document.createElement("div");progress.className="redesign-progress";progress.setAttribute("aria-hidden","true");
 document.body.append(progress);
 Object.assign(progress.style,{position:"fixed",left:"0",top:"0",height:"3px",width:"100%",zIndex:"250",pointerEvents:"none",transformOrigin:"left",background:"linear-gradient(to top, #e6b980 0%, #eacda3 100%)",transform:"scaleX(0)"});

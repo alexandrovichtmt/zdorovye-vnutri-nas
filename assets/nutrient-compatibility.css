@@ -45,3 +45,18 @@
  .nutrient-legend>span{font-size:12px}
  .nutrient-caveat{font-size:12px}
 }
+
+/* High-definition nutrient matrix: clean, saturated signal colors */
+.nutrient-matrix-frame{background:#fffefa!important;border-color:#e0c3a0!important;box-shadow:0 17px 42px rgba(95,65,29,.12)!important}
+.nutrient-matrix-table tbody .nutrient-cell{background:#fffdf8!important}
+.nutrient-matrix-table tbody tr:nth-child(even) .nutrient-cell{background:#f6f3ed!important}
+.nutrient-matrix-table .nutrient-dot{width:20px!important;height:20px!important;opacity:1!important;filter:none!important;box-shadow:0 1px 2px rgba(54,40,24,.2),inset 0 1px 1px rgba(255,255,255,.3)!important}
+.nutrient-matrix-table .is-compatible .nutrient-dot,.nutrient-legend .is-compatible{background:#2f9470!important}
+.nutrient-matrix-table .is-incompatible .nutrient-dot,.nutrient-legend .is-incompatible{background:#cf605b!important}
+.nutrient-matrix-table .is-neutral .nutrient-dot,.nutrient-legend .is-neutral{background:#e7a84e!important}
+.nutrient-matrix-table .nutrient-groups th:not(:first-child){background:#e7c19a!important;color:#4a2e1c!important}
+.nutrient-matrix-table .nutrient-groups th:last-child{background:#dfc3a5!important}
+.nutrient-matrix-table .nutrient-labels-head th{background:#f0e0cc!important;color:#543622!important}
+.nutrient-matrix-table tbody .nutrient-row-name{color:#503622!important;font-weight:650!important;background:#f9f3e8!important}
+.nutrient-matrix-table tbody tr.nutrient-focused td,.nutrient-matrix-table tbody td.nutrient-focused,.nutrient-matrix-table tbody tr.nutrient-focused .nutrient-row-name{background:#f3d6aa!important}
+.nutrient-matrix-table tbody .is-self{background:#e8e6e1!important}

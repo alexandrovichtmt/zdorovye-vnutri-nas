@@ -1337,3 +1337,148 @@ body.wellness-v3.about-page .about-layout-bio-left .about-photo > img {
     min-height:62px!important;
   }
 }
+
+/* October 11 consolidated approved-site fixes: gradients, responsive controls, portrait, credentials and contact photo. */
+body.wellness-v3 a.btn:not(.btn-outline),body.wellness-v3 button.btn:not(.btn-outline),body.wellness-v3 .child-register-button {
+ background:linear-gradient(122deg,#f8deb3 0%,#efbf7c 48%,#d49a52 100%)!important;
+ color:#102018!important;
+ border:1px solid rgba(180,111,48,.45)!important;
+ box-shadow:0 10px 24px rgba(190,124,52,.23),inset 0 1px rgba(255,255,255,.5)!important;
+ text-shadow:none!important;
+}
+body.wellness-v3 a.btn:not(.btn-outline):hover,body.wellness-v3 button.btn:not(.btn-outline):hover{
+ background:linear-gradient(120deg,#fce6c3 0%,#eab66e 52%,#c98739 100%)!important;
+ box-shadow:0 14px 31px rgba(170,100,34,.31)!important
+}
+body.wellness-v3 a.btn:not(.btn-outline):active,body.wellness-v3 button.btn:not(.btn-outline):active{transform:translateY(0)!important}
+body .inline-arrow-unit{display:inline-block!important;white-space:nowrap!important;word-break:keep-all!important;overflow-wrap:normal!important}
+body .btn .inline-arrow-unit{color:inherit!important}
+body.wellness-v3 .nav .links>a{font-size:13px!important;font-weight:650!important;letter-spacing:-.022em!important;padding-inline:clamp(5px,.62vw,11px)!important}
+body.wellness-v3.about-page .about-photo-bio-list li{grid-template-columns:32px minmax(0,1fr)!important;align-items:center!important}
+body.wellness-v3.about-page .about-photo-bio-list li span.about-emoji{
+ font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif!important;
+ font-size:24px!important;line-height:1.15!important;
+ width:30px;min-width:30px;display:inline-flex;align-items:center;justify-content:center;
+ color:initial!important;opacity:1!important;filter:none!important
+}
+/* Native 837x1280 portrait, no 150% CSS enlargement, preserved full-body framing. */
+body.wellness-v3.about-page .about-layout-bio-left .about-photo{
+ aspect-ratio:756/1030!important;line-height:0!important;background:#f3ede5!important
+}
+body.wellness-v3.about-page .about-layout-bio-left .about-photo>img{
+ position:absolute!important;inset:0!important;top:0!important;right:0!important;bottom:0!important;left:0!important;
+ display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;
+ min-width:0!important;max-width:none!important;object-fit:cover!important;object-position:center bottom!important;
+ transform:none!important;filter:none!important;opacity:1!important;image-rendering:auto!important;border-radius:0!important
+}
+/* Third floating glass badge: the two existing badges remain unchanged. */
+body.wellness-v3.home-sync .hero .hero-glass.glass-three{
+ top:43%!important;bottom:auto!important;right:2.8%!important;left:auto!important;
+ max-width:min(310px,29%)!important;animation-delay:-1.2s!important
+}
+body.wellness-v3.home-sync .hero .hero-glass.glass-three strong{font-size:clamp(10px,1vw,13px)!important;line-height:1.34!important}
+/* Siberian Wellness registration moves from Child Health to Supplements. */
+body.wellness-v3 .supplement-registration{padding:clamp(34px,5vw,70px) 0!important;background:transparent!important}
+body.wellness-v3 .supplement-registration-card{
+ display:grid;grid-template-columns:minmax(0,1.45fr) minmax(250px,.72fr);align-items:center;
+ gap:clamp(20px,4vw,55px);padding:clamp(26px,4vw,65px);border-radius:34px;
+ background:#0e1d16!important;border:1px solid #33443a!important;box-shadow:0 20px 48px rgba(16,30,22,.17)!important;
+}
+body.wellness-v3 .supplement-registration-text{min-width:0}
+body.wellness-v3 .supplement-registration-eyebrow{display:block;color:#edc98c!important;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:750!important;margin-bottom:25px}
+body.wellness-v3 .supplement-registration-card h2{font-size:clamp(27px,3.35vw,49px)!important;line-height:1.14!important;color:#fffdf8!important;letter-spacing:-.035em!important;margin:0 0 25px!important}
+body.wellness-v3 .supplement-registration-text p,
+body.wellness-v3 .supplement-registration-text strong{color:#f9f2e9!important;-webkit-text-fill-color:#f9f2e9!important;text-shadow:none!important;opacity:1!important}
+body.wellness-v3 .supplement-registration-text p{font-size:clamp(14px,1.1vw,18px)!important;line-height:1.72!important;margin:0 0 16px!important}
+body.wellness-v3 .supplement-registration-text p.supplement-registration-note{font-size:13px!important;color:#e3cda5!important;-webkit-text-fill-color:#e3cda5!important;margin-top:21px!important}
+body.wellness-v3 .supplement-registration-action{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0}
+body.wellness-v3 .supplement-registration-qr-link{display:block;padding:10px;background:#fff;border:1px solid #eddfcb;border-radius:17px;box-shadow:0 8px 23px rgba(0,0,0,.25)}
+body.wellness-v3 .supplement-registration-qr{width:176px;max-width:100%;height:176px;object-fit:contain;image-rendering:pixelated;display:block}
+body.wellness-v3 .supplement-registration-scan,body.wellness-v3 .supplement-registration-hint{font-size:12px!important;color:#e9d2aa!important;text-align:center!important}
+body.wellness-v3 .supplement-registration-button{max-width:100%!important;display:inline-flex!important;text-align:center!important;margin-top:10px!important;padding:16px 23px!important;font-size:clamp(12px,1.1vw,15px)!important}
+/* Contact hero uses the original user-supplied portrait from the repository. */
+body.wellness-v3 .contact-hero{padding:20px 0 15px;background:transparent!important}
+body.wellness-v3 .contact-hero-grid{
+ display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.08fr);
+ align-items:center;gap:clamp(21px,4.5vw,70px);padding:clamp(25px,4vw,54px);
+ border:1px solid #ecd5b7;border-radius:34px;background:linear-gradient(125deg,#fffdf9 0%,#f0dcc2 100%);
+ box-shadow:0 16px 40px rgba(90,64,35,.08)
+}
+body.wellness-v3 .contact-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#93653a;font-weight:750!important}
+body.wellness-v3 .contact-hero-copy h1{font-size:clamp(39px,5vw,73px)!important;margin:15px 0 24px!important;color:#102018!important}
+body.wellness-v3 .contact-hero-copy p{font-size:clamp(15px,1.4vw,19px)!important;color:#332c25!important}
+body.wellness-v3 .contact-portrait{height:clamp(300px,34vw,530px);border-radius:27px;overflow:hidden;line-height:0}
+body.wellness-v3 .contact-portrait img{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 37%!important;filter:none!important;display:block}
+body.wellness-v3 .contact-hero+.section .cards{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:17px!important}
+body.wellness-v3 .contact-hero+.section .cards>*{min-width:0!important}
+@media(max-width:1360px){body.wellness-v3 .nav .links>a{font-size:12.4px!important;padding-inline:6px!important}}
+@media(max-width:900px){
+ body.wellness-v3 .supplement-registration-card{grid-template-columns:minmax(0,1fr)!important}
+ body.wellness-v3 .supplement-registration-action{padding-top:10px}
+ body.wellness-v3 .contact-hero-grid{grid-template-columns:minmax(0,1fr)!important}
+ body.wellness-v3 .contact-hero+.section .cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:760px){
+ body.wellness-v3.home-sync .hero .hero-glass.glass-three{display:none!important}
+ body.wellness-v3 .contact-hero-grid{padding:22px!important;gap:18px!important}
+ body.wellness-v3 .contact-portrait{height:auto!important;aspect-ratio:1.15/1!important}
+ body.wellness-v3 .contact-hero+.section .cards{grid-template-columns:minmax(0,1fr)!important}
+ body.wellness-v3 .supplement-registration-card{padding:25px 20px!important;border-radius:25px!important}
+ body.wellness-v3 .supplement-registration-card h2{font-size:clamp(26px,7vw,36px)!important}
+ body.wellness-v3 .supplement-registration-button{width:100%!important;min-width:0!important}
+ body.wellness-v3.about-page .about-photo-bio-list li span.about-emoji{font-size:22px!important}
+}
+
+/* Natural source images for the Child Health and Gut Health introductory blocks. */
+body.wellness-v3.child-health-page .child-hero-art{
+ position:relative!important;isolation:isolate!important;overflow:hidden!important;
+ min-height:clamp(350px,37vw,530px)!important;padding:clamp(22px,3vw,38px)!important;
+ display:flex!important;flex-direction:column!important;justify-content:flex-end!important;
+ background:#dfd1be!important;border-radius:30px!important
+}
+body.wellness-v3.child-health-page .child-hero-photo{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-height:none!important;
+ display:block!important;object-fit:cover!important;object-position:center 38%!important;
+ filter:none!important;opacity:1!important;transform:none!important;z-index:0!important
+}
+body.wellness-v3.child-health-page .child-hero-photo-shade{
+ position:absolute;inset:35% 0 0;z-index:1;pointer-events:none;
+ background:linear-gradient(to bottom,transparent,rgba(16,29,21,.72) 100%)
+}
+body.wellness-v3.child-health-page .child-hero-art>p{
+ position:relative!important;z-index:2!important;color:#fff!important;font-size:clamp(23px,2.2vw,33px)!important;
+ line-height:1.22!important;text-shadow:0 2px 12px rgba(0,0,0,.5)!important
+}
+body.wellness-v3.child-health-page .child-hero-art>span{
+ position:relative!important;z-index:2!important;color:#fff4e4!important;font-weight:650!important;
+ text-shadow:0 2px 8px rgba(0,0,0,.45)!important
+}
+body.wellness-v3.child-health-page .child-hero-art .child-art-mark{display:none!important}
+body.wellness-v3.gut-health-page .gut-hero-visual{
+ min-height:0!important;display:flex!important;flex-direction:column!important;
+ justify-content:flex-start!important;align-items:stretch!important;gap:16px!important;
+ padding:clamp(17px,2.5vw,26px)!important;background:#f2e6d6!important;
+ border-radius:31px!important;overflow:hidden!important
+}
+body.wellness-v3.gut-health-page .gut-hero-visual>span{
+ font-size:clamp(20px,2.05vw,29px)!important;line-height:1.18!important;font-weight:650!important;
+ color:#22392e!important;z-index:1!important
+}
+body.wellness-v3.gut-health-page .gut-hero-photo-frame{
+ width:100%!important;min-width:0!important;border-radius:22px!important;overflow:hidden!important;
+ background:#fff!important;position:relative!important;line-height:0!important
+}
+body.wellness-v3.gut-health-page .gut-hero-photo{
+ display:block!important;width:100%!important;height:auto!important;max-height:420px!important;
+ object-fit:contain!important;object-position:center!important;filter:none!important;opacity:1!important
+}
+body.wellness-v3.gut-health-page .gut-hero-visual .gut-visual-small{
+ color:#786143!important;margin:0!important;font-size:11px!important
+}
+body.wellness-v3.gut-health-page .gut-hero-ring,
+body.wellness-v3.gut-health-page .gut-hero-leaf{display:none!important}
+@media(max-width:850px){
+ body.wellness-v3.child-health-page .child-hero-art{min-height:clamp(300px,70vw,520px)!important}
+ body.wellness-v3.gut-health-page .gut-hero-visual{padding:18px!important}
+ body.wellness-v3.gut-health-page .gut-hero-photo{max-height:360px!important}
+}
