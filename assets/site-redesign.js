@@ -1,8 +1,10 @@
 /* Adaptive multipage navigation & progressive design enhancements.
    All business content, existing checks, supplements and recipe data stay untouched. */
 (()=>{"use strict";
-const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["community.html","Комьюнити"],["blog.html","Блог"],["services.html","Услуги"]];
+const desktop=[["index.html","Главная"],["about.html","Обо мне"],["nutrition.html","Питание"],["supplements.html","БАДы"],["labs.html","Анализы"],["child-health.html","Детское здоровье"],["community.html","Комьюнити"],["services.html","Услуги"]];
 const all=desktop;
+// Remove legacy Blog entries from existing desktop/mobile navigation.
+document.querySelectorAll('a[href="blog.html"]').forEach(a=>{if(a.closest('.nav,.mobile-dropdown,.more-menu'))a.remove()});
 const page=location.pathname.split("/").pop()||"index.html";
 const nav=document.querySelector(".nav"),inNav=nav?.querySelector(".navin");
 const anchors=arr=>arr.map(([file,label])=>'<a href="'+file+'"'+(file===page?' aria-current="page"':'')+'>'+label+'</a>').join("");
