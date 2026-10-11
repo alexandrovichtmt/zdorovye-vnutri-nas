@@ -1,39 +1,39 @@
 
 /* Vitamin and mineral compatibility matrix — editorial wellness style */
-.nutrient-compatibility{padding-top:70px;padding-bottom:86px;background:linear-gradient(180deg,#fbf8f0 0%,#fffdf8 100%);border-top:1px solid #35584212}
+.nutrient-compatibility{padding-top:70px;padding-bottom:86px;background:linear-gradient(180deg,#fbf8f0 0%,#fffdf8 100%);border-top:1px solid #5b473612}
 .nutrient-compatibility .nutrient-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:34px;margin-bottom:28px}
-.nutrient-compatibility .nutrient-eyebrow{display:block;color:#68806d;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:17px}
-.nutrient-compatibility h2{font:400 clamp(34px,4.5vw,60px)/1.04 Georgia,serif;letter-spacing:-.025em;color:#234836;margin:0 0 16px;max-width:850px}
-.nutrient-compatibility .nutrient-section-head p{margin:0;max-width:780px;font-size:16px;line-height:1.68;color:#647067}
-.nutrient-compatibility .nutrient-section-ornament{font:italic 78px Georgia,serif;color:#9eaf8d;line-height:1;letter-spacing:-.08em;opacity:.5;flex:none}
-.nutrient-matrix-frame{border-radius:24px;background:#fffefa;padding:27px 22px 22px;border:1px solid #e7e2d5;box-shadow:0 20px 55px rgba(42,61,42,.065)}
-.nutrient-matrix-scroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#c3d1bf #f5f4ed}
+.nutrient-compatibility .nutrient-eyebrow{display:block;color:#97734e;font-weight:600;font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:17px}
+.nutrient-compatibility h2{font:400 clamp(34px,4.5vw,60px)/1.04 Georgia,serif;letter-spacing:-.025em;color:#5b4736;margin:0 0 16px;max-width:850px}
+.nutrient-compatibility .nutrient-section-head p{margin:0;max-width:780px;font-size:16px;line-height:1.68;color:#97734e}
+.nutrient-compatibility .nutrient-section-ornament{font:italic 78px Georgia,serif;color:#dab898;line-height:1;letter-spacing:-.08em;opacity:.5;flex:none}
+.nutrient-matrix-frame{border-radius:24px;background:#fffefa;padding:27px 22px 22px;border:1px solid #e7e2d5;box-shadow:0 20px 55px rgba(91,71,54,.065)}
+.nutrient-matrix-scroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#dab898 #f5f4ed}
 .nutrient-matrix-table{border-collapse:separate;border-spacing:2px;width:100%;min-width:1050px;table-layout:fixed;font-family:Arial,sans-serif}
 .nutrient-matrix-table col.nutrient-label-column{width:180px}
 .nutrient-matrix-table th,.nutrient-matrix-table td{padding:0;border:0}
 .nutrient-matrix-table .nutrient-head-spacer{background:transparent}
-.nutrient-matrix-table .nutrient-groups th:not(:first-child){font:600 13px Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;padding:16px 4px;background:#e4eadd;color:#31543d;border-radius:9px 9px 2px 2px}
+.nutrient-matrix-table .nutrient-groups th:not(:first-child){font:600 13px Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;padding:16px 4px;background:#efd7bb;color:#5b4736;border-radius:9px 9px 2px 2px}
 .nutrient-matrix-table .nutrient-groups th:last-child{background:#eee9db}
-.nutrient-matrix-table .nutrient-labels-head th{padding:14px 2px;font-size:13px;color:#3c5542;background:#f5f5ec;font-weight:700}
-.nutrient-matrix-table tbody .nutrient-row-name{height:38px;text-align:left;font-size:12px;font-weight:500;line-height:1.2;white-space:nowrap;padding:5px 9px 5px 14px;background:#f6f5ee;color:#334b38}
+.nutrient-matrix-table .nutrient-labels-head th{padding:14px 2px;font-size:13px;color:#5b4736;background:#f5f5ec;font-weight:700}
+.nutrient-matrix-table tbody .nutrient-row-name{height:38px;text-align:left;font-size:12px;font-weight:500;line-height:1.2;white-space:nowrap;padding:5px 9px 5px 14px;background:#f6f5ee;color:#5b4736}
 .nutrient-matrix-table tbody tr:nth-child(even) .nutrient-row-name{background:#efeee5}
 .nutrient-matrix-table tbody .nutrient-cell{height:38px;text-align:center;background:#fbfbf7;transition:background .17s ease;position:relative}
 .nutrient-matrix-table tbody tr:nth-child(even) .nutrient-cell{background:#f5f6f0}
 .nutrient-matrix-table tbody tr.nutrient-group-start:not(:first-child) th,.nutrient-matrix-table tbody tr.nutrient-group-start:not(:first-child) td{border-top:5px solid #fffefa}
-.nutrient-matrix-table .nutrient-dot{width:19px;height:19px;border-radius:50%;display:inline-block;vertical-align:middle;box-shadow:inset 0 1px 2px #fff9,0 1px 3px #173a2a0c}
-.nutrient-matrix-table .is-compatible .nutrient-dot,.nutrient-legend .is-compatible{background:#63885c}
+.nutrient-matrix-table .nutrient-dot{width:19px;height:19px;border-radius:50%;display:inline-block;vertical-align:middle;box-shadow:inset 0 1px 2px #fff9,0 1px 3px #5b47360c}
+.nutrient-matrix-table .is-compatible .nutrient-dot,.nutrient-legend .is-compatible{background:#97734e}
 .nutrient-matrix-table .is-incompatible .nutrient-dot,.nutrient-legend .is-incompatible{background:#c76b6c}
-.nutrient-matrix-table .is-neutral .nutrient-dot,.nutrient-legend .is-neutral{background:#bdc9bf}
-.nutrient-matrix-table tbody tr.nutrient-focused td,.nutrient-matrix-table tbody td.nutrient-focused{background:#e9efe6!important}
-.nutrient-matrix-table tbody tr.nutrient-focused .nutrient-row-name{background:#e3ebdf}
-.nutrient-matrix-table .nutrient-labels-head th.nutrient-focused{background:#dce8d9}
+.nutrient-matrix-table .is-neutral .nutrient-dot,.nutrient-legend .is-neutral{background:#dab898}
+.nutrient-matrix-table tbody tr.nutrient-focused td,.nutrient-matrix-table tbody td.nutrient-focused{background:#efd7bb!important}
+.nutrient-matrix-table tbody tr.nutrient-focused .nutrient-row-name{background:#efd7bb}
+.nutrient-matrix-table .nutrient-labels-head th.nutrient-focused{background:#efd7bb}
 .nutrient-matrix-table tbody .is-self{background:#efeee8!important}
-.nutrient-legend{display:flex;align-items:center;justify-content:center;gap:clamp(20px,4vw,65px);flex-wrap:wrap;margin:28px auto 11px;color:#536554;font-size:13px}
+.nutrient-legend{display:flex;align-items:center;justify-content:center;gap:clamp(20px,4vw,65px);flex-wrap:wrap;margin:28px auto 11px;color:#97734e;font-size:13px}
 .nutrient-legend>span{display:flex;align-items:center;gap:10px}
 .nutrient-legend i{width:14px;height:14px;border-radius:100%;display:block}
-.nutrient-scroll-hint{display:none;font-size:13px;color:#6d7d6d;margin:0 0 12px}
-.nutrient-caveat{margin:24px auto 0;max-width:1100px;background:#f1f3ed;border-left:2px solid #a8b99f;padding:17px 22px;color:#637067;line-height:1.65;font-size:13px;border-radius:0 12px 12px 0}
-.nutrient-caveat strong{color:#36503a}
+.nutrient-scroll-hint{display:none;font-size:13px;color:#97734e;margin:0 0 12px}
+.nutrient-caveat{margin:24px auto 0;max-width:1100px;background:#f1f3ed;border-left:2px solid #dab898;padding:17px 22px;color:#97734e;line-height:1.65;font-size:13px;border-radius:0 12px 12px 0}
+.nutrient-caveat strong{color:#5b4736}
 @media(max-width:1100px){.nutrient-scroll-hint{display:block}.nutrient-matrix-table{width:1100px}}
 @media(max-width:720px){
  .nutrient-compatibility{padding:50px 0 65px}
