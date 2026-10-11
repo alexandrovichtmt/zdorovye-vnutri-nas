@@ -206,3 +206,21 @@ body.community-page .community-visual-self .community-notebook small{
 /* Uploaded portrait photography: preserve face and study desk in course visuals */
 body.community-page .community-visual-courses .community-photo{object-position:center top!important}
 body.community-page .community-detail-photo img[src*="D0%9E"]{object-position:center 30%!important}
+
+
+/* Second community format: bespoke support-chat image, not a food photo. */
+body.community-page .community-visual-support .community-photo{
+ object-position:center center!important;
+ object-fit:cover!important;
+ filter:none!important;
+}
+body.community-page .community-support-note{
+ margin:12px 0 8px!important;
+ padding:13px 16px!important;
+ border-left:3px solid #c59a60!important;
+ border-radius:11px!important;
+ background:rgba(255,250,242,.88)!important;
+ font-size:13px!important;
+ line-height:1.58!important;
+ color:#5b4c3a!important;
+}

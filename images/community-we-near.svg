@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+<title id="t">Мы рядом — чат поддержки</title><desc id="d">Чат поддержки врачей превентивной медицины и врачей-нутрициологов в спокойной зелёно-золотой гамме</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5efe3"/><stop offset=".55" stop-color="#fcfaf5"/><stop offset="1" stop-color="#e0eddf"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4d6a1"/><stop offset="1" stop-color="#a97229"/></linearGradient>
+<linearGradient id="phone" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffefb"/><stop offset="1" stop-color="#f2efdf"/></linearGradient>
+<filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#4b513e" flood-opacity=".18"/></filter>
+</defs>
+<rect width="1200" height="720" fill="url(#bg)"/>
+<g opacity=".15" stroke="#779b57" fill="none" stroke-width="9"><path d="M-50 620 Q130 420 95 110"/><path d="M110 340Q-10 320-42 235"/><path d="M100 230Q215 210 245 72"/><path d="M1120 690 Q1140 460 1250 230"/></g>
+<g fill="#9fb88a" opacity=".23"><ellipse cx="116" cy="244" rx="36" ry="93" transform="rotate(30 116 244)"/><ellipse cx="39" cy="430" rx="36" ry="100" transform="rotate(-30 39 430)"/><ellipse cx="196" cy="120" rx="40" ry="96" transform="rotate(45 196 120)"/><ellipse cx="1161" cy="537" rx="36" ry="105" transform="rotate(-30 1161 537)"/></g>
+<circle cx="245" cy="221" r="105" fill="#fffdf8" opacity=".85" stroke="#c69a56" stroke-width="3"/>
+<path d="M209 225 C165 170 204 145 244 187 C282 142 327 181 280 235 L244 270Z" fill="none" stroke="url(#gold)" stroke-width="17" stroke-linejoin="round"/>
+<circle cx="208" cy="164" r="12" fill="#c99948"/><circle cx="278" cy="164" r="12" fill="#c99948"/>
+<text x="245" y="385" text-anchor="middle" fill="#937037" font-family="Arial,sans-serif" font-size="28" font-weight="700" letter-spacing="5">ЧАТ ПОДДЕРЖКИ</text>
+<text x="245" y="465" text-anchor="middle" fill="#153426" font-family="Arial,sans-serif" font-size="66" font-weight="750">МЫ РЯДОМ</text>
+<path d="M80 505 H409" stroke="#c49a60" stroke-width="3" opacity=".8"/>
+<text x="245" y="557" text-anchor="middle" fill="#355240" font-family="Arial,sans-serif" font-size="29">Врачи • Нутрициологи</text>
+<text x="245" y="596" text-anchor="middle" fill="#355240" font-family="Arial,sans-serif" font-size="29">Поддержка и забота</text>
+<g filter="url(#shadow)">
+<rect x="674" y="68" width="346" height="616" rx="52" fill="#1d2b27" transform="rotate(7 847 376)"/>
+<rect x="692" y="84" width="312" height="582" rx="38" fill="url(#phone)" transform="rotate(7 847 376)"/>
+</g>
+<g transform="rotate(7 847 376)">
+<rect x="776" y="89" width="143" height="22" rx="11" fill="#1d2b27"/>
+<circle cx="846" cy="160" r="38" fill="#f5e8d2" stroke="#d5a76b" stroke-width="2"/>
+<path d="M823 162 C815 150 823 138 844 154 C864 139 878 150 864 170 L846 187Z" fill="none" stroke="#b88639" stroke-width="7"/>
+<text x="847" y="227" text-anchor="middle" fill="#1d3b2b" font-family="Arial,sans-serif" font-size="21" font-weight="700">Мы рядом ♡</text>
+<rect x="724" y="270" width="233" height="95" rx="22" fill="#fffdfb"/>
+<text x="743" y="306" fill="#405044" font-family="Arial,sans-serif" font-size="18">Можно спросить</text>
+<text x="743" y="332" fill="#405044" font-family="Arial,sans-serif" font-size="18">про анализы?</text>
+<rect x="754" y="395" width="233" height="111" rx="22" fill="#dae8ca"/>
+<text x="773" y="430" fill="#37533b" font-family="Arial,sans-serif" font-size="18">Конечно!</text>
+<text x="773" y="456" fill="#37533b" font-family="Arial,sans-serif" font-size="18">Мы поможем</text>
+<text x="773" y="482" fill="#37533b" font-family="Arial,sans-serif" font-size="18">разобраться ♡</text>
+<rect x="735" y="551" width="222" height="49" rx="25" fill="#fff" opacity=".9"/>
+<text x="845" y="582" text-anchor="middle" fill="#ae8647" font-family="Arial,sans-serif" font-size="18">Мы всегда рядом</text>
+</g>
+</svg>
