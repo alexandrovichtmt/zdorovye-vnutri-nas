@@ -50,6 +50,28 @@ document.addEventListener("pointerdown",(event)=>{
   anchor.setAttribute("aria-label","Написать Людмиле в Telegram");
  }
 });
+/* Back-to-top control: shared across desktop/mobile, positioned above Telegram. */
+const topButton=document.createElement("button");
+topButton.type="button";
+topButton.className="back-to-top-btn";
+topButton.setAttribute("aria-label","Вернуться к началу страницы");
+topButton.setAttribute("title","Наверх");
+topButton.innerHTML='<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/><path d="M12 8v11"/></svg>';
+document.body.appendChild(topButton);
+const updateTopButton=()=>{
+  const visible=window.scrollY>320;
+  topButton.classList.toggle("is-visible",visible);
+  topButton.tabIndex=visible?0:-1;
+  topButton.setAttribute("aria-hidden",visible?"false":"true");
+};
+window.addEventListener("scroll",updateTopButton,{passive:true});
+window.addEventListener("pageshow",updateTopButton);
+updateTopButton();
+topButton.addEventListener("click",()=>{
+  const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({top:0,behavior:reduced?"instant":"smooth"});
+});
+
 /* Animate original glass cards — never touch the underlying photos. */
 document.querySelectorAll(".hero-glass,.gut-hero-visual,.child-hero-art,.community-hero-art").forEach((node,i)=>{
  node.classList.add("glass-floating");node.style.setProperty("--float-delay",(-i*1.7)+"s");
