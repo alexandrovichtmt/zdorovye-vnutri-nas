@@ -48,7 +48,7 @@ document.querySelectorAll("img[data-fallback]").forEach(el=>el.addEventListener(
 if(location.hash==="#format-courses"||location.hash==="#community-programs"){
  select(2,false);
  requestAnimationFrame(()=>panel.scrollIntoView({block:"start",behavior:"auto"}));
-}else if(location.hash==="#format-self"){select(1,false);requestAnimationFrame(()=>panel.scrollIntoView({block:"start",behavior:"auto"}))}
+}else if(location.hash==="#format-support"||location.hash==="#format-self"){select(1,false);requestAnimationFrame(()=>panel.scrollIntoView({block:"start",behavior:"auto"}))}
 else if(location.hash==="#format-care"){select(0,false);requestAnimationFrame(()=>panel.scrollIntoView({block:"start",behavior:"auto"}))}
 else select(0,false);
 })();
