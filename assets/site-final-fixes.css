@@ -245,3 +245,47 @@ body.wellness-v3 .nutrient-matrix-frame{
  body.nutrition-page .gut-hero-grid,
  body.child-health-page .child-hero-grid{padding-left:42px!important;box-sizing:border-box}
 }
+
+
+/* 2026-10-11: consistent, regular-weight typography on every site action.
+   The JS-inserted .inline-arrow-unit and authored strong/b labels must not
+   render at a different weight from their surrounding button text. */
+body.wellness-v3 :is(
+  .btn, .child-register-button, .supplement-registration-button,
+  .recipe-library-filters button, .gut-filters button,
+  .home-category-tabs a, .child-age-tabs a,
+  .checkup-copy, .checkup-clear, .iron-reset,
+  .iron-page-button, .iron-survey-buttons button,
+  .community-card-trigger, .community-access-action a,
+  .child-zoom-label
+){
+  font-family:Manrope,Arial,sans-serif!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  font-synthesis:none!important;
+}
+body.wellness-v3.home-sync .hero .actions a.btn{
+  font-weight:400!important;
+}
+body.wellness-v3 :is(
+  .btn, .child-register-button, .supplement-registration-button,
+  .recipe-library-filters button, .gut-filters button,
+  .home-category-tabs a, .child-age-tabs a,
+  .checkup-copy, .checkup-clear, .iron-reset,
+  .iron-page-button, .iron-survey-buttons button,
+  .community-card-trigger, .community-access-action a,
+  .child-zoom-label
+) :is(span,strong,b,em,small,.inline-arrow-unit){
+  font-family:inherit!important;
+  font-weight:inherit!important;
+  font-style:normal!important;
+}
+
+/* Contact thumbnail: show the complete portrait centered, not a head crop. */
+body.wellness-v3 .services-contact-photo{
+  background:#f7eee3!important;
+}
+body.wellness-v3 .services-contact-photo img{
+  object-fit:contain!important;
+  object-position:center center!important;
+}
