@@ -412,3 +412,34 @@ body.about-page .about-photo-bio>p{font-size:14px!important;line-height:1.55!imp
  body.about-page .about-photo-bio{padding:0 4px!important}
  body.about-page .about-photo-bio-list li{padding:10px 11px;font-size:14px}
 }
+
+/* About: single compact intro to the LEFT of a centered portrait, crop unused top */
+body.about-page .about-section{padding:clamp(20px,3vw,44px) 0 clamp(35px,4vw,65px)!important}
+body.about-page .about-layout.about-layout-bio-left{
+ display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)!important;
+ gap:clamp(25px,4vw,70px)!important;align-items:center!important;
+}
+body.about-page .about-layout-bio-left .about-photo-bio{order:0!important}
+body.about-page .about-layout-bio-left .about-photo{order:1!important;min-width:0!important;
+ height:clamp(480px,49vw,650px)!important;min-height:0!important;
+ border-radius:30px!important;overflow:hidden!important}
+body.about-page .about-layout-bio-left .about-photo img{
+ display:block!important;width:100%!important;height:100%!important;min-height:0!important;
+ object-fit:cover!important;object-position:center 46%!important;transform:none!important;
+}
+body.about-page .about-photo-bio h1{font-size:clamp(39px,4.2vw,66px)!important;line-height:1.06!important;
+ letter-spacing:-.05em!important;color:#112019!important;margin:0 0 14px!important}
+body.about-page .about-photo-bio p.about-photo-intro{
+ font-size:clamp(15px,1.3vw,19px)!important;line-height:1.55!important;
+ color:#4c4238!important;font-weight:500!important;margin:0 0 23px!important;
+}
+body.about-page .about-photo-bio-years{margin:10px 0 15px!important}
+body.about-page .about-photo-bio-list{gap:7px!important;margin-bottom:14px!important}
+body.about-page .about-photo-bio-list li{padding:10px 13px!important;background:rgba(255,253,249,.7)!important;
+ border-radius:13px!important;font-size:clamp(13px,1.04vw,16px)!important}
+@media(max-width:800px){
+ body.about-page .about-layout.about-layout-bio-left{grid-template-columns:1fr!important;gap:22px!important}
+ body.about-page .about-layout-bio-left .about-photo{height:clamp(360px,92vw,560px)!important;order:1!important}
+ body.about-page .about-layout-bio-left .about-photo-bio{order:0!important}
+ body.about-page .about-photo-bio h1{font-size:clamp(35px,9vw,48px)!important}
+}
