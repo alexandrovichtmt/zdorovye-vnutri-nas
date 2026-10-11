@@ -1,0 +1,349 @@
+/* ONE DESIGN LANGUAGE / 2026-10-11
+   Derived from the approved homepage mockup. Original imagery unaltered.
+   Visual accents exclusively linear-gradient(to top, #e6b980 0%, #eacda3 100%). */
+:root{
+ --w-bg:#F7F5EF;--w-ink:#0F1A14;--w-white:#fffdfa;--w-line:rgba(230,185,128,.44);
+ --w-glass:rgba(255,252,247,.78);--w-glass-strong:rgba(255,253,249,.88);
+ --w-accent:linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+ --w-elev:0 15px 44px rgba(100,76,53,.105),0 2px 6px rgba(107,79,48,.035);
+}
+html{scroll-padding-top:115px}
+body.wellness-v3{
+ color:var(--w-ink)!important;
+ background:linear-gradient(145deg,#F7F5EF,#fbf4eb 48%,#f7f2ec)!important;
+}
+body.wellness-v3 :is(h1,h2,h3,h4,strong,b){color:var(--w-ink)}
+body.wellness-v3 :is(.pageHero p,.content p,.child-intro p,.gut-intro p,.community-card p,.recipe-library p){
+ color:#38342f!important;
+}
+/* Consistent white floating header, brand pill and CTA. */
+body.wellness-v3 .nav .navin{
+ background:rgba(255,254,252,.90)!important;
+ border:1px solid rgba(234,205,169,.55)!important;
+ box-shadow:0 15px 37px rgba(57,45,30,.075)!important;
+ backdrop-filter:blur(18px) saturate(1.16);
+ -webkit-backdrop-filter:blur(18px) saturate(1.16);
+}
+body.wellness-v3 .nav .navcta,
+body.wellness-v3 .nav .links>a[aria-current="page"]{
+ background:var(--w-accent)!important;
+ border-color:transparent!important;color:var(--w-ink)!important;
+ box-shadow:0 7px 20px rgba(190,143,82,.18)!important;
+}
+body.wellness-v3 .nav .links>a{color:var(--w-ink)!important}
+body.wellness-v3 .nav .links>a:not([aria-current="page"]):hover{background:rgba(234,205,163,.32)!important}
+/* Existing kitchen photograph: zero filters or overlay, no stretching or crop transformation. */
+body.wellness-v3.home-sync .hero::after,
+body.wellness-v3.home-sync .hero::before{display:none!important}
+body.wellness-v3.home-sync .hero>.hero-media img{
+ opacity:1!important;filter:none!important;mix-blend-mode:normal!important;
+ -webkit-mask-image:none!important;mask-image:none!important;
+}
+/* Improve long explanatory line with its own small glass, not a layer over the photo. */
+body.wellness-v3.home-sync .hero-copy>p{
+ color:var(--w-ink)!important;
+ background:rgba(255,251,244,.57);
+ text-shadow:0 1px 2px rgba(255,253,250,.85);
+ font-weight:600!important;
+ line-height:1.65!important;
+ padding:9px 12px;
+ border-radius:13px;
+ max-width:510px!important;
+ -webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+ box-shadow:0 3px 20px rgba(255,252,246,.13);
+}
+body.wellness-v3.home-sync .hero .hero-title-line:last-child,
+body.wellness-v3.home-sync .hero .hero-title-line:last-child .hero-letter{
+ -webkit-text-fill-color:var(--w-ink)!important;color:var(--w-ink)!important;
+}
+/* Glass, low-amplitude organic float. */
+@keyframes wellness-glass-drift{
+ 0%,100%{transform:translate3d(0,0,0)}
+ 50%{transform:translate3d(0,-7px,0)}
+}
+body.wellness-v3 .glass-floating{
+ animation:wellness-glass-drift 6.8s ease-in-out infinite!important;
+ animation-delay:var(--float-delay,0s)!important;
+ will-change:transform;
+}
+body.wellness-v3 .hero .hero-glass{
+ background:var(--w-glass)!important;
+ border:1px solid rgba(255,255,255,.9)!important;
+ backdrop-filter:blur(20px) saturate(1.2)!important;
+ -webkit-backdrop-filter:blur(20px) saturate(1.2)!important;
+ box-shadow:0 17px 40px rgba(42,31,21,.12),inset 0 1px 0 #fff!important;
+}
+body.wellness-v3 .hero-glass b,
+body.wellness-v3 .hero-glass .glass-icon{
+ background:var(--w-accent)!important;color:var(--w-ink)!important}
+/* Home bento: keep EVERY photo crisp, rich and photographic. Text only inside glass inset. */
+body.wellness-v3.home-sync .topicgrid{gap:17px!important}
+body.wellness-v3.home-sync .topic{
+ position:relative;border-radius:32px!important;isolation:isolate!important;
+ background:#f2e6d8!important;box-shadow:var(--w-elev)!important;
+ transition:transform .36s ease,box-shadow .36s ease!important;
+}
+body.wellness-v3.home-sync .topic:hover{
+ transform:translateY(-5px)!important;box-shadow:0 23px 48px rgba(78,53,25,.18)!important;
+}
+body.wellness-v3.home-sync .topic img,
+body.wellness-v3.home-sync .topic:nth-child(n) img{
+ display:block!important;opacity:1!important;filter:none!important;
+ width:100%!important;height:100%!important;object-fit:cover!important;
+ transition:transform .55s cubic-bezier(.2,.65,.2,1)!important;
+}
+body.wellness-v3.home-sync .topic:hover img{transform:scale(1.035)!important}
+body.wellness-v3.home-sync .topic::before,
+body.wellness-v3.home-sync .topic::after,
+body.wellness-v3.home-sync .topic:nth-child(n)::after{
+ display:none!important;content:none!important;
+}
+body.wellness-v3.home-sync .topic .topiccopy{
+ position:absolute!important;z-index:3!important;inset:auto auto 17px 17px!important;
+ width:max-content!important;max-width:calc(100% - 92px)!important;
+ padding:16px 21px!important;border-radius:21px!important;
+ color:var(--w-ink)!important;
+ background:var(--w-glass)!important;
+ border:1px solid rgba(255,255,255,.87);
+ backdrop-filter:blur(18px) saturate(1.15)!important;
+ -webkit-backdrop-filter:blur(18px) saturate(1.15)!important;
+ box-shadow:0 11px 31px rgba(56,35,17,.15)!important;
+}
+body.wellness-v3.home-sync .topic:nth-child(n) .topiccopy h3,
+body.wellness-v3.home-sync .topic.topic-community .topiccopy h3{
+ color:var(--w-ink)!important;font-size:clamp(18px,2vw,26px)!important;
+ margin:0 0 7px!important;
+}
+body.wellness-v3.home-sync .topic:nth-child(n) .topiccopy p,
+body.wellness-v3.home-sync .topic.topic-community .topiccopy p{
+ color:#2b2723!important;font-weight:600!important;
+ font-size:12px!important;line-height:1.4!important;margin:0!important;
+}
+body.wellness-v3.home-sync .topic .topic-arrow{
+ position:absolute;right:18px;bottom:18px;z-index:3;
+ display:grid;place-items:center;width:44px;height:44px;
+ border-radius:50%;border:1px solid rgba(255,255,255,.9);
+ background:rgba(255,252,245,.75);backdrop-filter:blur(12px);
+ color:var(--w-ink);font-size:23px;font-weight:500;
+ transition:transform .3s ease,background .3s ease;
+}
+body.wellness-v3.home-sync .topic:hover .topic-arrow{
+ transform:translate(3px,-3px);background:#eacda3;
+}
+body.wellness-v3.home-sync .topic.topic-community{
+ background:linear-gradient(120deg,#181713,#2d231c)!important;
+}
+body.wellness-v3.home-sync .topic.topic-community .topiccopy{
+ max-width:calc(100% - 55px)!important;
+ background:rgba(255,252,245,.14)!important;border:1px solid rgba(255,255,255,.30);
+}
+body.wellness-v3.home-sync .topic.topic-community .topiccopy :is(h3,p){color:#fff!important}
+body.wellness-v3.home-sync .topic.topic-community .topic-arrow{background:var(--w-accent)!important}
+/* Inner pages: an editorial hero with image on the FIRST SCREEN.
+   Image is a DOM clone of the existing user-provided asset; original is not altered. */
+body.wellness-v3 .pageHero.editorial-intro{
+ padding:20px 0 10px!important;background:transparent!important;border:0!important;
+}
+body.wellness-v3 .pageHero.editorial-intro>.wrap{
+ display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1.03fr)!important;
+ align-items:center!important;gap:clamp(20px,4vw,65px)!important;
+ padding:clamp(24px,3.8vw,55px)!important;
+ min-height:clamp(310px,33vw,475px)!important;
+ border-radius:36px!important;border:1px solid var(--w-line)!important;
+ background:radial-gradient(circle at 13% 25%,rgba(255,255,255,.95),transparent 60%),
+ linear-gradient(120deg,#f9f5ef,#efd7b8 150%)!important;
+ box-shadow:var(--w-elev);
+ opacity:1!important;transform:none!important;
+}
+body.wellness-v3 .editorial-copy{min-width:0;animation:wellness-intro-in .8s both}
+@keyframes wellness-intro-in{
+ from{opacity:.01;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}
+}
+body.wellness-v3 .editorial-copy h1{
+ font-size:clamp(32px,4.1vw,65px)!important;
+ letter-spacing:-.045em!important;line-height:1.08!important;
+ margin:0 0 21px!important;color:var(--w-ink)!important;
+ overflow-wrap:anywhere;
+}
+body.wellness-v3 .editorial-copy p{
+ max-width:590px!important;font-size:clamp(15px,1.13vw,18px)!important;
+ line-height:1.74!important;color:#312c25!important;
+ font-weight:500!important;
+}
+body.wellness-v3 .editorial-visual{
+ min-height:320px;height:100%;max-height:460px;width:100%;
+ overflow:hidden;position:relative;border-radius:29px!important;
+ border:1px solid rgba(255,255,255,.85);
+ background:linear-gradient(145deg,#ecd2b3,#fff3e3);
+ box-shadow:0 12px 35px rgba(94,59,21,.10);
+}
+body.wellness-v3 .editorial-visual img{
+ width:100%!important;height:100%!important;object-fit:cover!important;
+ object-position:center!important;display:block!important;
+ filter:none!important;opacity:1!important;transform:none!important;
+}
+body.wellness-v3 .about-page-hero .editorial-visual img{object-position:center 25%!important}
+body.wellness-v3 .editorial-abstract{
+ display:grid;place-items:center;
+ background:radial-gradient(circle at 72% 32%,#ffe6c5 0 10%,transparent 38%),
+ linear-gradient(140deg,#f8e9d5,#eacda3,#fff9f1)!important;
+}
+body.wellness-v3 .editorial-orbit{
+ position:absolute;width:63%;aspect-ratio:1;border-radius:50%;
+ border:1px solid rgba(128,86,35,.32);transform:rotate(-27deg) scaleX(1.3);
+}
+body.wellness-v3 .editorial-orbit-small{width:42%;transform:rotate(27deg) scaleX(1.2)}
+body.wellness-v3 .editorial-symbol{font-size:clamp(120px,15vw,240px);color:#95734d;opacity:.45}
+body.wellness-v3 .editorial-image-original{display:none!important}
+body.wellness-v3 .split.editorial-cards-only{
+ display:block!important;margin:0!important;padding:0!important;
+}
+body.wellness-v3 .split.editorial-cards-only>.content{
+ width:100%!important;max-width:none!important;flex:none!important;
+ padding:0!important;margin:0!important;
+}
+body.wellness-v3 .pageHero.editorial-intro+.section{
+ padding:22px 0 43px!important;margin:0!important;
+ background:transparent!important;
+}
+body.wellness-v3 .split.editorial-cards-only>.content>h2{
+ font-size:clamp(25px,3vw,40px)!important;margin:0 0 12px!important;
+}
+body.wellness-v3 .split.editorial-cards-only>.content>.cards{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:17px!important;margin-top:22px!important;
+}
+body.wellness-v3 .split.editorial-cards-only>.content>.cards>*{
+ min-width:0!important;width:100%!important;
+}
+/* Universal frosted card language. No green fill or tint. */
+body.wellness-v3 :is(
+ .card,.new-info-card,.about-specialty-card,.gut-mechanism-node,
+ .gut-compare-card,.gut-step,.child-path-card,.child-visual-card,
+ .community-card,.course-card,.recipe-library-card,
+ .checkup-group,.child-guide-step,.gut-journal-panel,.iron-survey,
+ .gut-food-matrix,.nutrient-matrix-frame,.course-note
+ ){
+ background:var(--w-glass)!important;
+ border:1px solid rgba(235,208,188,.85)!important;
+ border-radius:28px!important;box-shadow:var(--w-elev)!important;
+ -webkit-backdrop-filter:blur(12px) saturate(1.12)!important;
+ backdrop-filter:blur(12px) saturate(1.12)!important;
+}
+body.wellness-v3 :is(
+ .card,.new-info-card,.about-specialty-card,.gut-compare-card,
+ .gut-step,.child-path-card,.child-visual-card,.community-card,
+ .course-card,.recipe-library-card
+ ){
+ transition:transform .3s ease,box-shadow .3s ease!important;
+}
+body.wellness-v3 :is(
+ .card,.new-info-card,.about-specialty-card,.gut-compare-card,
+ .gut-step,.child-path-card,.child-visual-card,.community-card,
+ .course-card,.recipe-library-card
+ ):hover{
+ transform:translateY(-4px)!important;
+ box-shadow:0 20px 44px rgba(106,73,33,.15)!important;
+}
+body.wellness-v3 :is(.card,.new-info-card,.community-card,.course-card,.child-visual-card,
+ .about-specialty-card,.gut-step,.gut-compare-card,.checkup-group)
+ :is(h2,h3,h4,p,li){color:var(--w-ink)!important}
+body.wellness-v3 .about-specialty-card.oncology{background:#201a17!important}
+body.wellness-v3 .about-specialty-card.oncology :is(h3,p,li){color:white!important}
+body.wellness-v3 :is(.community-card-art img,.course-card img,
+ .child-visual-card img,.recipe-library-media img,.art img){
+ opacity:1!important;filter:none!important;mix-blend-mode:normal!important;
+}
+body.wellness-v3 .community-card-art img{display:block;object-fit:cover}
+body.wellness-v3 :is(.child-hero-art,.gut-hero-visual,.community-hero-art){
+ background:linear-gradient(135deg,rgba(255,253,249,.84),rgba(239,215,184,.67))!important;
+ border:1px solid rgba(255,255,255,.85)!important;
+ box-shadow:var(--w-elev)!important;
+ -webkit-backdrop-filter:blur(16px)!important;backdrop-filter:blur(16px)!important;
+}
+body.wellness-v3 :is(.child-hero,.gut-hero,.community-hero,.iron-hero){
+ padding-block:clamp(27px,4vw,53px)!important;
+}
+body.wellness-v3 :is(.community-grid,.course-grid,.gut-compare-grid,.child-path-grid){
+ gap:18px!important;
+}
+body.wellness-v3 :is(.community-card-body,.course-card-content){padding:clamp(20px,2vw,32px)!important}
+body.wellness-v3 .course-card>img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+body.wellness-v3 :is(.child-path-number,.gut-mechanism-icon,
+ .gut-step-number,.checkup-group-num,.about-specialty-mark,
+ .community-access-circle){
+ background:var(--w-accent)!important;color:var(--w-ink)!important;
+ border-color:rgba(230,185,128,.7)!important;
+}
+body.wellness-v3 :is(.home-category-tabs a.active,.recipe-library-filters button.active,
+ .gut-filters button.is-current,.iron-option input:checked+span,
+ .checkup-item input:checked+.checkup-checkmark,.btn:not(.btn-outline)){
+ background:var(--w-accent)!important;color:var(--w-ink)!important}
+body.wellness-v3 :is(.ctaBox,.community-access-panel){
+ background:#201b18!important;border:1px solid #3b3026!important;
+ border-radius:34px!important;box-shadow:var(--w-elev)!important;
+}
+body.wellness-v3 :is(.ctaBox,.community-access-panel) :is(h2,h3,p){color:white!important}
+body.wellness-v3 :is(.community-access-panel,.child-register-card) .btn{
+ background:var(--w-accent)!important;color:var(--w-ink)!important;
+}
+body.wellness-v3 .recipe-library-card{overflow:hidden}
+body.wellness-v3 .recipe-library-card .recipe-library-media{
+ background:rgba(255,253,248,.87)!important}
+body.wellness-v3 .recipe-library-card img{filter:none!important;opacity:1!important}
+/* Telegram floating capsule, authentic SVG plane. */
+body.wellness-v3 .tgbar{
+ position:fixed!important;bottom:clamp(17px,3vw,34px)!important;
+ right:clamp(15px,3vw,35px)!important;left:auto!important;top:auto!important;
+ padding:0!important;z-index:190!important;
+ animation:wellness-glass-drift 5.8s ease-in-out infinite!important;
+}
+body.wellness-v3 .tgbar .tg-floating{
+ display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ gap:10px!important;padding:13px 20px!important;
+ border-radius:999px!important;color:var(--w-ink)!important;
+ background:rgba(255,251,244,.74)!important;
+ border:1px solid rgba(255,255,255,.9)!important;
+ box-shadow:0 9px 27px rgba(70,49,25,.20),inset 0 1px 0 #fff!important;
+ backdrop-filter:blur(21px) saturate(1.25)!important;
+ -webkit-backdrop-filter:blur(21px) saturate(1.25)!important;
+ font:700 14px Manrope,sans-serif!important;line-height:1!important;
+ transition:background .25s,transform .25s,box-shadow .25s!important;
+}
+body.wellness-v3 .tgbar .tg-floating:hover{
+ background:var(--w-accent)!important;transform:translateY(-4px)!important;
+ box-shadow:0 16px 34px rgba(87,64,38,.25)!important;
+}
+body.wellness-v3 .tgbar .tg-floating svg{flex:none;display:block}
+/* Responsive keeps hero, photo, and actions visible without horizontal scrolling. */
+@media(max-width:1040px){
+ body.wellness-v3 .pageHero.editorial-intro>.wrap{grid-template-columns:1fr 1fr!important;gap:20px!important}
+ body.wellness-v3 .split.editorial-cards-only>.content>.cards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:760px){
+ body.wellness-v3 .pageHero.editorial-intro{padding:15px 0 8px!important}
+ body.wellness-v3 .pageHero.editorial-intro>.wrap{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+  padding:22px!important;gap:17px!important;border-radius:27px!important;min-height:0!important;
+ }
+ body.wellness-v3 .editorial-copy h1{font-size:clamp(30px,8vw,44px)!important;margin-bottom:12px!important}
+ body.wellness-v3 .editorial-visual{height:245px!important;min-height:245px!important;max-height:245px!important;border-radius:19px!important}
+ body.wellness-v3 .pageHero.editorial-intro+.section{padding:16px 0 35px!important}
+ body.wellness-v3 .split.editorial-cards-only>.content>.cards{grid-template-columns:1fr!important;gap:13px!important}
+ body.wellness-v3.home-sync .topicgrid{gap:12px!important}
+ body.wellness-v3.home-sync .topic .topiccopy{
+  left:11px!important;bottom:11px!important;
+  padding:12px 13px!important;border-radius:14px!important;max-width:calc(100% - 68px)!important;
+ }
+ body.wellness-v3.home-sync .topic .topic-arrow{right:10px;bottom:10px;width:38px;height:38px}
+ body.wellness-v3.home-sync .hero-copy>p{padding:8px 10px}
+ body.wellness-v3 .tgbar{right:12px!important;bottom:13px!important}
+ body.wellness-v3 .tgbar .tg-floating{padding:12px 15px!important;font-size:12px!important}
+ body.wellness-v3 :is(.child-hero,.gut-hero,.community-hero){padding-block:25px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body.wellness-v3 .glass-floating,
+ body.wellness-v3 .tgbar{animation:none!important;will-change:auto!important}
+ body.wellness-v3 .editorial-copy{animation:none!important}
+ body.wellness-v3 .topic,body.wellness-v3 .topic img{transition:none!important}
+}
