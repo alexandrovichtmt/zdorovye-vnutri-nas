@@ -204,5 +204,5 @@ body.community-page .community-visual-self .community-notebook small{
 }
 
 /* Uploaded portrait photography: preserve face and study desk in course visuals */
-body.community-page .community-visual-courses .community-photo{object-position:center 31%!important}
+body.community-page .community-visual-courses .community-photo{object-position:center top!important}
 body.community-page .community-detail-photo img[src*="D0%9E"]{object-position:center 30%!important}
