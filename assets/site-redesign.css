@@ -394,3 +394,21 @@ body.about-page .about-reasons ul{grid-template-columns:1fr}
 body.about-page .about-reasons-action{padding:23px}
 body .footer{padding-bottom:80px!important}
 }
+
+/* Compact About credentials aligned with the portrait */
+body.about-page .about-layout{align-items:center!important;gap:clamp(22px,4vw,65px)!important}
+body.about-page .about-photo-bio{min-width:0;padding:8px 0!important}
+body.about-page .about-photo-bio .about-eyebrow{font-size:12px!important;letter-spacing:.12em}
+body.about-page .about-photo-bio-years{display:flex;align-items:center;gap:12px;margin:14px 0 17px}
+body.about-page .about-photo-bio-years strong{font-size:clamp(45px,5vw,72px);line-height:1;color:#b37a40}
+body.about-page .about-photo-bio-years span{font-size:clamp(16px,1.3vw,20px);font-weight:700;color:#29231c}
+body.about-page .about-photo-bio h2{font-size:clamp(27px,2.7vw,43px)!important;line-height:1.1;margin:0 0 15px!important}
+body.about-page .about-photo-bio-list{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:7px}
+body.about-page .about-photo-bio-list li{display:grid;grid-template-columns:26px minmax(0,1fr);align-items:start;gap:9px;padding:11px 12px;border:1px solid #eadac7;background:rgba(255,253,250,.8);border-radius:14px;color:#2b241e;font-size:clamp(14px,1.15vw,17px);font-weight:650;line-height:1.35}
+body.about-page .about-photo-bio-list li span{font-size:19px;text-align:center;line-height:1.15;color:#af7d4d}
+body.about-page .about-photo-bio>p{font-size:14px!important;line-height:1.55!important;margin:0!important;color:#67574a!important}
+@media(max-width:760px){
+ body.about-page .about-layout{gap:20px!important}
+ body.about-page .about-photo-bio{padding:0 4px!important}
+ body.about-page .about-photo-bio-list li{padding:10px 11px;font-size:14px}
+}
