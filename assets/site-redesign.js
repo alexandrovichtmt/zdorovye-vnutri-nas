@@ -42,7 +42,7 @@ if(document.body.classList.contains("home-sync")){
  if(benefits&&!document.querySelector(".home-category-tabs")){
   const tabs=document.createElement("nav");tabs.className="home-category-tabs";
   tabs.setAttribute("aria-label","Популярные разделы");
-  tabs.innerHTML=anchors([["nutrition.html","Питание"],["labs.html","Анализы"],["supplements.html","БАДы"],["child-health.html","Детское здоровье"]]);
+  tabs.innerHTML=anchors([["nutrition.html","Питание"],["labs.html","Анализы"],["supplements.html","БАДы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"]]);
   benefits.insertAdjacentElement("afterend",tabs);
  }
  const grid=document.querySelector(".topicgrid");
