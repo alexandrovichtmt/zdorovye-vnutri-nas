@@ -239,3 +239,9 @@ body.wellness-v3 .nutrient-matrix-frame{
   body.wellness-v3.child-health-page .child-intro > .wrap,
   body.wellness-v3.nutrition-page .gut-intro > .wrap{width:calc(100% - 28px)!important}
 }
+
+/* Align the nutrition and child-health hero text with the first section heading. */
+@media (min-width: 761px){
+ body.nutrition-page .gut-hero-grid,
+ body.child-health-page .child-hero-grid{padding-left:42px!important;box-sizing:border-box}
+}
