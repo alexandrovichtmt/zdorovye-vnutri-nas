@@ -15,7 +15,7 @@ document.querySelectorAll("[data-recipe-library]").forEach(root=>{
        '<details class="recipe-library-details"><summary>Показать подробный рецепт <span aria-hidden="true">⌄</span></summary>'+
        '<div class="recipe-library-detail-text"><h4>Ингредиенты</h4><ul>'+ingredients.map(x=>'<li>'+safe(x)+'</li>').join('')+'</ul>'+
        '<h4>Способ приготовления</h4><ol>'+steps.map(x=>'<li>'+safe(x)+'</li>').join('')+'</ol>'+
-       '<a href="'+fileUrl+'" target="_blank" rel="noopener noreferrer" class="recipe-library-original">Открыть исходную HD-карточку ↗</a></div></details></div></article>';
+       '<a href="'+fileUrl+'" target="_blank" rel="noopener noreferrer" class="recipe-library-original">Открыть исходную HD-карточку →</a></div></details></div></article>';
    }).join('')+'</div>'+
    '';
   const cards=[...root.querySelectorAll('[data-recipe-category]')];

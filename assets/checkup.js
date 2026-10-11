@@ -8,7 +8,7 @@
     const n=items.filter(i=>i.checked).length;
     counter.textContent=String(n);
     copy.disabled=n===0;
-    copy.textContent=n ? "Скопировать отмеченные ↗" : "Скопировать отмеченные";
+    copy.textContent=n ? "Скопировать отмеченные →" : "Скопировать отмеченные";
   };
   items.forEach(el=>el.addEventListener("change",refresh));
   clear.addEventListener("click",()=>{items.forEach(el=>el.checked=false);refresh()});

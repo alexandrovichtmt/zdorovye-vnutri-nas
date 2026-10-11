@@ -68,7 +68,7 @@ if(document.body.classList.contains("child-health-page")){
 document.querySelectorAll("a,button,h3").forEach(node=>{
  if(node.children.length)return;
  const original=node.textContent.trim();
- const parts=original.match(/^(.*?)([^\s]+)\s+([→↗↓])$/su);
+ const parts=original.match(/^(.*?)([^\s]+)\s+([→↓])$/su);
  if(!parts)return;
  node.textContent=parts[1];
  const joined=document.createElement("span");

@@ -79,7 +79,7 @@ document.querySelectorAll(".hero-glass,.gut-hero-visual,.child-hero-art,.communi
 /* Give image-card links a clear accessible indication of navigation. */
 document.querySelectorAll(".topicgrid .topic").forEach(node=>{
  if(node.querySelector("img")&&!node.querySelector(".topic-arrow")){
-  const arrow=document.createElement("span");arrow.className="topic-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";node.append(arrow);
+  const arrow=document.createElement("span");arrow.className="topic-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="→";node.append(arrow);
  }
 });
 
