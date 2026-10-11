@@ -90,7 +90,7 @@ body.community-page .community-card li:before{
 body.community-page .community-card li:after{content:"✓";position:absolute;top:10px;left:5px;color:#78512a;font:800 12px Manrope,sans-serif}
 body.community-page .community-card-trigger{
  align-self:center;display:grid;place-items:center;width:47px;height:47px;flex-shrink:0;
- border:1px solid #e5caa7;border-radius:50%;color:#79502b;background:linear-gradient(to top,#e6b980,#eacda3);
+ border:1px solid #e5caa7;border-radius:50%;color:#79502b;background:linear-gradient(to top, #e6b980 0%, #eacda3 100%);
  cursor:pointer;font-size:24px;transition:transform .22s ease,box-shadow .22s ease;
  box-shadow:0 5px 15px rgba(193,147,83,.12)}
 body.community-page .community-card-trigger:hover,.community-page .community-card-trigger:focus-visible{
@@ -113,7 +113,7 @@ body.community-page .community-detail-bullet{
  border:1px solid #f2e2d2;display:flex;align-items:flex-start;gap:11px}
 body.community-page .community-detail-bullet .detail-icon{
  width:31px;height:31px;border-radius:50%;flex:none;display:grid;place-items:center;
- background:linear-gradient(to top,#e6b980,#eacda3);color:#533923;font-size:16px}
+ background:linear-gradient(to top, #e6b980 0%, #eacda3 100%);color:#533923;font-size:16px}
 body.community-page .community-detail-bullet strong{color:#171914!important;font-size:12px!important;line-height:1.5!important}
 body.community-page .community-detail-bullet small{color:#4a4037!important;font-size:11px!important;line-height:1.5!important;display:block;margin-top:3px}
 body.community-page .community-detail-footer{
@@ -150,7 +150,7 @@ body.community-page .community-access-panel .community-eyebrow{color:#eacda3!imp
 body.community-page .community-access-note{color:#fff!important;background:#ffffff12!important;border-left:2px solid #eacda3}
 body.community-page .community-access-action small{color:#f1e1d1!important}
 body.community-page .community-access-circle{color:#edc99a!important}
-body.community-page .community-access-action .btn{background:linear-gradient(to top,#e6b980,#eacda3)!important;color:#121810!important}
+body.community-page .community-access-action .btn{background:linear-gradient(to top, #e6b980 0%, #eacda3 100%)!important;color:#121810!important}
 body.community-page .community-course-redirect{display:none}
 @media(max-width:1030px){
  body.community-page .community-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
@@ -173,3 +173,6 @@ body.community-page .community-course-redirect{display:none}
 @media(prefers-reduced-motion:reduce){
  body.community-page .community-card,body.community-page .community-photo,body.community-page .community-card-trigger{transition:none!important}
 }
+
+body.community-page .community-card{cursor:pointer!important}
+body.community-page .community-card:focus-within{outline-offset:3px}
