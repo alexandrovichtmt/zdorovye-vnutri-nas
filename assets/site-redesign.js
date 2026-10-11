@@ -45,12 +45,6 @@ if(document.body.classList.contains("home-sync")){
   tabs.innerHTML=anchors([["nutrition.html","Питание"],["labs.html","Анализы"],["supplements.html","БАДы"],["child-health.html","Детское здоровье"],["gut-health.html","Здоровый кишечник"]]);
   benefits.insertAdjacentElement("afterend",tabs);
  }
- const grid=document.querySelector(".topicgrid");
- if(grid&&!grid.querySelector(".topic-community")){
-  const card=document.createElement("a");card.className="topic topic-community";card.href="community.html";
-  card.innerHTML="<div class='topiccopy'><h3>Комьюнити</h3><p>Чаты, обучение и персональная поддержка после работы с Людмилой</p></div>";
-  grid.append(card);
- }
 }
 if(document.body.classList.contains("child-health-page")){
  const first=document.getElementById("child-materials");
