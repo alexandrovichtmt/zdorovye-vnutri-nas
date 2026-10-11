@@ -1,0 +1,135 @@
+/* About — warm-cream editorial palette and areas of nutritional support */
+.about-page{
+ --about-ink:#44382f;
+ --about-body:#6b6057;
+ --about-muted:#9b8877;
+ --about-line:#e9dfd3;
+ --about-cream:#fbf6ef;
+ --about-sand:#f1e6d8;
+ --about-accent:#9d7d64;
+ color:var(--about-ink);
+ background:linear-gradient(125deg,#fffaf4 0%,#fbf6ef 39%,#f7f0e8 70%,#fffaf4 100%);
+}
+.about-page .nav{background:rgba(253,248,241,.95);border-bottom:1px solid #b69d802c}
+.about-page .brand,.about-page .links a{color:var(--about-ink)}
+.about-page .btn{background:linear-gradient(125deg,#b99b7d,#8d6d55);color:#fffaf3;border:1px solid #987a61}
+.about-page .btn:hover{box-shadow:0 13px 32px #795e4830}
+.about-page .menu{color:var(--about-ink)}
+.about-page .pageHero.about-page-hero{
+  background:radial-gradient(ellipse at 82% 12%,rgba(229,203,180,.43),transparent 40%),
+             linear-gradient(115deg,#fffaf3,#f0e5d8 68%,#f9f3ea);
+  padding:157px 0 76px;
+  border-bottom:1px solid #e9ded2;
+}
+.about-page .pageHero.about-page-hero h1{
+  color:#594738;font-size:clamp(48px,7vw,88px);
+  letter-spacing:-.055em;line-height:1.03;
+  text-transform:none;margin-bottom:20px;
+}
+.about-page .pageHero.about-page-hero p{font-size:18px;color:#71645a;line-height:1.72}
+.about-page .about-section{background:transparent;padding:84px 0 92px}
+.about-page .about-layout{gap:clamp(32px,6vw,78px)}
+.about-page .about-photo{
+  border-radius:25px;overflow:hidden;background:#f1e8df;
+  border:1px solid #e7dcd0;box-shadow:0 29px 69px #7c665224;
+}
+.about-page .about-photo img{object-fit:cover;object-position:center 34%;filter:saturate(.97) contrast(1.015)}
+.about-page .content h2{color:#503f33;font-size:clamp(35px,4vw,60px);line-height:1.06;letter-spacing:-.04em}
+.about-page .content>p{font-size:17px;line-height:1.78;color:#66594f;margin:20px 0 28px}
+.about-page .content .cards{gap:12px}
+.about-page .content .card{
+  border:1px solid #e9ddd0;background:linear-gradient(140deg,#fffdfa,#f5ece2);
+  border-radius:17px;padding:23px 17px;box-shadow:0 10px 30px #594c3c0a;
+}
+.about-page .content .card h3{color:#5e4939;font-size:17px;line-height:1.3}
+.about-page .content .card p{color:#786b61;line-height:1.55;font-size:13px}
+.about-scope{padding:94px 0 100px;position:relative;overflow:hidden;
+ background:radial-gradient(ellipse at 5% 2%,#e5d3be55 0%,transparent 34%),
+             linear-gradient(160deg,#f7f0e7,#fffbf5 54%,#f5eadf);}
+.about-scope::before{content:"";width:480px;height:480px;border:1px solid #deccb9;
+ border-radius:50%;position:absolute;right:-240px;top:-260px;pointer-events:none;opacity:.55}
+.about-scope .wrap{position:relative;z-index:1}
+.about-scope-intro{display:grid;grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);
+ gap:clamp(18px,7vw,110px);align-items:end;margin-bottom:42px}
+.about-eyebrow{display:inline-flex;gap:10px;align-items:center;text-transform:uppercase;
+ letter-spacing:.19em;font-size:11px;color:#9b826d;font-weight:600!important;margin-bottom:17px}
+.about-eyebrow::before{content:"";width:24px;height:1px;background:#c09f83}
+.about-scope h2{font-size:clamp(37px,5.15vw,71px);font-weight:600!important;
+ letter-spacing:-.055em;line-height:1.04;margin:0;color:#49392d}
+.about-scope-intro p{font-size:16px;line-height:1.77;color:#77685b;margin:0 0 4px}
+.about-specialty-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.about-specialty-card{display:flex;flex-direction:column;position:relative;
+ background:linear-gradient(138deg,#fffdfa,#f8f0e7);border:1px solid #e6d9ca;
+ border-radius:23px;padding:clamp(25px,3.2vw,40px);
+ box-shadow:0 16px 48px #70594212;
+ transition:transform .38s cubic-bezier(.2,.8,.2,1),box-shadow .38s ease, border-color .38s ease}
+.about-specialty-card:hover{transform:translateY(-5px);box-shadow:0 24px 54px #7059421e;border-color:#d3bba5}
+.about-specialty-top{display:flex;justify-content:space-between;align-items:center;
+ gap:15px;margin-bottom:28px}
+.about-specialty-mark{display:grid;place-items:center;width:48px;height:48px;
+ border-radius:15px;border:1px solid #ddc8b3;
+ background:linear-gradient(140deg,#f5e6d5,#fffaf2);
+ color:#a1846b;font-size:19px;font-weight:500!important}
+.about-specialty-count{font-size:12px;color:#aa9480;letter-spacing:.13em}
+.about-specialty-card h3{font-size:clamp(20px,2.05vw,27px);line-height:1.18;
+ font-weight:600!important;color:#554133;letter-spacing:-.025em;margin:0 0 24px}
+.about-specialty-list{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.about-specialty-list li{position:relative;min-height:46px;display:flex;align-items:center;
+ padding:12px 0 12px 26px;border-top:1px solid #ebdfd3;
+ color:#5e5146;font-size:clamp(13px,1.05vw,15px);font-weight:500!important;line-height:1.56}
+.about-specialty-list li::before{content:"";position:absolute;left:1px;top:21px;
+ width:8px;height:8px;border-radius:50%;background:#c1a78b;box-shadow:0 0 0 3px #f3e7db}
+.about-specialty-list li:first-child{border-top-color:#d9c7b6}
+.about-specialty-card.oncology{grid-column:1/-1;display:grid;grid-template-columns: minmax(0,.75fr) minmax(0,1.25fr);
+ gap:25px 45px;align-items:center;
+ background:radial-gradient(circle at 96% 0%,rgba(219,194,165,.33),transparent 42%),
+ linear-gradient(130deg,#fcf7f0,#efe1d3);
+ border-color:#dac7b4}
+.about-specialty-card.oncology .about-specialty-top{margin-bottom:14px}
+.about-specialty-card.oncology h3{margin:0}
+.about-specialty-card.oncology .about-specialty-oncology-text{font-size:16px;line-height:1.78;color:#67574a;margin:0}
+.about-specialty-note{margin:31px 0 0;padding:21px 25px;border-radius:14px;
+ border:1px solid #e4d6c6;background:#fffbf6;
+ color:#796b5d;font-size:13px;line-height:1.76}
+.about-specialty-note strong{color:#685241;font-weight:600!important}
+.about-specialty-cta{display:flex;justify-content:space-between;align-items:center;
+ gap:20px;margin-top:39px}
+.about-specialty-cta p{margin:0;max-width:710px;font-size:16px;line-height:1.7;color:#6f6053}
+.about-specialty-cta .btn{white-space:nowrap}
+.about-page .footer{background:#f8f2e9;border-top:1px solid #e6d7c6}
+.about-page .foot{color:#64574c}
+.about-page .tgbar .btn{background:linear-gradient(125deg,#bd9d7d,#927157)}
+@media(max-width:1030px){
+ .about-scope-intro{grid-template-columns:1fr;gap:19px}
+ .about-specialty-card.oncology{grid-template-columns:1fr;gap:15px}
+ .about-page .content .cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+ .about-page .pageHero.about-page-hero{padding:124px 0 56px}
+ .about-page .pageHero.about-page-hero h1{font-size:clamp(40px,9vw,61px)}
+ .about-page .pageHero.about-page-hero p{font-size:16px}
+ .about-page .about-section{padding:53px 0 62px}
+ .about-page .about-photo,.about-page .about-photo img{height:500px;min-height:500px}
+ .about-page .content .cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .about-page .content .card{padding:17px 12px;border-radius:12px}
+ .about-page .content .card h3{font-size:14px}
+ .about-page .content .card p{font-size:12px}
+ .about-scope{padding:66px 0 74px}
+ .about-scope-intro{margin-bottom:27px}
+ .about-specialty-grid{grid-template-columns:1fr;gap:15px}
+ .about-specialty-card{border-radius:18px;padding:25px 22px}
+ .about-specialty-top{margin-bottom:17px}
+ .about-specialty-card h3{margin-bottom:16px}
+ .about-specialty-list li{font-size:14px}
+ .about-specialty-card.oncology{grid-column:auto;gap:13px}
+ .about-specialty-card.oncology .about-specialty-oncology-text{font-size:14px}
+ .about-specialty-note{padding:17px 19px}
+ .about-specialty-cta{flex-direction:column;align-items:stretch;margin-top:24px}
+ .about-specialty-cta p{font-size:14px}
+ .about-specialty-cta .btn{justify-content:center;white-space:normal;text-align:center}
+}
+@media(max-width:380px){
+ .about-page .content .cards{grid-template-columns:1fr}
+ .about-page .about-photo,.about-page .about-photo img{height:410px;min-height:410px}
+}
+@media(prefers-reduced-motion:reduce){.about-specialty-card{transition:none}}
