@@ -721,3 +721,49 @@ body.wellness-v3.iron-questionnaire-page .tg-floating{
 @media(prefers-reduced-motion:reduce){
  body.wellness-v3.iron-questionnaire-page .iron-scale{backdrop-filter:none!important}
 }
+
+/* Unified homepage benefits + consultation card */
+body.home-sync .unified-wellness-section{background:transparent!important;padding-block:46px!important}
+body.home-sync .ctaBox.unified-wellness-card{
+ display:block!important;width:min(1600px,calc(100% - 40px))!important;
+ padding:clamp(26px,4.2vw,68px)!important;margin-inline:auto!important;
+ border-radius:38px!important;background:#201b18!important;color:#fff!important;
+ box-sizing:border-box!important;max-width:none!important;
+}
+body.home-sync .unified-wellness-card .unified-wellness-top{
+ display:grid!important;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)!important;
+ align-items:center!important;gap:clamp(25px,4vw,70px)!important;
+}
+body.home-sync .unified-wellness-card h2{color:#fff!important;letter-spacing:-.035em!important}
+body.home-sync .unified-wellness-heading h2{font-size:clamp(30px,3.4vw,59px)!important;line-height:1.09!important;margin:0!important}
+body.home-sync .unified-wellness-info p{font-size:clamp(15px,1.14vw,19px)!important;line-height:1.65!important;color:#e8e1d9!important;margin:0 0 22px!important}
+body.home-sync .unified-wellness-card .healthbox{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:10px!important;padding:0!important;background:transparent!important;
+ border:0!important;border-radius:0!important;
+}
+body.home-sync .unified-wellness-card .healthbox div{
+ min-width:0!important;display:flex!important;align-items:center!important;
+ justify-content:center!important;gap:8px!important;text-align:center!important;
+ border-radius:17px!important;padding:13px 10px!important;
+ background:#eac697!important;color:#241d17!important;
+ font-size:clamp(13px,1.06vw,17px)!important;font-weight:600!important;
+}
+body.home-sync .unified-wellness-bottom{
+ display:flex!important;align-items:center!important;justify-content:space-between!important;
+ gap:28px!important;margin-top:37px!important;padding-top:30px!important;
+ border-top:1px solid rgba(234,198,151,.28)!important;
+}
+body.home-sync .unified-wellness-bottom h2{font-size:clamp(25px,2.9vw,44px)!important;line-height:1.16!important;margin:0 0 12px!important}
+body.home-sync .unified-wellness-bottom p{font-size:clamp(14px,1vw,17px)!important;color:#e8e1d9!important;margin:0!important}
+body.home-sync .unified-wellness-bottom .btn{white-space:normal!important;text-align:center!important;flex-shrink:0!important;max-width:250px!important}
+@media(max-width:800px){
+ body.home-sync .ctaBox.unified-wellness-card{width:calc(100% - 28px)!important;padding:25px 21px!important;border-radius:28px!important}
+ body.home-sync .unified-wellness-card .unified-wellness-top{grid-template-columns:1fr!important;gap:22px!important}
+ body.home-sync .unified-wellness-bottom{flex-direction:column!important;align-items:stretch!important;gap:18px!important;margin-top:25px!important;padding-top:24px!important}
+ body.home-sync .unified-wellness-bottom .btn{max-width:none!important;width:100%!important}
+}
+@media(max-width:390px){
+ body.home-sync .unified-wellness-card .healthbox{gap:7px!important}
+ body.home-sync .unified-wellness-card .healthbox div{font-size:12px!important;padding:11px 6px!important}
+}
