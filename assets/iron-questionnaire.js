@@ -91,6 +91,40 @@
   });
   tbody.replaceChildren(fragment);
 
+  // Four compact pages of seven questions. Answers and scoring stay global.
+  const pageSize = 7;
+  const pages = Math.ceil(totalQuestions / pageSize);
+  const questionRows = [...tbody.querySelectorAll(".iron-question-row")];
+  const pager = document.createElement("nav");
+  pager.className = "iron-pager";
+  pager.setAttribute("aria-label", "Страницы анкеты");
+  pager.innerHTML = '<button class="iron-page-button" type="button" data-page-prev>← Назад</button><span class="iron-pager-status" role="status" aria-live="polite"></span><button class="iron-page-button iron-page-next" type="button" data-page-next>Далее →</button>';
+  document.querySelector(".iron-table-scroller").after(pager);
+  const pageStatus = pager.querySelector(".iron-pager-status");
+  const previous = pager.querySelector("[data-page-prev]");
+  const next = pager.querySelector("[data-page-next]");
+  let currentPage = 0;
+  function showPage(page, scroll = true) {
+    currentPage = Math.max(0, Math.min(page, pages - 1));
+    const start = currentPage * pageSize;
+    questionRows.forEach((row, index) => { row.hidden = index < start || index >= start + pageSize; });
+    previous.disabled = currentPage === 0;
+    next.disabled = currentPage === pages - 1;
+    const end = Math.min(start + pageSize, totalQuestions);
+    const answeredHere = answers.slice(start, end).filter(v => v !== null).length;
+    pageStatus.textContent = "Вопросы " + (start + 1) + "–" + end + " из " + totalQuestions + " · Заполнено " + answeredHere + "/" + (end - start) + " · Шаг " + (currentPage + 1) + "/" + pages;
+    if (scroll) {
+      const legend = document.querySelector(".iron-scale");
+      (legend || document.querySelector(".iron-intro")).scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+        block: "start"
+      });
+    }
+  }
+  previous.addEventListener("click", () => showPage(currentPage - 1));
+  next.addEventListener("click", () => showPage(currentPage + 1));
+  showPage(0, false);
+
   function update() {
     const filled = answers.filter(v => v !== null).length;
     const sum = answers.reduce((acc, v) => acc + (v === null ? 0 : v), 0);
@@ -99,6 +133,7 @@
     progress.setAttribute("aria-valuenow", String(filled));
     fill.style.width = filled / totalQuestions * 100 + "%";
     submit.disabled = filled !== totalQuestions;
+    showPage(currentPage, false);
     footerHint.textContent = filled === totalQuestions
       ? "Все ответы заполнены. Можно посмотреть предварительный результат."
       : "Осталось ответить на " + (totalQuestions - filled) + " из " + totalQuestions + " вопросов.";
@@ -139,6 +174,7 @@
     tbody.querySelectorAll('input[type="radio"]').forEach(input => input.checked = false);
     tbody.querySelectorAll("tr").forEach(tr => tr.classList.remove("iron-answered"));
     result.hidden = true;
+    showPage(0, false);
     update();
     document.getElementById("iron-survey").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
   }

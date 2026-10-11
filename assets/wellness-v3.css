@@ -419,3 +419,305 @@ body.wellness-v3.home-sync :is(.child-teaser-inner,.gut-teaser-inner:not(.gut-gl
  body.wellness-v3.home-sync .gut-glass-step{padding:18px 19px!important}
  body.wellness-v3.home-sync .gut-glass-number{margin-bottom:10px}
 }
+
+/* OCT 11 accessibility and spacing polish – applied after the earlier themes.
+   All previous written content and native form behavior stay unchanged. */
+:root{--rd-text:#3d322b;--rd-sub:#5a4332}
+body.wellness-v3 .section > .wrap,
+body.wellness-v3 .iron-section > .wrap{
+ box-sizing:border-box!important;
+ padding-inline:clamp(16px,2.8vw,40px)!important;
+ margin-inline:auto!important;
+}
+body.wellness-v3 .pageHero.editorial-intro + .section > .wrap.split.editorial-cards-only{
+ display:block!important;
+ width:min(1340px,calc(100% - 48px))!important;
+ max-width:1340px!important;
+ margin-inline:auto!important;
+ padding-inline:clamp(24px,3.8vw,55px)!important;
+}
+body.wellness-v3 :is(.editorial-copy p,.about-section .content>p,
+ .about-scope-intro p,.iron-intro p,.iron-hero p,
+ .section>.wrap>p,.gut-headline>p){
+ color:#342d28!important;
+ font-weight:500!important;
+ line-height:1.65!important;
+}
+body.wellness-v3 :is(.iron-intro h2,.iron-survey-heading strong,.iron-question-row th,
+ .iron-pager,.iron-survey-points,.iron-scale span){
+ color:#25231e!important;
+}
+/* Full portrait of Ludmila: never crop head, legs or the original photograph. */
+body.wellness-v3.about-page .pageHero.editorial-intro > .wrap{
+ grid-template-columns:minmax(0,.90fr) minmax(0,1fr)!important;
+ align-items:center!important;
+ padding:clamp(26px,3.6vw,50px)!important;
+ min-height:0!important;
+}
+body.wellness-v3.about-page .pageHero.editorial-intro .editorial-visual{
+ height:auto!important;max-height:none!important;min-height:0!important;
+ aspect-ratio:auto!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ background:linear-gradient(120deg,#f5eadd,#f9f5ef)!important;
+ overflow:hidden!important;
+}
+body.wellness-v3.about-page .pageHero.editorial-intro .editorial-visual img{
+ width:100%!important;height:auto!important;max-height:650px!important;
+ object-fit:contain!important;object-position:center center!important;
+ filter:none!important;transform:none!important;
+}
+body.wellness-v3.about-page .about-section{padding-top:12px!important}
+body.wellness-v3.about-page .editorial-copy h1{margin-bottom:13px!important}
+/* Iron: 7 questions per page, clear persistent 0–4 legend. */
+body.wellness-v3.iron-questionnaire-page .iron-hero{
+ padding:28px 0 27px!important;min-height:0!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-hero-inner{
+ grid-template-columns:minmax(0,1fr) auto!important;gap:22px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-back{margin-bottom:14px!important}
+body.wellness-v3.iron-questionnaire-page .iron-eyebrow{margin-bottom:8px!important}
+body.wellness-v3.iron-questionnaire-page .iron-hero h1{
+ font:700 clamp(31px,4vw,55px)/1.12 Unbounded,Manrope,sans-serif!important;
+ letter-spacing:-.045em!important;margin:0 0 12px!important;
+ color:#0f1a14!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-hero h1 em{color:#76502c!important;font-style:normal}
+body.wellness-v3.iron-questionnaire-page .iron-hero p{
+ font-size:clamp(13px,1vw,16px)!important;line-height:1.55!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-droplet{
+ width:82px!important;height:82px!important;margin:0 auto 3px!important;
+ font:600 29px Unbounded,Manrope,sans-serif!important;
+ border-radius:25px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-hero-aside{gap:4px!important;font-size:11px!important}
+body.wellness-v3.iron-questionnaire-page .iron-section{padding:25px 0 65px!important}
+body.wellness-v3.iron-questionnaire-page .iron-intro{max-width:980px;margin-bottom:21px!important}
+body.wellness-v3.iron-questionnaire-page .iron-intro h2{
+ font:700 clamp(23px,3.3vw,39px)/1.2 Unbounded,Manrope,sans-serif!important;
+ margin:0 0 9px!important;letter-spacing:-.04em!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-intro p{
+ font-size:14px!important;line-height:1.55!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-survey{
+ overflow:visible!important;border-radius:24px!important;
+ background:rgba(255,253,250,.92)!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-survey-top{
+ padding:18px 25px 12px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-survey-heading{gap:3px!important}
+body.wellness-v3.iron-questionnaire-page .iron-survey-heading strong{
+ font:700 20px/1.2 Manrope,sans-serif!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-survey-points strong{
+ font:700 24px/1.2 Manrope,sans-serif!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-progress-track{
+ height:6px!important;margin:0 25px 12px!important;
+}
+body.wellness-v3.iron-questionnaire-page #iron-progress-fill{
+ background:var(--w-accent)!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-scale{
+ display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;
+ gap:7px!important;align-items:center!important;
+ position:sticky!important;top:95px!important;z-index:80!important;
+ padding:9px 11px!important;margin:0 15px 12px!important;
+ border:1px solid rgba(229,202,171,.85)!important;
+ border-radius:16px!important;
+ background:rgba(255,249,242,.97)!important;
+ box-shadow:0 6px 17px rgba(95,68,39,.095)!important;
+ backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);
+ scroll-margin-top:108px;
+}
+body.wellness-v3.iron-questionnaire-page .iron-scale span{
+ display:flex!important;align-items:center!important;gap:6px!important;
+ font-size:clamp(10px,.77vw,12px)!important;line-height:1.25!important;
+ font-weight:600!important;min-width:0!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-scale b{
+ flex:0 0 24px;width:24px;height:24px;
+ background:white!important;color:#28211c!important;
+ border:1px solid #d7b992!important;font-size:11px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-table-scroller{
+ overflow:visible!important;border-radius:0!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-table{
+ width:100%!important;min-width:0!important;table-layout:fixed!important;
+ font-size:13px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-table thead{
+ background:#efe0cf!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-table thead th{
+ padding:10px 6px!important;font:700 12px Manrope,sans-serif!important;
+ color:#322820!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-table th:first-child{
+ width:59%!important;padding-left:22px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-table thead th:not(:first-child){width:8.2%!important}
+body.wellness-v3.iron-questionnaire-page .iron-table tbody th{
+ padding:9px 14px 9px 20px!important;
+ color:#2f2924!important;font-size:13px!important;
+ line-height:1.38!important;font-weight:550!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-table tbody td{
+ padding:5px 3px!important;text-align:center!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-question-number{
+ width:26px!important;height:26px!important;flex:0 0 26px!important;
+ margin-right:10px!important;background:#f5e6d5!important;
+ color:#5a3e25!important;font-size:10px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-option span{
+ width:35px!important;height:35px!important;border-radius:11px!important;
+ font-size:13px!important;color:#44332a!important;
+ border:1px solid #d9c0a6!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-option input:checked+span{
+ background:var(--w-accent)!important;color:#0f1a14!important;
+ border-color:#d5ae7a!important;font-weight:800!important;
+ box-shadow:0 4px 10px rgba(110,76,39,.13)!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-question-row[hidden]{
+ display:none!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-pager{
+ display:flex;align-items:center;justify-content:space-between;
+ gap:12px;padding:15px 23px!important;
+ border-top:1px solid #ead9c5;
+ background:rgba(251,242,231,.54)!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-pager-status{
+ font:600 12px/1.5 Manrope,sans-serif!important;text-align:center;
+ color:#423326!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-page-button{
+ appearance:none;border-radius:999px;border:1px solid #d5bd9f;
+ background:#fffdfa;color:#2e271f;padding:10px 17px;
+ font:700 12px Manrope,sans-serif;cursor:pointer;white-space:nowrap;
+}
+body.wellness-v3.iron-questionnaire-page .iron-page-next{
+ background:var(--w-accent)!important;border-color:transparent;
+ box-shadow:0 3px 8px rgba(151,110,68,.10);
+}
+body.wellness-v3.iron-questionnaire-page .iron-page-button:disabled{
+ opacity:.42;cursor:default;filter:grayscale(.4);
+}
+body.wellness-v3.iron-questionnaire-page .iron-survey-footer{
+ padding:12px 23px 18px!important;gap:15px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-survey-footer .iron-footer-hint{
+ color:#4d3b30!important;font-size:12px!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-reset{
+ padding:10px 14px!important;color:#392e23!important;
+}
+body.wellness-v3.iron-questionnaire-page .iron-submit{
+ padding:11px 16px!important;font-size:12px!important;
+}
+body.wellness-v3.iron-questionnaire-page .tgbar{
+ bottom:18px!important;right:15px!important;
+}
+body.wellness-v3.iron-questionnaire-page .tg-floating{
+ padding:11px 14px!important;
+}
+@media(max-width:800px){
+ body.wellness-v3.about-page .pageHero.editorial-intro > .wrap{
+  grid-template-columns:1fr!important;
+  padding:22px!important;
+ }
+ body.wellness-v3.about-page .pageHero.editorial-intro .editorial-visual{
+  max-height:none!important;height:auto!important;min-height:0!important;
+ }
+ body.wellness-v3.about-page .pageHero.editorial-intro .editorial-visual img{
+  max-height:540px!important;height:auto!important;object-fit:contain!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-hero-inner{grid-template-columns:1fr!important}
+ body.wellness-v3.iron-questionnaire-page .iron-hero-aside{display:none!important}
+ body.wellness-v3.iron-questionnaire-page .iron-scale{
+  top:81px!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  margin:0 8px 9px!important;padding:8px 5px!important;gap:3px!important;
+  scroll-margin-top:90px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-scale span{
+  flex-direction:column;align-items:center!important;
+  text-align:center;gap:4px!important;
+  font-size:clamp(9px,2.1vw,11px)!important;
+  line-height:1.2!important;overflow-wrap:anywhere!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-scale b{
+  flex:0 0 22px;width:22px;height:22px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-table{
+  display:block!important;min-width:0!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-table tbody{
+  display:block!important;width:100%!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-table thead{display:none!important}
+ body.wellness-v3.iron-questionnaire-page .iron-table tbody tr:not([hidden]){
+  display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:2px!important;padding:10px 8px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-table tbody th{
+  display:flex!important;grid-column:1/-1;
+  padding:0 5px 8px!important;text-align:left!important;
+  font-size:13px!important;gap:6px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-question-number{
+  margin-right:5px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-table tbody td{
+  padding:0 2px!important;display:block!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-option span{
+  width:100%!important;height:37px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-pager{
+  flex-wrap:wrap;gap:9px!important;padding:12px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-pager-status{
+  order:-1;flex:0 0 100%!important;font-size:11px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-page-button{
+  flex:1;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-survey-footer{
+  flex-direction:column!important;align-items:stretch!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-survey-buttons{
+  flex-direction:row!important;align-items:center!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-survey-buttons button{
+  width:auto!important;flex:1;
+ }
+}
+@media(max-width:480px){
+ body.wellness-v3 .pageHero.editorial-intro+.section>.wrap.split.editorial-cards-only{
+  width:calc(100% - 28px)!important;padding-inline:18px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-hero h1{font-size:30px!important}
+ body.wellness-v3.iron-questionnaire-page .iron-intro h2{font-size:24px!important}
+ body.wellness-v3.iron-questionnaire-page .iron-survey-top{
+  padding:15px 13px 12px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-progress-track{
+  margin:0 13px 10px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .iron-survey-points strong{font-size:20px!important}
+ body.wellness-v3.iron-questionnaire-page .iron-survey-heading strong{font-size:16px!important}
+ body.wellness-v3.iron-questionnaire-page .iron-option span{height:36px!important}
+ body.wellness-v3.iron-questionnaire-page .iron-survey-footer{
+  padding:13px 12px 19px!important;
+ }
+ body.wellness-v3.iron-questionnaire-page .tg-floating span{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body.wellness-v3.iron-questionnaire-page .iron-scale{backdrop-filter:none!important}
+}
