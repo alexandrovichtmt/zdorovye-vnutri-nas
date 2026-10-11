@@ -520,3 +520,135 @@ body.wellness-v3.about-page .about-layout-bio-left .about-photo > img {
     aspect-ratio:1 / 1!important;
   }
 }
+
+
+/* 2026-10-11 audited: align actual section container edges, not the inner
+   card content. Earlier shared inset increased the left offset by 20–52px. */
+body.wellness-v3 :is(.section,.about-profile-extra,.about-scope,.community-intro,.community-access,.child-path,.gut-intro,.gut-mechanisms,.services-section) > .wrap {
+  padding-inline:0!important;
+}
+body.wellness-v3.nutrition-page :is(.gut-hero,.nutrition-basics,.gut-intro,.gut-protocol,.gut-explainer,.gut-food-comparison,.gut-recipe-section,.recipe-library,.gut-journal) > .wrap,
+body.wellness-v3.child-health-page :is(.child-hero,.child-path,.child-materials) > .wrap {
+  padding-inline:0!important;
+}
+@media(min-width:761px){
+  body.wellness-v3 :is(.child-health-page,.nutrition-page) .gut-hero-grid{
+    padding-inline:0!important;
+  }
+  body.wellness-v3.nutrition-page .nutrition-hero .gut-hero-grid,
+  body.wellness-v3.child-health-page .child-hero-grid{
+    padding-inline:0!important;
+  }
+}
+/* Keep the photos and legibility; remove only unnecessary whitespace. */
+body.wellness-v3.nutrition-page .nutrition-hero {
+  padding-block:clamp(16px,2.5vw,34px)!important;
+}
+body.wellness-v3.nutrition-page .gut-hero-visual{
+  padding:clamp(15px,2vw,24px)!important;
+  gap:10px!important;
+}
+body.wellness-v3.nutrition-page .gut-hero-photo{
+  max-height:360px!important;
+}
+body.wellness-v3.nutrition-page .nutrition-basics{
+  padding-top:clamp(22px,2.8vw,37px)!important;
+  padding-bottom:clamp(26px,3.3vw,45px)!important;
+}
+body.wellness-v3.nutrition-page .nutrition-basics-head{
+  margin-bottom:17px!important;
+}
+body.wellness-v3.nutrition-page .nutrition-basics-head h2{
+  margin:8px 0 9px!important;
+}
+body.wellness-v3.nutrition-page .nutrition-basics-head p{
+  margin:0!important;
+}
+body.wellness-v3.nutrition-page .gut-intro{
+  padding-block:clamp(24px,3vw,40px)!important;
+}
+body.wellness-v3.nutrition-page .gut-intro > .wrap.gut-intro-grid{
+  padding-inline:0!important;
+}
+body.wellness-v3.nutrition-page .gut-protocol,
+body.wellness-v3.nutrition-page .gut-explainer,
+body.wellness-v3.nutrition-page .gut-food-comparison,
+body.wellness-v3.nutrition-page .recipe-library{
+  padding-top:clamp(29px,3.5vw,47px)!important;
+  padding-bottom:clamp(32px,4vw,51px)!important;
+}
+body.wellness-v3.child-health-page .child-hero{
+  padding-block:clamp(16px,2.7vw,32px)!important;
+}
+body.wellness-v3.child-health-page .child-hero-art{
+  min-height:clamp(355px,34vw,470px)!important;
+  height:clamp(355px,34vw,470px)!important;
+}
+body.wellness-v3.child-health-page .child-path{
+  padding-top:clamp(20px,2.8vw,36px)!important;
+  padding-bottom:clamp(24px,3.5vw,45px)!important;
+}
+body.wellness-v3.child-health-page .child-path-heading{
+  margin-bottom:clamp(16px,2.5vw,28px)!important;
+}
+@media(max-width:760px){
+  body.wellness-v3.nutrition-page .gut-intro > .wrap.gut-intro-grid{
+    grid-template-columns:minmax(0,1fr)!important;
+  }
+  body.wellness-v3.child-health-page .child-hero-art{
+    min-height:clamp(320px,95vw,470px)!important;
+    height:clamp(320px,95vw,470px)!important;
+  }
+  body.wellness-v3.nutrition-page .nutrition-hero,
+  body.wellness-v3.child-health-page .child-hero{
+    padding-block:18px!important;
+  }
+}
+/* All action labels use consistent, regular Manrope (including words in spans).
+   Gold/light backgrounds receive readable near-black, but dark panels retain
+   their white descriptive headings. */
+body.wellness-v3 :is(
+  a.btn,button.btn,.child-register-button,.supplement-registration-button,
+  .checkup-copy,.checkup-clear,.iron-reset,.iron-submit,
+  .recipe-library-filters button,.gut-filters button,
+  .home-category-tabs a,.child-age-tabs a,
+  .child-zoom-label,.community-card-trigger,
+  .services-contact-cards a.card h3
+){
+  font-family:Manrope,Arial,sans-serif!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  font-synthesis:none!important;
+}
+body.wellness-v3 :is(
+  a.btn,button.btn,.child-register-button,.supplement-registration-button,
+  .checkup-copy,.checkup-clear,.iron-reset,.iron-submit,
+  .recipe-library-filters button,.gut-filters button,
+  .home-category-tabs a,.child-age-tabs a,
+  .community-card-trigger,.services-contact-cards a.card h3
+){
+  color:#111111!important;
+  -webkit-text-fill-color:#111111!important;
+}
+body.wellness-v3 :is(
+  a.btn,button.btn,.child-register-button,.supplement-registration-button,
+  .checkup-copy,.checkup-clear,.iron-reset,.iron-submit,
+  .recipe-library-filters button,.gut-filters button,
+  .home-category-tabs a,.child-age-tabs a,
+  .community-card-trigger,.services-contact-cards a.card h3
+) :is(span,strong,b,em,.inline-arrow-unit){
+  font-family:inherit!important;
+  font-weight:400!important;
+  font-style:normal!important;
+  color:inherit!important;
+  -webkit-text-fill-color:inherit!important;
+}
+body.wellness-v3 .services-contact-cards a.card h3 {
+  letter-spacing:normal!important;
+}
+body.wellness-v3 :is(a.btn,button.btn,.services-contact-cards a.card h3) > .inline-arrow-unit-after-text,
+body.wellness-v3 .inline-arrow-unit-after-text{
+  display:inline!important;
+  margin-inline-start:.27em!important;
+  white-space:nowrap!important;
+}

@@ -72,7 +72,7 @@ document.querySelectorAll("a,button,h3").forEach(node=>{
  if(!parts)return;
  node.textContent=parts[1];
  const joined=document.createElement("span");
- joined.className="inline-arrow-unit";
+ joined.className="inline-arrow-unit"+(parts[1].trim()?" inline-arrow-unit-after-text":"");
  joined.textContent=parts[2]+"\u00a0"+parts[3];
  node.appendChild(joined);
 });
