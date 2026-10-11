@@ -1,0 +1,50 @@
+/* TMT wellness visual system v3 — presentational enhancement only.
+ * Keeps authored content, navigation, questionnaires and modals intact. */
+(()=>{"use strict";
+const root=document.body;root.classList.add("wellness-v3");
+const nav=document.querySelector(".nav");
+if(nav)nav.classList.add("wellness-nav");
+/* Bring the existing authored photo beside the page heading, not one screen below. */
+const hero=document.querySelector("header.pageHero");
+const section=hero?.nextElementSibling;
+if(hero&&section?.classList.contains("section")){
+ const heroWrap=hero.querySelector(".wrap");
+ const split=section.querySelector(".wrap.split");
+ if(heroWrap&&!heroWrap.querySelector(".editorial-copy")){
+  const source=split?.querySelector(".art img");
+  const copy=document.createElement("div");copy.className="editorial-copy";
+  while(heroWrap.firstChild)copy.appendChild(heroWrap.firstChild);
+  const art=document.createElement("div");art.className="editorial-visual";
+  if(source){
+   const image=source.cloneNode(true);image.removeAttribute("loading");image.setAttribute("decoding","async");
+   art.appendChild(image);source.closest(".art").classList.add("editorial-image-original");
+   if(split)split.classList.add("editorial-cards-only");
+  }else{
+   art.classList.add("editorial-abstract");
+   art.setAttribute("aria-hidden","true");
+   art.innerHTML='<span class="editorial-orbit"></span><span class="editorial-orbit editorial-orbit-small"></span><span class="editorial-symbol">✳</span>';
+  }
+  heroWrap.append(copy,art);hero.classList.add("editorial-intro");
+ }
+}
+/* Telegram: single translucent floating capsule throughout the website. */
+let tg=document.querySelector(".tgbar");
+if(!tg){tg=document.createElement("div");tg.className="tgbar";document.body.appendChild(tg)}
+let anchor=tg.querySelector("a");
+if(!anchor){anchor=document.createElement("a");tg.appendChild(anchor)}
+if(!anchor.hasAttribute("href"))anchor.href="https://t.me/trunova1977";
+anchor.className="tg-floating";
+anchor.target="_blank";anchor.rel="noopener noreferrer";
+anchor.setAttribute("aria-label","Написать Людмиле в Telegram");
+anchor.innerHTML='<svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m21.6 3.1-3.3 17c-.2 1.1-.8 1.3-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.3L5.9 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20 3.3c.9-.3 1.8.2 1.6 1.1Z" fill="currentColor"/><path d="m8.7 14.9 9.5-8.5" stroke="#fff" stroke-opacity=".38" stroke-linecap="round"/></svg><span>Telegram</span>';
+/* Animate original glass cards — never touch the underlying photos. */
+document.querySelectorAll(".hero-glass,.gut-hero-visual,.child-hero-art,.community-hero-art").forEach((node,i)=>{
+ node.classList.add("glass-floating");node.style.setProperty("--float-delay",(-i*1.7)+"s");
+});
+/* Give image-card links a clear accessible indication of navigation. */
+document.querySelectorAll(".topicgrid .topic").forEach(node=>{
+ if(node.querySelector("img")&&!node.querySelector(".topic-arrow")){
+  const arrow=document.createElement("span");arrow.className="topic-arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="↗";node.append(arrow);
+ }
+});
+})();
