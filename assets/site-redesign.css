@@ -352,3 +352,45 @@ body .child-age-tabs a:first-child,body .child-age-tabs a:hover{background:var(-
  body .hero-glass,body .topic,body .btn,body .nav .more-menu{animation:none!important;transition:none!important}
  body .reveal{opacity:1!important;transform:none!important}
 }
+
+/* Transparent site footer: no dark bottom backing on any page */
+body .footer{background:transparent!important;background-image:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;margin-top:0!important;padding:28px 0 32px!important}
+body .footer .foot,body .footer .foot b,body .footer .foot span{color:#50463b!important;text-shadow:none!important}
+body .footer::before,body .footer::after{background:none!important;box-shadow:none!important}
+
+/* About: experience, focus areas and inviting consultation */
+body.about-page .about-profile-extra{padding:35px 0 65px!important}
+body.about-page .about-profile-head{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-bottom:22px}
+body.about-page .about-profile-head h2{font-size:clamp(34px,4vw,58px);line-height:1.08;margin:12px 0 0}
+body.about-page .about-years{display:flex;align-items:center;gap:16px;padding:16px 24px;background:#211b17;border-radius:26px;color:#fff;flex-shrink:0}
+body.about-page .about-years strong{font-size:clamp(43px,4vw,62px);line-height:1;color:#edc99a}
+body.about-page .about-years span{font-size:15px;color:#fff;max-width:95px;line-height:1.25}
+body.about-page .about-credentials{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:24px}
+body.about-page .about-credential{padding:26px 20px;min-height:160px;border:1px solid #e8d5be;border-radius:25px;background:#fffdfa;box-sizing:border-box}
+body.about-page .about-credential span{font-size:27px;display:block;margin-bottom:18px}
+body.about-page .about-credential h3{font-size:clamp(15px,1.3vw,20px);line-height:1.4;margin:0;overflow-wrap:anywhere}
+body.about-page .about-reasons{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.8fr);gap:30px;background:#f4e8d9;border:1px solid #e8cba7;border-radius:34px;padding:clamp(25px,4vw,55px)}
+body.about-page .about-reasons h2{font-size:clamp(30px,3.3vw,47px);line-height:1.12;margin:10px 0 26px}
+body.about-page .about-reasons ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px 24px;padding:0;margin:0;list-style:none}
+body.about-page .about-reasons li{position:relative;padding-left:22px;font-size:16px;line-height:1.5;color:#2a2520}
+body.about-page .about-reasons li::before{content:"✦";position:absolute;left:0;color:#ae7843}
+body.about-page .about-reasons-action{display:flex;flex-direction:column;justify-content:center;padding:28px;border-radius:28px;background:#211b17;color:#fff}
+body.about-page .about-reasons-action>span{font-size:34px;color:#edc99a}
+body.about-page .about-reasons-action h3{color:#fff!important;font-size:clamp(23px,2.1vw,31px);line-height:1.2;margin:17px 0}
+body.about-page .about-reasons-action p{color:#e9ddd0!important;line-height:1.65;margin:0 0 22px}
+body.about-page .about-reasons-action .btn{align-self:flex-start;background:#eac697!important;color:#1e1914!important;border-radius:999px}
+@media(max-width:1020px){
+body.about-page .about-credentials{grid-template-columns:repeat(2,minmax(0,1fr))}
+body.about-page .about-reasons{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+body.about-page .about-profile-head{align-items:flex-start;flex-direction:column}
+body.about-page .about-years{width:auto}
+body.about-page .about-credentials{gap:10px}
+body.about-page .about-credential{padding:18px 14px;min-height:145px}
+body.about-page .about-credential h3{font-size:14px}
+body.about-page .about-reasons{padding:24px 17px}
+body.about-page .about-reasons ul{grid-template-columns:1fr}
+body.about-page .about-reasons-action{padding:23px}
+body .footer{padding-bottom:80px!important}
+}
