@@ -334,7 +334,7 @@ body.wellness-v3.community-page .community-access-circle.community-access-avatar
 /* Nutrition refinements: consistent outer alignment, condensed textual
    spacing and section rhythm. Content padding INSIDE the cards is preserved. */
 body.nutrition-page .nutrition-hero > .wrap,
-body.nutrition-page main > section > .wrap:not(.gut-journal-panel):not(.gut-care-box) {
+body.nutrition-page main > section > .wrap:not(.gut-journal-panel):not(.gut-care-box):not(.ctaBox):not(.child-register-card):not(.community-access-panel) {
   padding-left:0!important;
   padding-right:0!important;
   box-sizing:border-box!important;
@@ -725,7 +725,8 @@ body.wellness-v3 :is(
 
 
 /* LAYOUT REPAIR v9: restore inner padding and contain oversized typography. */
-body.wellness-v3 .section>.wrap:not(.child-teaser-inner):not(.gut-teaser-inner):not(.unified-wellness-card){padding-inline:0!important}
+/* Outer-only containers: preserve padding inside informational .wrap cards. */
+body.wellness-v3 .section>.wrap:not(.child-teaser-inner):not(.gut-teaser-inner):not(.unified-wellness-card):not(.ctaBox):not(.gut-care-box):not(.gut-journal-panel):not(.child-register-card):not(.community-access-panel){padding-inline:0!important}
 body.wellness-v3.home-sync .child-home-teaser>.wrap.child-teaser-inner{
  box-sizing:border-box!important;width:min(1340px,calc(100% - 48px))!important;
  display:flex!important;align-items:center!important;gap:clamp(18px,3vw,38px)!important;
@@ -985,4 +986,39 @@ body.wellness-v3 :is(
   .gut-home-teaser>.wrap.gut-teaser-inner,
   .unified-wellness-section>.wrap.unified-wellness-card
  ){padding:19px!important}
+}
+
+
+/* Card padding regression fix (v11): restore the actual CONTENT inset
+   on .wrap used as the card element. Preserve the unified outer 1340px grid. */
+body.wellness-v3 .section > .wrap.ctaBox:not(.unified-wellness-card),
+body.wellness-v3 .section > .wrap.gut-care-box,
+body.wellness-v3 .section > .wrap.gut-journal-panel,
+body.wellness-v3 .section > .wrap.child-register-card,
+body.wellness-v3 .section > .wrap.community-access-panel{
+  padding:clamp(26px,3.2vw,46px)!important;
+  padding-inline:clamp(26px,3.2vw,46px)!important;
+  box-sizing:border-box!important;
+}
+body.wellness-v3 .gut-care > .wrap.gut-care-box{
+  padding:clamp(26px,3.2vw,46px)!important;
+  padding-inline:clamp(26px,3.2vw,46px)!important;
+}
+body.wellness-v3 .section > .wrap.ctaBox > div,
+body.wellness-v3 .gut-care-box > :is(h2,p,.gut-sources,a),
+body.wellness-v3 .gut-journal-panel > div{
+  min-width:0!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+@media(max-width:760px){
+  body.wellness-v3 .section > .wrap.ctaBox:not(.unified-wellness-card),
+  body.wellness-v3 .section > .wrap.gut-care-box,
+  body.wellness-v3 .section > .wrap.gut-journal-panel,
+  body.wellness-v3 .section > .wrap.child-register-card,
+  body.wellness-v3 .section > .wrap.community-access-panel,
+  body.wellness-v3 .gut-care > .wrap.gut-care-box{
+    padding:22px!important;
+    padding-inline:22px!important;
+  }
 }
