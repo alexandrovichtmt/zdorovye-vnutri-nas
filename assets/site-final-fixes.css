@@ -336,3 +336,146 @@ body.wellness-v3.community-page .community-access-circle.community-access-avatar
     margin:0 auto 8px!important;
   }
 }
+
+
+/* Nutrition refinements: consistent outer alignment, condensed textual
+   spacing and section rhythm. Content padding INSIDE the cards is preserved. */
+body.nutrition-page .nutrition-hero > .wrap,
+body.nutrition-page main > section > .wrap:not(.gut-journal-panel):not(.gut-care-box) {
+  padding-left:0!important;
+  padding-right:0!important;
+  box-sizing:border-box!important;
+}
+body.nutrition-page .nutrition-hero .gut-hero-grid {
+  padding-left:0!important;
+  padding-right:0!important;
+  column-gap:clamp(20px,3.2vw,42px)!important;
+}
+body.nutrition-page .nutrition-hero .gut-hero-copy {
+  padding-left:0!important;
+  margin-left:0!important;
+  justify-self:start!important;
+}
+body.nutrition-page .gut-intro > .wrap.gut-intro-grid {
+  gap:clamp(20px,3vw,42px)!important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.08fr)!important;
+}
+body.nutrition-page .gut-intro-grid > :first-child {
+  padding-left:0!important;
+  margin-left:0!important;
+}
+body.nutrition-page :is(.gut-headline,.nutrition-basics-head,.gut-intro-grid > :first-child,.recipe-library-head) {
+  text-align:left!important;
+}
+body.nutrition-page .nutrition-hero .gut-kicker {
+  margin-bottom:12px!important;
+}
+body.nutrition-page .nutrition-hero h1 {
+  margin-bottom:15px!important;
+}
+body.nutrition-page .nutrition-hero .gut-hero-copy > p {
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+body.nutrition-page .nutrition-hero .gut-hero-actions {
+  margin-top:22px!important;
+}
+body.nutrition-page .nutrition-basics {
+  padding-top:clamp(28px,3.5vw,46px)!important;
+  padding-bottom:clamp(27px,3.5vw,48px)!important;
+}
+body.nutrition-page .nutrition-basics-head {
+  margin-bottom:19px!important;
+}
+body.nutrition-page .nutrition-basics-head h2 {
+  margin-top:7px!important;
+  margin-bottom:10px!important;
+}
+body.nutrition-page .nutrition-basics-head p {
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+body.nutrition-page :is(.gut-intro,.gut-explainer,.gut-food-comparison,.gut-protocol,.recipe-library) {
+  padding-top:clamp(30px,4vw,48px)!important;
+  padding-bottom:clamp(35px,4.5vw,54px)!important;
+}
+body.nutrition-page .gut-kicker,
+body.nutrition-page .recipe-library-eyebrow {
+  margin-bottom:clamp(8px,1vw,13px)!important;
+}
+body.nutrition-page :is(.gut-headline,.recipe-library-head) {
+  margin-bottom:clamp(18px,2.6vw,28px)!important;
+}
+body.nutrition-page .gut-headline h2 {
+  margin-bottom:10px!important;
+}
+body.nutrition-page .gut-intro-text p {
+  margin-bottom:12px!important;
+}
+body.nutrition-page .gut-intro-text p:last-child {
+  margin-bottom:0!important;
+}
+body.nutrition-page .gut-food-footnote {
+  margin-top:16px!important;
+}
+body.nutrition-page .gut-steps {
+  gap:clamp(12px,1.6vw,19px)!important;
+}
+body.nutrition-page .gut-protocol-note {
+  margin-top:18px!important;
+}
+body.nutrition-page .gut-journal {
+  padding-top:clamp(30px,4vw,48px)!important;
+  padding-bottom:clamp(30px,4vw,48px)!important;
+}
+body.nutrition-page .gut-journal-panel {
+  gap:clamp(20px,3vw,45px)!important;
+}
+body.nutrition-page .gut-care {
+  padding-bottom:clamp(36px,5vw,65px)!important;
+}
+@media(max-width:760px){
+  body.nutrition-page .gut-intro > .wrap.gut-intro-grid {
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:14px!important;
+  }
+  body.nutrition-page .nutrition-hero .gut-hero-grid {
+    column-gap:18px!important;
+    row-gap:22px!important;
+  }
+  body.nutrition-page :is(.gut-intro,.gut-explainer,.gut-food-comparison,.gut-protocol,.recipe-library) {
+    padding-top:29px!important;
+    padding-bottom:35px!important;
+  }
+}
+
+/* Services: identical softly rounded photographic edges on desktop/mobile,
+   while preserving the original images and their current object positioning. */
+.services-hero .services-portrait {
+  overflow:hidden!important;
+  border-radius:clamp(22px,2.3vw,30px)!important;
+  background:linear-gradient(135deg,#fffefa,#f2e5d7)!important;
+}
+.services-hero .services-portrait > .services-photo {
+  display:block!important;
+  width:100%!important;
+  border-radius:clamp(22px,2.3vw,30px)!important;
+  -webkit-mask-image:none!important;
+  mask-image:none!important;
+  clip-path:inset(0 round clamp(22px,2.3vw,30px))!important;
+}
+.services-contact .services-contact-photo {
+  overflow:hidden!important;
+  border-radius:clamp(20px,2.3vw,28px)!important;
+}
+.services-contact .services-contact-photo img {
+  display:block!important;
+  border-radius:clamp(20px,2.3vw,28px)!important;
+}
+@media(max-width:800px){
+  .services-hero .services-portrait,
+  .services-hero .services-portrait > .services-photo {
+    border-radius:22px!important;
+    clip-path:inset(0 round 22px)!important;
+  }
+}
