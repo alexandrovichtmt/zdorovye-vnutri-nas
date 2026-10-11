@@ -176,3 +176,29 @@ body.community-page .community-course-redirect{display:none}
 
 body.community-page .community-card{cursor:pointer!important}
 body.community-page .community-card:focus-within{outline-offset:3px}
+
+/* Community / self-study: unobstructed photo and readable, unboxed left-side copy */
+body.community-page .community-visual-self .community-notebook{
+  left:5%!important;top:25%!important;width:58%!important;height:auto!important;
+  padding:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important;transform:none!important;
+  text-align:left!important;pointer-events:none!important;
+}
+body.community-page .community-visual-self .community-notebook::before{content:none!important;display:none!important}
+body.community-page .community-visual-self .community-notebook span{
+  display:block!important;text-align:left!important;color:#fff!important;
+  font-family:Manrope,Arial,sans-serif!important;font-weight:500!important;
+  font-size:clamp(15px,1.65vw,25px)!important;line-height:1.28!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.55)!important;
+}
+body.community-page .community-visual-self .community-notebook small{
+  display:block!important;text-align:left!important;color:#fff!important;
+  font-family:Manrope,Arial,sans-serif!important;font-weight:500!important;
+  font-size:clamp(10px,1vw,14px)!important;margin-top:10px!important;
+  text-shadow:0 1px 3px rgba(0,0,0,.55)!important;
+}
+@media(max-width:690px){
+  body.community-page .community-visual-self .community-notebook{left:5%!important;top:25%!important;width:64%!important}
+  body.community-page .community-visual-self .community-notebook span{font-size:clamp(17px,4.3vw,23px)!important}
+  body.community-page .community-visual-self .community-notebook small{font-size:clamp(11px,2.8vw,13px)!important}
+}
