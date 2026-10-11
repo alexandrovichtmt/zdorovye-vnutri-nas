@@ -1,0 +1,114 @@
+/* Compact final composition, October 2026 — all photographed imagery remains unchanged */
+body.home-sync .hero::before,body.home-sync .hero::after{display:none!important;background:none!important;content:none!important}
+body.home-sync .hero>.hero-media,body.home-sync .hero>.hero-media img.hero-final{
+ filter:none!important;opacity:1!important;mix-blend-mode:normal!important;
+ -webkit-mask-image:none!important;mask-image:none!important;
+}
+body.home-sync .hero .hero-title-line:last-child,
+body.home-sync .hero .hero-title-line:last-child .hero-letter{
+ color:#0F1A14!important;-webkit-text-fill-color:#0F1A14!important;
+ text-shadow:none!important}
+body.home-sync .hero .hero-letter{
+ animation:life-letter-in .96s cubic-bezier(.21,.75,.22,1) both!important;
+ animation-delay:calc(.24s + var(--letter-index)*.075s)!important}
+body.home-sync .hero-copy .eyebrow{animation-delay:0s!important}
+body.home-sync .hero-copy .lead{animation-delay:1.22s!important;animation-duration:.75s!important}
+body.home-sync .hero-copy>p{animation-delay:1.63s!important;animation-duration:.8s!important}
+body.home-sync .hero-copy .actions a:first-child{animation-delay:2.08s!important;animation-duration:.7s!important}
+body.home-sync .hero-copy .actions a:nth-child(2){animation-delay:2.19s!important;animation-duration:.7s!important}
+/* All menu entries visible on desktop. Two lines of pills when viewport is moderately narrow. */
+@media(min-width:981px){
+ body .nav .navin,body .nav>.navin{
+  width:min(1540px,calc(100% - 36px))!important;max-width:1540px!important;
+  min-height:76px!important;height:auto!important;padding:11px 17px!important;
+  border-radius:36px!important;display:grid!important;
+  grid-template-columns:minmax(165px,auto) minmax(0,1fr) auto!important;
+  column-gap:10px!important;row-gap:6px!important}
+ body .nav .links{
+  display:flex!important;flex-wrap:wrap!important;justify-content:center!important;
+  align-content:center!important;gap:0!important;margin:0!important;min-width:0}
+ body .nav .links>a{padding:9px clamp(5px,.6vw,10px)!important;font-size:clamp(10px,.73vw,12px)!important}
+ body .nav .navcta{margin:0!important;padding:13px 18px!important}
+ body .nav .menu{display:none!important}
+}
+@media(max-width:980px){body .nav .links{display:none!important}body .nav .menu{display:flex!important}}
+/* More content in the first viewport; removes giant empty transition between lead and real content */
+body .pageHero,body .new-page-hero{
+ padding:clamp(30px,3.9vw,55px) 0 22px!important;
+ min-height:0!important;margin:0!important}
+body .pageHero .wrap,body .new-page-hero .wrap{padding:0!important}
+body .pageHero h1,body .new-page-hero h1{
+ margin:0 0 16px!important;line-height:1.10!important;
+ font-size:clamp(32px,4.5vw,65px)!important}
+body .pageHero p,body .new-page-hero p{
+ margin:0!important;font-size:clamp(14px,1.05vw,17px)!important;
+ line-height:1.6!important;max-width:900px!important}
+body .pageHero+.section,body .new-page-hero+.section,
+body .pageHero+.about-section,body .pageHero+.section.about-section{
+ padding-top:12px!important;margin-top:0!important}
+body .pageHero+.section .split,body .pageHero+.about-section .split,
+body .new-page-hero+.section .split{
+ align-items:center!important;gap:clamp(20px,3vw,46px)!important}
+body .pageHero+.section .art,body .pageHero+.section .content,
+body .about-section .art,body .about-section .content{margin-top:0!important}
+body .pageHero+.section .art img,body .about-section .about-photo img{
+ display:block;width:100%!important;max-height:490px!important;min-height:300px;
+ object-fit:cover!important;object-position:center center!important;border-radius:28px!important}
+body.about-page .about-page-hero{padding-bottom:12px!important}
+body.about-page .about-section{padding:10px 0 35px!important}
+body.about-page .about-layout{align-items:center!important}
+body.about-page .about-photo img{object-position:center 24%!important;max-height:520px!important}
+body .content h2{font-size:clamp(25px,3.1vw,45px)!important;line-height:1.15!important;margin:0 0 18px!important}
+body .pageHero+.section .content .cards{margin-top:20px!important}
+body .pageHero+.section .content>.cards .card{padding:23px!important}
+body .gut-hero,body .child-hero{padding:33px 0 42px!important;min-height:0!important}
+body .community-hero{padding:45px 0 52px!important;min-height:0!important}
+body .gut-hero-grid,body .child-hero-grid{gap:clamp(22px,4vw,54px)!important}
+body .gut-intro,body .child-intro,body .community-intro{padding:26px 0!important}
+body .gut-protocol,body .child-path,body .child-materials,
+body .gut-explainer,body .gut-food-comparison,body .gut-recipe-section,
+body .community-formats,body .course-section{padding-top:52px!important;padding-bottom:58px!important}
+body .checkup-section,body .nutrient-compatibility{padding-top:48px!important;padding-bottom:54px!important}
+body .recipe-library{padding:50px 0 65px!important}
+body .recipe-library-head{margin-bottom:21px!important}
+body .recipe-library-head h2{font-size:clamp(32px,4vw,52px)!important}
+body .recipe-library-head p{max-width:670px!important}
+body .recipe-library-grid{gap:18px!important;align-items:start!important}
+body .recipe-library-card{align-self:start!important;overflow:hidden}
+body .recipe-library-media{
+ width:100%!important;height:auto!important;aspect-ratio:auto!important;
+ padding:9px!important;background:#fffefa!important}
+body .recipe-library-media>a{display:block;width:100%;line-height:0;cursor:zoom-in}
+body .recipe-library-media img{
+ height:auto!important;min-height:0!important;width:100%!important;
+ object-fit:contain!important;max-height:none!important;border-radius:12px!important}
+body .recipe-library-content{padding:18px 21px 20px!important}
+body .recipe-library-content h3{font-size:clamp(18px,1.8vw,24px)!important;margin:8px 0 15px!important}
+body .recipe-library-card:has([data-recipe-category="dessert"]) .recipe-library-media{
+ min-height:0!important}
+/* On recipe image click: high-resolution original with true image aspect ratio */
+.recipe-image-viewer[hidden]{display:none!important}
+.recipe-image-viewer{position:fixed;inset:0;z-index:9999;
+ background:rgba(15,20,17,.89);display:flex;flex-direction:column;align-items:center;
+ justify-content:center;gap:14px;padding:24px}
+.recipe-image-viewer img{max-height:calc(100dvh - 125px);max-width:min(97vw,1400px);
+ width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 23px 65px #0007}
+.recipe-image-viewer .viewer-title{font:600 15px Manrope,sans-serif;color:#fffdfa;text-align:center}
+.recipe-image-viewer button{position:absolute;right:clamp(18px,4vw,45px);top:18px;
+ width:46px;height:46px;border-radius:50%;border:1px solid #ffffff72;
+ background:linear-gradient(to top,#e6b980 0%,#eacda3 100%);
+ color:#0F1A14;font-size:27px;cursor:pointer;z-index:2}
+@media(max-width:840px){
+ body .pageHero,body .new-page-hero{padding:23px 0 12px!important}
+ body .pageHero+.section,body .pageHero+.about-section{padding-top:7px!important}
+ body .pageHero+.section .art img,body .about-section .about-photo img{max-height:360px!important}
+ body.home-sync .hero::after{display:none!important}
+ body .recipe-library-grid{grid-template-columns:1fr!important}
+ body .recipe-library-media{padding:8px!important}
+ body .child-path,body .gut-food-comparison{padding:42px 0!important}
+}
+@media(prefers-reduced-motion:reduce){
+ body.home-sync .hero .hero-letter,body.home-sync .hero-copy .eyebrow,
+ body.home-sync .hero-copy .lead,body.home-sync .hero-copy>p,
+ body.home-sync .hero-copy .actions a{animation:none!important;opacity:1!important;filter:none!important;transform:none!important}
+}
