@@ -4,8 +4,8 @@ const choices=[...document.querySelectorAll("[data-community-choice]")];
 const panel=document.getElementById("community-detail-content"),body=document.getElementById("community-detail-body"),image=document.getElementById("community-detail-image");
 if(!choices.length||!panel||!body||!image)return;
 const photos=[
-["images/community-care-gentle.svg","images/community-care-gentle.svg"],
-["images/community-we-near.svg","images/community-we-near.svg"],
+["images/community-care-hd.webp","images/community-care-gentle.svg"],
+["images/community-support-hd.webp","images/community-we-near.svg"],
 ["%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5.PNG","images/community-courses.svg"]
 ];
 const bullet=(icon,title,desc)=>'<div class="community-detail-bullet"><span class="detail-icon" aria-hidden="true">'+icon+'</span><div><strong>'+title+'</strong><small>'+desc+'</small></div></div>';
@@ -46,6 +46,27 @@ document.querySelectorAll("img[data-fallback]").forEach(el=>el.addEventListener(
  if(this.src.endsWith(this.dataset.fallback))return;
  this.src=this.dataset.fallback;
 },{once:true}));
+
+/* Full-resolution viewer for the selected Community card. */
+const viewer=document.getElementById("community-image-viewer");
+const viewerImg=viewer?.querySelector("img");
+const viewerClose=viewer?.querySelector(".community-image-viewer-close");
+function openHdImage(){
+ if(!viewer||!viewerImg||!viewer.showModal)return;
+ const index=Math.max(0,Math.min(2,Number(panel.dataset.activeFormat||0)));
+ const [source,fallback]=photos[index];
+ viewerImg.onerror=()=>{if(!viewerImg.src.endsWith(fallback))viewerImg.src=fallback};
+ viewerImg.src=source;
+ viewerImg.alt=entries[index].title;
+ if(!viewer.open)viewer.showModal();
+}
+image.addEventListener("click",openHdImage);
+image.addEventListener("keydown",event=>{
+ if(event.key==="Enter"||event.key===" "){event.preventDefault();openHdImage()}
+});
+viewerClose?.addEventListener("click",()=>viewer.close());
+viewer?.addEventListener("click",event=>{if(event.target===viewer)viewer.close()});
+
 if(location.hash==="#format-courses"||location.hash==="#community-programs"){
  select(2,false);
  requestAnimationFrame(()=>panel.scrollIntoView({block:"start",behavior:"auto"}));
