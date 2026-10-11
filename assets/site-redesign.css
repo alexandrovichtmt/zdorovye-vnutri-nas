@@ -443,3 +443,44 @@ body.about-page .about-photo-bio-list li{padding:10px 13px!important;background:
  body.about-page .about-layout-bio-left .about-photo-bio{order:0!important}
  body.about-page .about-photo-bio h1{font-size:clamp(35px,9vw,48px)!important}
 }
+
+/* FIX: show original full-body About portrait at its natural aspect ratio.
+   The legacy compact-final.css caps photos at 490/520px; remove that cap
+   instead of stretching a tall wrapper around a cropped image. */
+body.about-page .about-layout-bio-left .about-photo{
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  align-self:center!important;
+  position:relative!important;
+  overflow:hidden!important;
+  display:block!important;
+  padding:0!important;
+  line-height:0!important;
+  background:transparent!important;
+  border-radius:30px!important;
+}
+body.about-page .about-layout-bio-left .about-photo > img{
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  position:static!important;
+  margin:0!important;
+  padding:0!important;
+  border-radius:0!important;
+  transform:none!important;
+}
+@media(max-width:800px){
+  body.about-page .about-layout-bio-left .about-photo{
+    height:auto!important;min-height:0!important;max-height:none!important;
+  }
+  body.about-page .about-layout-bio-left .about-photo > img{
+    height:auto!important;min-height:0!important;max-height:none!important;
+  }
+}
