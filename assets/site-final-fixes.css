@@ -295,3 +295,44 @@ body.wellness-v3 .services-contact-photo img{
 body.wellness-v3 :is(.section,.about-profile-extra,.about-scope,.community-intro,.community-access,.child-path,.gut-intro,.gut-mechanisms,.services-section) > .wrap{box-sizing:border-box;padding-inline:var(--site-content-gutter)!important}
 body.wellness-v3 :is(.about-reasons,.about-scope-intro,.about-scope-grid,.community-access-panel,.community-grid,.services-contact-head,.services-contact-cards){box-sizing:border-box}
 @media(max-width:760px){:root{--site-content-gutter:18px}}
+
+
+/* Premium pearl portrait avatar in Community personal invitation CTA.
+   Reuses the approved avatar.png, no duplicated / remade artwork. */
+body.wellness-v3.community-page .community-access-action .community-access-circle.community-access-avatar{
+  display:grid!important;
+  place-items:center!important;
+  flex:none!important;
+  width:clamp(144px,13vw,178px)!important;
+  height:clamp(144px,13vw,178px)!important;
+  margin:0 auto 7px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:2px solid rgba(249,219,174,.95)!important;
+  border-radius:50%!important;
+  background:radial-gradient(circle at 30% 20%,#fff,#faf9fc 45%,#f0f5ff 72%,#fff8f8)!important;
+  box-shadow:0 10px 32px rgba(235,202,163,.18),0 0 0 4px rgba(255,255,255,.07)!important;
+  color:transparent!important;
+  font-size:0!important;
+  line-height:0!important;
+}
+body.wellness-v3.community-page .community-access-circle.community-access-avatar img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  border-radius:50%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  opacity:1!important;
+  filter:none!important;
+  transform:none!important;
+}
+@media(max-width:720px){
+  body.wellness-v3.community-page .community-access-action .community-access-circle.community-access-avatar{
+    display:grid!important;
+    width:138px!important;
+    height:138px!important;
+    margin:0 auto 8px!important;
+  }
+}
