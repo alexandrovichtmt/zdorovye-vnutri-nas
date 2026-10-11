@@ -795,3 +795,7 @@ body.wellness-v3 .tgbar:focus-within .tg-floating span{opacity:1!important;max-w
 @media(prefers-reduced-motion:reduce){
  body.wellness-v3 .tgbar .tg-floating,body.wellness-v3 .tgbar .tg-floating span{transition:none!important}
 }
+
+/* Footer background removal — final cascade override on every page */
+body .footer{background:transparent!important;background-image:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;margin-top:0!important}
+body .footer .foot,body .footer .foot b,body .footer .foot span{color:#50463b!important;text-shadow:none!important}
