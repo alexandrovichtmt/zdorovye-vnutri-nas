@@ -652,3 +652,98 @@ body.wellness-v3 .inline-arrow-unit-after-text{
   margin-inline-start:.27em!important;
   white-space:nowrap!important;
 }
+
+
+/* Editorial dark ink for both lines of the medical checkup heading. */
+body.wellness-v3 .checkup-section .checkup-top h2,
+body.wellness-v3 .checkup-section .checkup-top h2 em {
+  color:#111111!important;
+  -webkit-text-fill-color:#111111!important;
+}
+
+/* Mobile navigation: remove doubled ☰ (legacy ::after was rendered on top of
+   the character already present in the authored button). */
+@media(max-width:1200px){
+  body .nav .menu{
+    position:relative!important;
+    flex:0 0 auto!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:0!important;
+    line-height:0!important;
+    letter-spacing:0!important;
+    color:transparent!important;
+    -webkit-text-fill-color:transparent!important;
+  }
+  body .nav .menu::before{
+    display:none!important;
+    content:none!important;
+  }
+  body .nav .menu::after{
+    content:""!important;
+    display:block!important;
+    position:absolute!important;
+    inset:auto!important;
+    top:50%!important;
+    left:50%!important;
+    width:24px!important;
+    height:18px!important;
+    transform:translate(-50%,-50%)!important;
+    background:
+      linear-gradient(#102019,#102019) center top / 24px 2.5px no-repeat,
+      linear-gradient(#102019,#102019) center center / 24px 2.5px no-repeat,
+      linear-gradient(#102019,#102019) center bottom / 24px 2.5px no-repeat!important;
+    border:0!important;
+    border-radius:0!important;
+    font-size:0!important;
+    line-height:0!important;
+    pointer-events:none!important;
+  }
+  body .nav .menu[aria-expanded="true"]::after{
+    background:
+      linear-gradient(45deg,transparent 43%,#102019 43%,#102019 56%,transparent 56%) center / 24px 24px no-repeat,
+      linear-gradient(-45deg,transparent 43%,#102019 43%,#102019 56%,transparent 56%) center / 24px 24px no-repeat!important;
+  }
+}
+
+/* Shared photo corners: preserve source images, zoom and object positioning. */
+body.wellness-v3 :is(
+ .services-hero .services-portrait,
+ .services-contact-photo,
+ .about-layout-bio-left .about-photo,
+ .child-hero-art,
+ .gut-hero-photo-frame,
+ .editorial-visual
+){
+  overflow:hidden!important;
+  border-radius:clamp(22px,2.4vw,30px)!important;
+}
+body.wellness-v3 :is(
+ .services-hero .services-photo,
+ .services-contact-photo img,
+ .gut-hero-photo-frame .gut-hero-photo,
+ .editorial-visual img
+){
+  border-radius:inherit!important;
+}
+@media(max-width:840px){
+  body.home-sync.wellness-v3 .hero>.hero-media{
+    overflow:hidden!important;
+    isolation:isolate!important;
+    border-radius:clamp(22px,5vw,32px)!important;
+    -webkit-clip-path:inset(0 round clamp(22px,5vw,32px))!important;
+    clip-path:inset(0 round clamp(22px,5vw,32px))!important;
+  }
+  body.home-sync.wellness-v3 .hero>.hero-media img.hero-final{
+    border-radius:inherit!important;
+    max-width:100%!important;
+  }
+  body.wellness-v3 :is(
+    .services-hero .services-portrait,
+    .services-contact-photo,
+    .about-layout-bio-left .about-photo,
+    .child-hero-art,
+    .gut-hero-photo-frame,
+    .editorial-visual
+  ){border-radius:24px!important}
+}
