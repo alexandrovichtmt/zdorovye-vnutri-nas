@@ -224,3 +224,38 @@ body.community-page .community-support-note{
  line-height:1.58!important;
  color:#5b4c3a!important;
 }
+
+
+/* Refreshed first card: calm, soft illustrated Chat of Care instead of vegetables. */
+body.community-page .community-visual-care-gentle{
+ background:linear-gradient(145deg,#faf6ee,#f7e9de 56%,#e9efdf)!important;
+ isolation:isolate!important;
+}
+body.community-page .community-visual-care-gentle .community-photo{
+ object-fit:cover!important;
+ object-position:center center!important;
+ filter:none!important;
+ opacity:1!important;
+ transform:none!important;
+}
+body.community-page .community-card:hover .community-visual-care-gentle .community-photo{
+ transform:scale(1.015)!important;
+}
+body.community-page .community-visual-care-gentle .community-scene-label{
+ color:#4a3224!important;
+ background:rgba(255,253,248,.90)!important;
+ box-shadow:0 6px 20px rgba(68,50,32,.09)!important;
+}
+body.community-page .community-detail-photo img[src*="community-care-gentle.svg"]{
+ object-fit:contain!important;
+ object-position:center center!important;
+ background:linear-gradient(145deg,#fcf8f0,#f2e8d9)!important;
+}
+body.community-page .community-detail-bullets:has(.community-detail-bullet:nth-child(5)) .community-detail-bullet:last-child{
+ grid-column:1/-1!important;
+}
+@media(max-width:690px){
+ body.community-page .community-detail-bullets:has(.community-detail-bullet:nth-child(5)) .community-detail-bullet:last-child{
+  grid-column:auto!important;
+ }
+}
