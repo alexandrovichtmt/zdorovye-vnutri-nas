@@ -4,12 +4,12 @@
   const title = document.getElementById("child-lightbox-title");
   const close = document.getElementById("child-lightbox-close");
   if (!dialog || !image || !close) return;
-  const allowed = new Set(["IMG_0262.png","IMG_0263.png","IMG_0264.png","IMG_0265.png","IMG_0266.png","IMG_0306.png","IMG_0307.png"]);
+  const allowed = new Set(["IMG_0262.PNG","IMG_0263.PNG","IMG_0264.PNG","IMG_0265.PNG","IMG_0266.PNG","images/community-care.svg","images/community-courses.svg"]);
   document.querySelectorAll(".child-image-open").forEach(button => {
     button.addEventListener("click", () => {
       const file = button.getAttribute("data-child-image");
       if (!allowed.has(file)) return;
-      image.src = "assets/child-health/" + file;
+      image.src = file;
       image.alt = button.getAttribute("data-child-alt") || "Памятка по детскому здоровью";
       title.textContent = image.alt;
       if (typeof dialog.showModal === "function") dialog.showModal();
