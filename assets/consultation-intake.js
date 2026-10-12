@@ -54,10 +54,11 @@
       <form id="consultation-intake-form" class="intake-form" autocomplete="on">
         <div id="intake-fields"></div>
         <footer class="intake-footer">
-          <div class="intake-footer-copy"><strong>Всё готово?</strong><span>После заполнения откроется мой личный чат в Telegram. Ваши ответы можно будет вставить в сообщение и отправить мне.</span></div>
+          <div class="intake-footer-copy"><strong>Всё готово?</strong><span>После заполнения вы сможете передать мне всю анкету в Telegram вместе с ответами на каждый вопрос.</span></div>
           <button class="intake-submit" type="submit">Отправить анкету и связаться со мной <span aria-hidden="true">↗</span></button>
           <p class="intake-status" id="intake-send-status" aria-live="polite" hidden></p>
           <div class="intake-fallback-actions" id="intake-fallback-actions" hidden>
+            <button type="button" id="intake-share-again">Передать всю анкету в Telegram ↗</button>
             <button type="button" id="intake-copy-again">Скопировать анкету</button>
             <a href="https://t.me/trunova1977" target="_blank" rel="noopener noreferrer" data-no-intake>Открыть мой Telegram ↗</a>
           </div>
@@ -95,6 +96,7 @@
   const fieldsRoot = overlay.querySelector("#intake-fields");
   const status = overlay.querySelector("#intake-send-status");
   const fallbackActions = overlay.querySelector("#intake-fallback-actions");
+  const shareAgain = overlay.querySelector("#intake-share-again");
   const copyAgain = overlay.querySelector("#intake-copy-again");
   const manualCopy = overlay.querySelector("#intake-manual-copy");
   const firstField = [];
@@ -234,14 +236,16 @@
       ta.remove();return success;
     } catch (_) {return false;}
   }
-  // Use a SHORT Telegram link only. Passing an entire Russian questionnaire in
-  // ?text= produced 400 Bad Request on mobile Telegram/nginx.
+  // Telegram supports t.me/<username>?text=<draft>, but full questionnaires
+  // exceed safe URL lengths when UTF-8 is percent-encoded (400 Bad Request).
+  // On mobile, native Web Share sends the FULL payload to the chosen
+  // Telegram conversation. Do not claim this automatically sends a message.
   const TELEGRAM_CHAT_URL = "https://t.me/" + TELEGRAM_USERNAME;
+  const TELEGRAM_SAFE_URL_CHARS = 5500;
 
-  function openTelegram() {
-    // Synchronous user-gesture navigation, plus a visible fallback real link.
+  function openTelegram(url=TELEGRAM_CHAT_URL) {
     const a = document.createElement("a");
-    a.href = TELEGRAM_CHAT_URL;
+    a.href = url;
     a.target = "_blank";
     a.rel = "noopener noreferrer";
     a.setAttribute("data-no-intake", "");
@@ -249,13 +253,79 @@
     a.click();
     a.remove();
   }
+
+  function sharePayload(message) {
+    // Telegram messages have a text length limit. Preserve particularly
+    // long forms as a .txt attachment instead of silently truncating.
+    if ([...message].length > 3900 && typeof File !== "undefined" && navigator.canShare) {
+      const file = new File([message], "anketa-lyudmila-baran.txt", {type:"text/plain;charset=utf-8"});
+      try {
+        if (navigator.canShare({files:[file]})) {
+          return {title:"Анкета для консультации",text:"Моя заполненная анкета для консультации",files:[file]};
+        }
+      } catch (_) {}
+    }
+    return {title:"Анкета для консультации",text:message};
+  }
+
+  function shareFullQuestionnaire(message) {
+    if (typeof navigator.share !== "function") return false;
+    try {
+      // Call Web Share directly in the submit/click user gesture.
+      const shared = navigator.share(sharePayload(message));
+      fallbackActions.hidden = false;
+      status.hidden = false;
+      status.textContent = "В открывшемся окне выберите Telegram, затем мой личный чат. Проверьте ответы и нажмите «Отправить».";
+      Promise.resolve(shared).then(() => {
+        status.hidden = false;
+        status.textContent = "Если вы уже отправили анкету в Telegram, я смогу прочитать ваши ответы. Если нет — выберите «Передать всю анкету в Telegram» ещё раз.";
+      }, err => {
+        status.hidden = false;
+        status.textContent = err && err.name === "AbortError"
+          ? "Передача анкеты отменена. Ответы остались заполненными, можно попробовать ещё раз."
+          : "Не удалось открыть передачу. Нажмите «Скопировать анкету», затем откройте мой Telegram и вставьте ответы.";
+      });
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function shareWithoutNativeApi(message) {
+    const draftUrl = TELEGRAM_CHAT_URL + "?text=" + encodeURIComponent(message);
+    // Only use the direct draft link if it includes the *entire* questionnaire.
+    // Otherwise opening a plain chat without text would confuse the visitor.
+    if (draftUrl.length <= TELEGRAM_SAFE_URL_CHARS && [...message].length <= 3900) {
+      status.hidden = false;
+      status.textContent = "Откроется мой чат Telegram с готовым текстом анкеты. Проверьте ответы и нажмите «Отправить».";
+      openTelegram(draftUrl);
+      return;
+    }
+    status.hidden = false;
+    status.textContent = "Анкета слишком длинная для ссылки Telegram. Скопируйте ответы целиком, затем откройте мой чат и вставьте их в сообщение.";
+    copyAnswers(message).then(ok => {
+      if (ok) {
+        status.textContent = "Анкета целиком скопирована. Откройте мой Telegram, вставьте ответы и нажмите «Отправить».";
+      } else {
+        manualCopy.hidden = false;
+        manualCopy.value = message;
+        status.textContent = "Нажмите «Скопировать анкету» или выделите текст ниже вручную, затем откройте мой Telegram.";
+      }
+    });
+  }
+
+  shareAgain.addEventListener("click", () => {
+    if (!latestFormattedAnswer) return;
+    if (!shareFullQuestionnaire(latestFormattedAnswer)) shareWithoutNativeApi(latestFormattedAnswer);
+  });
+
   copyAgain.addEventListener("click", async () => {
     if (!latestFormattedAnswer) return;
     const ok = await copyAnswers(latestFormattedAnswer);
     manualCopy.hidden = ok;
     status.hidden = false;
     status.textContent = ok
-      ? "Анкета скопирована. Откройте мой Telegram, вставьте её и нажмите «Отправить»."
+      ? "Анкета полностью скопирована. Откройте мой Telegram, вставьте ответы и нажмите «Отправить»."
       : "Не удалось скопировать автоматически. Выделите текст ниже и скопируйте его вручную.";
     if (!ok) {
       manualCopy.value = latestFormattedAnswer;
@@ -263,6 +333,7 @@
       manualCopy.select();
     }
   });
+
   form.addEventListener("submit", event => {
     event.preventDefault();
     for (const field of firstField) {
@@ -280,18 +351,12 @@
     fallbackActions.hidden = false;
     manualCopy.hidden = true;
     status.hidden = false;
-    status.textContent = "Открываю мой Telegram. Анкета копируется — вставьте её в сообщение и нажмите «Отправить».";
-    // Start clipboard in the click/submit gesture; do not wait for it before
-    // launching Telegram or the browser may block the popup.
-    copyAnswers(latestFormattedAnswer).then(ok => {
-      status.hidden = false;
-      status.textContent = ok
-        ? "Анкета скопирована. В моём Telegram вставьте её в сообщение и нажмите «Отправить»."
-        : "Автоматическое копирование недоступно. Нажмите «Скопировать анкету» или скопируйте текст вручную.";
-      manualCopy.hidden = ok;
-      if (!ok) manualCopy.value = latestFormattedAnswer;
-    });
-    openTelegram();
+
+    // Full text goes directly into the phone's share sheet. In Telegram
+    // the visitor selects Ludmila and confirms the send.
+    if (!shareFullQuestionnaire(latestFormattedAnswer)) {
+      shareWithoutNativeApi(latestFormattedAnswer);
+    }
   });
 
 })();
