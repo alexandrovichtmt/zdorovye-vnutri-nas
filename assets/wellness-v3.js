@@ -37,19 +37,10 @@ anchor.className="tg-floating";
 anchor.target="_blank";anchor.rel="noopener noreferrer";
 anchor.setAttribute("aria-label","Написать Людмиле в Telegram");
 anchor.innerHTML='<svg aria-hidden="true" width="23" height="23" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m21.6 3.1-3.3 17c-.2 1.1-.8 1.3-1.6.8l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.3L5.9 13.5l-4.8-1.5c-1-.3-1-1 .2-1.5L20 3.3c.9-.3 1.8.2 1.6 1.1Z" fill="currentColor"/><path d="m8.7 14.9 9.5-8.5" stroke="#fff" stroke-opacity=".38" stroke-linecap="round"/></svg><span>Telegram</span>';
-/* On touchscreens first tap expands, second tap opens Telegram. */
-anchor.addEventListener("click",(event)=>{
- if(window.matchMedia("(hover: none)").matches && !tg.classList.contains("tg-expanded")){
-  event.preventDefault();tg.classList.add("tg-expanded");
-  anchor.setAttribute("aria-label","Открыть Telegram (нажмите ещё раз)");
- }
-});
-document.addEventListener("pointerdown",(event)=>{
- if(!tg.contains(event.target) && tg.classList.contains("tg-expanded")){
-  tg.classList.remove("tg-expanded");
-  anchor.setAttribute("aria-label","Написать Людмиле в Telegram");
- }
-});
+/* Open the personal Telegram chat on the first tap, including mobile.
+   The floating pill's hover/visual styling is unaffected. */
+anchor.href="https://t.me/trunova1977";
+anchor.setAttribute("data-no-intake","");
 /* Back-to-top control: shared across desktop/mobile, positioned above Telegram. */
 const topButton=document.createElement("button");
 topButton.type="button";
