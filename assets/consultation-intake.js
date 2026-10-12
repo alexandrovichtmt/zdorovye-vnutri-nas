@@ -179,6 +179,7 @@
     anchor.href=link;
     anchor.target="_blank";
     anchor.rel="noopener noreferrer";
+    anchor.setAttribute("data-no-intake", "");
     document.body.appendChild(anchor);anchor.click();anchor.remove();
   }
   form.addEventListener("submit", e => {
