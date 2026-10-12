@@ -157,10 +157,14 @@
   // Everything else (including the floating Telegram and Услуги) is direct.
   function shouldOfferChoice(anchor) {
     if (!anchor) return false;
-    if (anchor.classList.contains("navcta") && anchor.textContent.trim() === "Консультация") return true;
-    if (anchor.textContent.trim() === "Начать консультацию →") return true;
-    if (anchor.textContent.trim() === "Записаться на консультацию →" && document.body.classList.contains("home-sync")) return true;
-    return false;
+    // Stable click intent takes precedence over visual text or animation markup.
+    // The site-redesign script wraps the last word plus arrow in a span
+    // separated by a non-breaking space, so textContent equality is brittle.
+    if (anchor.hasAttribute("data-consultation-choice")) return true;
+    const label = (anchor.textContent || "").replace(/\\s+/g, " ").trim();
+    if (anchor.classList.contains("navcta") && label === "Консультация") return true;
+    if (!document.body.classList.contains("home-sync")) return false;
+    return label === "Начать консультацию →" || label === "Записаться на консультацию →";
   }
 
   function setOpen(open, preserveFocus = false) {
