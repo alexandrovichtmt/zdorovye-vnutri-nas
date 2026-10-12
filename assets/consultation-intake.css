@@ -111,3 +111,56 @@
  .intake-footer{padding:23px 20px 26px}
  .intake-submit{font-size:14px!important}
 }
+
+/* Two-step consultation choice: Telegram now, or optional questionnaire. */
+.intake-choice-overlay .intake-choice-dialog {
+  width:min(550px,100%);height:auto;max-height:min(93dvh,650px);
+}
+.intake-choice-actions{
+  display:grid;gap:13px;padding:24px clamp(22px,3.7vw,40px) 34px;
+}
+.intake-choice-actions :is(a,button),
+.intake-fallback-actions :is(a,button){
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:53px;padding:14px 20px;border-radius:99px;
+  font:600 15px/1.4 Manrope,Arial,sans-serif!important;
+  text-align:center;text-decoration:none!important;cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.intake-choice-actions :is(a,button):hover,.intake-fallback-actions :is(a,button):hover{
+  transform:translateY(-2px);box-shadow:0 10px 22px rgba(100,64,28,.15);
+}
+.intake-choice-direct{
+  border:1px solid #d5a977;
+  background:linear-gradient(to top,#e6b980,#eacda3);
+  color:#17231c!important;
+}
+.intake-choice-questionnaire{
+  border:1px solid #d5baa0;
+  background:#fffcf7;color:#292a23!important;
+}
+.intake-fallback-actions[hidden],.intake-manual-copy[hidden]{display:none!important}
+.intake-fallback-actions{
+  display:flex;flex-wrap:wrap;gap:12px;
+}
+.intake-fallback-actions :is(a,button){
+  min-height:44px;flex:1 1 190px;padding:10px 14px;
+  font-size:13px!important;
+  background:#fffdf9;border:1px solid #cda578;color:#30261e!important;
+}
+.intake-manual-copy{
+  width:100%;max-width:100%;min-height:130px;
+  padding:13px;box-sizing:border-box;resize:vertical;
+  background:#fffefb;color:#2a291f;border:1px solid #cda578;
+  border-radius:12px;font:400 13px/1.5 Manrope,Arial,sans-serif!important;
+}
+@media(max-width:640px){
+  .intake-choice-overlay{
+    align-items:center!important;padding:16px;
+  }
+  .intake-choice-overlay .intake-choice-dialog{
+    width:100%;height:auto!important;max-height:88dvh;
+    border-radius:24px;border:1px solid #ead5bb;
+  }
+  .intake-choice-actions{padding:24px 20px 27px}
+}
