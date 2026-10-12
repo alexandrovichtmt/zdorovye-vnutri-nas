@@ -152,3 +152,53 @@ body .checkup-section .checkup-bottom .btn{
   body .checkup-section .checkup-bottom{flex-direction:column;align-items:stretch}
   body .checkup-section .checkup-bottom .btn{width:100%}
 }
+
+/* Premium portrait check-up poster trial; preserves the real intake CTA. */
+body .checkup-poster-section .checkup-poster-stage {
+  display:flex;flex-direction:column;align-items:center;
+  width:min(100%,1000px);box-sizing:border-box;
+  margin:0 auto clamp(25px,3.2vw,45px)!important;
+  padding:clamp(12px,2.7vw,32px) clamp(12px,2.7vw,32px) clamp(17px,2.5vw,28px);
+  border:1px solid #e8d5bd;border-radius:clamp(22px,2.6vw,34px);
+  background:radial-gradient(ellipse at 50% -6%,rgba(234,202,156,.33),transparent 65%),
+    linear-gradient(135deg,#fffefa,#f6f0e7);
+  box-shadow:0 13px 38px rgba(89,64,39,.055);
+}
+body .checkup-poster-section .checkup-poster-link {
+  display:block;width:100%;max-width:850px;overflow:hidden;
+  border-radius:clamp(14px,1.9vw,24px);
+  border:1px solid rgba(156,117,77,.2);
+  background:#faf7f1;
+  box-shadow:0 18px 48px rgba(39,40,30,.14),0 3px 12px rgba(59,38,23,.08);
+  transition:transform .25s ease,box-shadow .25s ease;
+  text-decoration:none!important;
+}
+body .checkup-poster-section .checkup-poster-link:hover {
+  transform:translateY(-3px);
+  box-shadow:0 24px 58px rgba(39,40,30,.17),0 4px 14px rgba(59,38,23,.08);
+}
+body .checkup-poster-section .checkup-poster-link:focus-visible {
+  outline:3px solid #ad7942;outline-offset:4px;
+}
+body .checkup-poster-section .checkup-poster-image {
+  display:block;width:100%;height:auto;aspect-ratio:941/1672;
+  border:0;border-radius:0;object-fit:contain;background:#f9f7f1;
+}
+body .checkup-poster-section .checkup-poster-caption {
+  color:#8b7155!important;text-align:center!important;
+  font:400 clamp(12px,.95vw,14px)/1.55 Manrope,Arial,sans-serif!important;
+  margin:clamp(15px,1.7vw,21px) 8px 0!important;
+}
+@media(max-width:650px){
+  body .checkup-poster-section .checkup-poster-stage {
+    padding:9px 9px 15px;
+    border-radius:20px;
+    margin-bottom:20px!important;
+  }
+  body .checkup-poster-section .checkup-poster-link {border-radius:14px}
+  body .checkup-poster-section .checkup-poster-caption {margin-top:12px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  body .checkup-poster-section .checkup-poster-link {transition:none}
+  body .checkup-poster-section .checkup-poster-link:hover {transform:none}
+}
