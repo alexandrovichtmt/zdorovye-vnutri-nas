@@ -32,7 +32,7 @@
   const fields = SECTION_DATA.flatMap(x => x.fields);
   const styles = document.createElement("link");
   styles.rel = "stylesheet";
-  styles.href = "assets/consultation-intake.css?v=2";
+  styles.href = "assets/consultation-intake.css?v=3";
   document.head.appendChild(styles);
 
   const overlay = document.createElement("div");
