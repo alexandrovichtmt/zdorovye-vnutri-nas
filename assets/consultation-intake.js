@@ -47,7 +47,7 @@
         <div class="intake-header-copy">
           <span class="intake-eyebrow">Людмила Баран · Личная консультация</span>
           <h2 id="intake-title">Давайте <em>познакомимся</em></h2>
-          <p>Заполните анкету, чтобы я могла заранее узнать о вашем самочувствии и подготовиться к разговору.</p>
+          <p>Заполните все 15 вопросов, чтобы я могла заранее узнать о вашем самочувствии и подготовиться к разговору. Если вопрос не относится к вам, напишите «нет» или «не относится».</p>
         </div>
         <button type="button" class="intake-close" data-close-intake aria-label="Закрыть анкету">×</button>
       </header>
@@ -196,10 +196,11 @@
     const message=formatAnswers();
     // Telegram public-username draft prefill is a supported Telegram deep link.
     // In very long answers, copy the entire text so it cannot be truncated.
-    const longMessage=Array.from(message).length > 3750;
+    const encoded=encodeURIComponent(message);
+    const longMessage=Array.from(message).length > 3750 || encoded.length > 7800;
     const link=longMessage
       ? "https://t.me/" + TELEGRAM_USERNAME
-      : "https://t.me/" + TELEGRAM_USERNAME + "?text=" + encodeURIComponent(message);
+      : "https://t.me/" + TELEGRAM_USERNAME + "?text=" + encoded;
 
     // Begin copy inside the submit gesture so Safari/iOS permits clipboard access.
     copyAnswers(message).then(ok => {
