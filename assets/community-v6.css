@@ -275,7 +275,7 @@ body.community-page .community-card:hover :is(.community-visual-care-gentle,.com
  transform:scale(1.012)!important;
 }
 body.community-page .community-details:is([data-active-format="0"],[data-active-format="1"]) .community-detail-aside{
- align-self:start!important;
+ align-self:center!important;
 }
 body.community-page .community-details:is([data-active-format="0"],[data-active-format="1"]) .community-detail-photo{
  width:100%!important;
