@@ -217,10 +217,21 @@
     else if (!e.shiftKey && document.activeElement === focus[focus.length-1]) {e.preventDefault();focus[0].focus();}
   });
 
+  // All 15 answers are preserved in full. Shorter question headings reduce
+  // the length of the URL needed to fill Telegram's message composer.
+  const telegramHeadings = [
+    "Имя, город/село", "Возраст", "Вес, рост, желаемый вес",
+    "Жалобы, симптомы, кожа, ногти, волосы", "Вирусные заболевания",
+    "Головные боли, циститы", "Менструация, боли, сгустки, ПМС",
+    "Гинекологические операции", "Диагнозы, кисты, миомы, полипы, камни",
+    "Аллергии", "Артериальное давление", "Щитовидная железа, эндокринолог",
+    "Лекарства, БАДы, гормоны, контрацептивы", "Привычки, сон, нагрузка",
+    "Цели по здоровью и самочувствию"
+  ];
   const formatAnswers = () => {
     const parts = ["АНКЕТА ДЛЯ ЛЮДМИЛЫ БАРАН", "Запрос на консультацию", ""];
     firstField.forEach((el,i) => {
-      parts.push((i+1) + ". " + el.getAttribute("data-question"));
+      parts.push((i+1) + ". " + telegramHeadings[i]);
       parts.push(el.value.trim());
       parts.push("");
     });
@@ -236,12 +247,29 @@
       ta.remove();return success;
     } catch (_) {return false;}
   }
-  // Telegram supports t.me/<username>?text=<draft>, but full questionnaires
-  // exceed safe URL lengths when UTF-8 is percent-encoded (400 Bad Request).
-  // On mobile, native Web Share sends the FULL payload to the chosen
-  // Telegram conversation. Do not claim this automatically sends a message.
+  // A native Telegram chat deep link fills the message input of the chosen
+  // *personal chat* with the whole questionnaire; unlike long t.me HTTP
+  // requests, it bypasses the nginx 400 Bad Request failure.
+  // Telegram cannot display a single message longer than its message limit,
+  // so full-length Web Share remains the fallback for unusually long answers.
   const TELEGRAM_CHAT_URL = "https://t.me/" + TELEGRAM_USERNAME;
+  const TELEGRAM_NATIVE_PREFIX = "tg://resolve?domain=" + TELEGRAM_USERNAME + "&text=";
   const TELEGRAM_SAFE_URL_CHARS = 5500;
+
+  function openDirectTelegramDraft(message) {
+    const encoded = encodeURIComponent(message);
+    const n = Array.from(message).length;
+    if (n > 3900 || encoded.length > 14500) return false;
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || "");
+    const link = isMobile || encoded.length > 1800
+      ? TELEGRAM_NATIVE_PREFIX + encoded
+      : TELEGRAM_CHAT_URL + "?text=" + encoded;
+    status.hidden = false;
+    status.textContent = "Открываю мой личный Telegram с полностью заполненной анкетой. Проверьте ответы и нажмите «Отправить». Если текст не подставился, воспользуйтесь кнопкой «Передать всю анкету» ниже.";
+    // Synchronous navigation keeps the iOS user activation alive.
+    window.location.href = link;
+    return true;
+  }
 
   function openTelegram(url=TELEGRAM_CHAT_URL) {
     const a = document.createElement("a");
@@ -352,8 +380,13 @@
     manualCopy.hidden = true;
     status.hidden = false;
 
-    // Full text goes directly into the phone's share sheet. In Telegram
-    // the visitor selects Ludmila and confirms the send.
+    // First try to open the personal chat with the entire text already in
+    // Telegram's input box. For oversized answers use the native share sheet.
+    if (openDirectTelegramDraft(latestFormattedAnswer)) {
+      // Keep the whole questionnaire available if the device blocks the link.
+      copyAnswers(latestFormattedAnswer).catch(() => {});
+      return;
+    }
     if (!shareFullQuestionnaire(latestFormattedAnswer)) {
       shareWithoutNativeApi(latestFormattedAnswer);
     }
