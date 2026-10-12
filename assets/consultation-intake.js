@@ -152,13 +152,14 @@
   }
 
   // Only the top navigation "Консультация" and the homepage
-  // "Начать консультацию" button open the two-action chooser.
+  // "Начать консультацию" and "Записаться на консультацию" buttons open the chooser.
   // The explicit "Заполнить анкету" button in Анализы opens the form directly.
   // Everything else (including the floating Telegram and Услуги) is direct.
   function shouldOfferChoice(anchor) {
     if (!anchor) return false;
     if (anchor.classList.contains("navcta") && anchor.textContent.trim() === "Консультация") return true;
     if (anchor.textContent.trim() === "Начать консультацию →") return true;
+    if (anchor.textContent.trim() === "Записаться на консультацию →" && document.body.classList.contains("home-sync")) return true;
     return false;
   }
 
